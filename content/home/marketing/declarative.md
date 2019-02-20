@@ -1,5 +1,5 @@
 ---
-title: Declarative
+title: ප්රකාශනය
 order: 0
 ---
 
