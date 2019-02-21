@@ -1,5 +1,5 @@
 ---
-title: A Stateful Component
+title: අවස්ථා සංරචකයක්
 order: 1
 domid: timer-example
 ---

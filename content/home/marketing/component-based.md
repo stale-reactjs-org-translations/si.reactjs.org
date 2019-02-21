@@ -1,8 +1,8 @@
 ---
-title: Component-Based
+title: සංරචක-පාදක
 order: 1
 ---
 
-Build encapsulated components that manage their own state, then compose them to make complex UIs.
+සන්ෂිප්‍ත එකක ගොඩනා ගන්න (එහි එක් කාර්යය පාලනයට ) එමගින්  සන්කීරණ UI නිර්මාණය කරන්න.
 
-Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
+සන්ෂිප්‍ත එකක තර්ක JavaScript මගින් ලියා අති හෙයින්  දත්ත app එක තුළින් හුවමාරු කල හක. තත්වය DOM වලට බල නොපායි.

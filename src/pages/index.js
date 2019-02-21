@@ -17,7 +17,6 @@ import {colors, media, sharedStyles} from 'theme';
 import loadScript from 'utils/loadScript';
 import createOgUrl from 'utils/createOgUrl';
 import {babelURL} from 'site-constants';
-import ReactDOM from 'react-dom';
 import logoWhiteSvg from 'icons/logo-white.svg';
 
 class Home extends Component {
@@ -134,7 +133,7 @@ class Home extends Component {
                         fontSize: 30,
                       },
                     }}>
-                    A JavaScript library for building user interfaces
+                    පරිශීලක අතුරුමුහුණත් ගොඩනැගීම සඳහා JavaScript පුස්තකාලය
                   </p>
                   <Flex
                     valign="center"
@@ -149,12 +148,12 @@ class Home extends Component {
                       <ButtonLink
                         to="/docs/getting-started.html"
                         type="primary">
-                        Get Started
+                        අරඹන්න
                       </ButtonLink>
                     </CtaItem>
                     <CtaItem>
                       <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                        Take the Tutorial
+                        නිබන්ධනය ගන්න
                       </ButtonLink>
                     </CtaItem>
                   </Flex>

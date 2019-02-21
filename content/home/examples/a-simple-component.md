@@ -1,5 +1,5 @@
 ---
-title: A Simple Component
+title: සරල සංරචකයකි
 order: 0
 domid: hello-example
 ---

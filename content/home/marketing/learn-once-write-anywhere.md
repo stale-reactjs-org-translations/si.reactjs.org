@@ -1,5 +1,5 @@
 ---
-title: Learn Once, Write Anywhere
+title: වරක් ඉගෙන ගන්න, ඕනෑම තැනක ලියන්න
 order: 2
 ---
 
