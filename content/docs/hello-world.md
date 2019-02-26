@@ -6,7 +6,7 @@ prev: cdn-links.html
 next: introducing-jsx.html
 ---
 
-The smallest React example looks like this:
+කුඩාම React උදාහරණය පහළින්:
 
 ```js
 ReactDOM.render(
@@ -15,36 +15,36 @@ ReactDOM.render(
 );
 ```
 
-It displays a heading saying "Hello, world!" on the page.
+ඉහත උදාහරණය "Hello, world!" ලෙස Heading එකක් page එකෙහි පෙන්වයි.
 
 [](codepen://hello-world)
 
-Click the link above to open an online editor. Feel free to make some changes, and see how they affect the output. Most pages in this guide will have editable examples like this one.
+ඉහලින් ඇති link එක මගින් online editor එක open කරගන්න.එයට වෙනස්කම් සිදුකරන්න, එම වෙනස්කම් output එකට බලපාන ආකාරය නිරීක්ෂණය කරන්න. මෙම උපදේශන මාලාවේ බොහෝ පිටුවල ඉහත ආකාරයේ  වෙනස්කම් කර නිරීක්ෂණය කළ හැකි උදාහරණ පවතී.
 
 
-## How to Read This Guide {#how-to-read-this-guide}
+## මෙම උපදේශන මාලාව කියවන්නේ කෙසේද {#how-to-read-this-guide}
 
-In this guide, we will examine the building blocks of React apps: elements and components. Once you master them, you can create complex apps from small reusable pieces.
+මෙම උපදෙස් මාලාවේදි අප විසින් React App එකක ඇති කොටස් පරීක්ෂා කරනවා: elements and components. ඒවා හොඳින් පුහුණු වුනු පසුව එම කුඩා Reusable කොටස් භාවිතයෙන් ඔබටත් සංකීර්ණ App එකක් නිර්මාණය කරගන්න පුළුවන්.
 
->Tip
+>ඉඟිය
 >
->This guide is designed for people who prefer **learning concepts step by step**. If you prefer to learn by doing, check out our [practical tutorial](/tutorial/tutorial.html). You might find this guide and the tutorial complementary to each other.
+>මෙම උපදෙස් මාලාව සකසා ඇත්ත **මෙහි ඇති සංකල්ප පියවරෙන් පියවර ඉගෙනගැනීමට කැමති අය සඳහායි**. ඔබ අත්හදා බලා ඉගෙනගැනීමට කැමති කෙනෙක්නම් අපගේ [ප්‍රායෝගික පාඩම් මාලාව](/tutorial/tutorial.html) පරීක්ෂා කරන්න. මෙම ප්‍රායෝගික පාඩම් මාලාවේ සහ උපදෙස් මාලාව යන දෙකෙහිම  වැදගත්කම් ඔබට හමුවේවි.
 
-This is the first chapter in a step-by-step guide about main React concepts. You can find a list of all its chapters in the navigation sidebar. If you're reading this from a mobile device, you can access the navigation by pressing the button in the bottom right corner of your screen.
+මෙය ප්‍රධාන React සංකල්ප උපදෙස් මාලාවේ පලමු කොටසයි. මෙහි සියළුම කොටස් navigation sidebar එකෙන් හොයාගන්න පුළුවන්. ඔබ මෙය කියවන්නේ ජංගම දුරකථනයකින් නම් navigation sidebar එක ලබාගැනීමට තිරයේ දකුණුපස පහල කෙලවරේ ඇති button එක තදකරන්න.
 
-Every chapter in this guide builds on the knowledge introduced in earlier chapters. **You can learn most of React by reading the “Main Concepts” guide chapters in the order they appear in the sidebar.** For example, [“Introducing JSX”](/docs/introducing-jsx.html) is the next chapter after this one.
+මෙම උපදෙස් මාලාවේ කොටස් එකිනෙකට සම්බන්ධයි. **ඔබට මෙහි ඇති “Main Concepts” කොටසෙහි ඇති උප කොටස් කියවීමෙන් React පිළිබඳ බොහෝදේ ඉගෙනගන්න පුළුවන්.** උදාහරණ, [“JSX හඳුන්වාදීම”](/docs/introducing-jsx.html) මීලඟ කොටසයි.
 
-## Knowledge Level Assumptions {#knowledge-level-assumptions}
+## ඔබසතුවිය යුතු දැනුම මට්ටම {#knowledge-level-assumptions}
 
-React is a JavaScript library, and so we'll assume you have a basic understanding of the JavaScript language. **If you don't feel very confident, we recommend [going through a JavaScript tutorial](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) to check your knowledge level** and enable you to follow along this guide without getting lost. It might take you between 30 minutes and an hour, but as a result you won't have to feel like you're learning both React and JavaScript at the same time.
+React යනු JavaScript library කි, එම නිසා JavaScript  පිළිබඳ මූලික දැනුම ඔබ සතුව ඇති බව අපි උපකල්පනය කරමු. **ඒ  පිළිබඳ ඔබ සෑහීමට පත් නොවේනම් , ඔබගේ දැනුම පරීක්ෂා කර්ගැනීමට අප විසින් මෙම [JavaScript පාඩම් මාළාව](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) නිර්දේශ කරනවා** එමෙන්ම මෙම උපදෙස් මාලාව කිසිඳු ප්‍රශ්ණයකින් තොරව කරගෙන යෑමට එය උපකාරී වනු ඇත. මෙය සඳහා පැය එකයි විනාඩි 30ක කාලයක් වැය කිරීමට සිදුවේ, එහෙත් මෙය හැදෑරීමෙන් පසු ඔබට උපදෙස් මාලාව තේරුම් ගැනීම පහසු වනු ඇත.
 
->Note
+>සටහන
 >
->This guide occasionally uses some of the newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
+>මෙම උපදෙස් මාළාවේ යම් අවස්ථාවලදී නව JavaScript Syntax උදාහරණ සඳහා භාවිතා කර ඇත. ඔබ පසුගිය අවුරුදු කිහිපය තුල JavaScript භාවිතා නොකළ කෙනෙක් නම්, [මෙම කරුණු තුන](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) බොහෝසේ වැදගත්වනු ඇත.
 
 
-## Let's Get Started! {#lets-get-started}
+## ආරම්භ කරමු! {#lets-get-started}
 
-Keep scrolling down, and you'll find the link to the [next chapter of this guide](/docs/introducing-jsx.html) right before the website footer.
+පහලට Scroll කරන්න. [උපදෙස් මාළාවේ මීලඟ කොටස](/docs/introducing-jsx.html) සඳහා Link එක වෙබ් අඩවියේ Footer එකට ඉහලින් හමුවේවි.
 
 
