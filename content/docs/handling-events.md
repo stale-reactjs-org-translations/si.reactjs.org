@@ -8,12 +8,12 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 
-Handling events with React elements is very similar to handling events on DOM elements. There are some syntactic differences:
+React elements එක්ක events හැසිරවීමත් DOM elements වලින් events හැසිරවීමට ගොඩක් සමානයි. Syntax වල පොඩි වෙනස්කම් ටිකක් තියෙනව මේ වගේ:
 
-* React events are named using camelCase, rather than lowercase.
-* With JSX you pass a function as the event handler, rather than a string.
+* React events නම් කරන්න භාවිතා කරන්නේ lowercase නෙමෙයි camelCase.
+* JSX වලදි event handler එක විදිහට යවන්නේ string එකක් නෙමෙයි function එකක්.
 
-For example, the HTML:
+උදාහරණයක් විදිහට පහල තියෙන HTML code එක බලන්න.
 
 ```html
 <button onclick="activateLasers()">
@@ -21,7 +21,7 @@ For example, the HTML:
 </button>
 ```
 
-is slightly different in React:
+ඒකම React වලන් ලියද්දි ටිකක් වෙනස් වෙනවා මේ වගේ.
 
 ```js{1}
 <button onClick={activateLasers}>
@@ -29,7 +29,8 @@ is slightly different in React:
 </button>
 ```
 
-Another difference is that you cannot return `false` to prevent default behavior in React. You must call `preventDefault` explicitly. For example, with plain HTML, to prevent the default link behavior of opening a new page, you can write:
+තවත් වෙනස්කමක් තමයි React වලදි අපිට element එකක default behavior එක නවත්තන්න return `false` භාවිතා කරන්න බැහැ. අපි අනිවාර්යෙන්ම `preventDefault` භාවිතා කරන්න ඕනි.
+උදාහරණයක් විදිහට plain HTML වලින් link එකක සාමාන්‍ය හැසිරීම (default behavior) නවත්තන්න ඒ කියන්නෙ link එක click කලාම  අලුත් page එකක් open වෙන එක නවත්තන්න පහල තියෙන code එකෙන් පුලුවන් වුනත්:
 
 ```html
 <a href="#" onclick="console.log('The link was clicked.'); return false">
@@ -37,7 +38,7 @@ Another difference is that you cannot return `false` to prevent default behavior
 </a>
 ```
 
-In React, this could instead be:
+React වලින් link එකක default behavior නවත්තන්න නම් මේ වගෙ code එකක් ලියන්න ඕනි:
 
 ```js{2-5,8}
 function ActionLink() {
