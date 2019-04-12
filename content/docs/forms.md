@@ -9,7 +9,8 @@ redirect_from:
   - "docs/forms-zh-CN.html"
 ---
 
-HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+REACT වල HTML පෝ‍රමය ඇතුළත තිබෙන සංරචක වල හැසිරීම වෙනත් DOM සංරචක වලට වඩා වෙනස්වෙ. මෙයට 
+හෙතුව, HTML පෝ‍රම් සංරචක ස්වාභාවයෙන්ම අභ්‍යන්තර වටිනකම් තබාගනු ඇත. උදාහරණයක් වශයෙන්, මෙම HTML පෝරමය තනි නමක් භාරගනු ඇත.
 
 ```html
 <form>
@@ -22,6 +23,8 @@ HTML form elements work a little bit differently from other DOM elements in Reac
 ```
 
 This form has the default HTML form behavior of browsing to a new page when the user submits the form. If you want this behavior in React, it just works. But in most cases, it's convenient to have a JavaScript function that handles the submission of the form and has access to the data that the user entered into the form. The standard way to achieve this is with a technique called "controlled components".
+
+ඉහත HTML පෝරමයේ හැසිරීම වෙනත් සාමාන්‍ය HTML පෝරමයක් හා සමාන වේ. ඔබ පෝරමය submit කළහොත් එය browser යේ අදාළ පිටුව වෙත  ඔබව යොමු කරනු ලැබේ. නමුත් මේවැනි බොහෝ අවස්ථා වලදී ඔබට එම පෝරමයේ තිබෙන දත්තයන් අවශ්‍ය වේ. මේ සදහා javascript function එකක් ලිවීමෙන් ඔබට එම කාර්යය ඉතා පහසුවන් කරගත හැක. මෙය “controlled components” ක්‍රමය ලෙස හදුන්වා දී ඇත.
 
 ## Controlled Components {#controlled-components}
 
