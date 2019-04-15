@@ -9,8 +9,8 @@ redirect_from:
   - "docs/forms-zh-CN.html"
 ---
 
-REACT වල HTML පෝ‍රමය ඇතුළත තිබෙන සංරචක වල හැසිරීම වෙනත් DOM සංරචක වලට වඩා වෙනස්වෙ. මෙයට 
-හෙතුව, HTML පෝ‍රම් සංරචක ස්වාභාවයෙන්ම අභ්‍යන්තර වටිනකම් තබාගනු ඇත. උදාහරණයක් වශයෙන්, මෙම HTML පෝරමය තනි නමක් භාරගනු ඇත.
+REACT වල HTML පෝ‍රමය ඇතුළත තිබෙන elements වල හැසිරීම වෙනත් DOM elements වලට වඩා වෙනස්වෙ. මෙයට 
+හෙතුව, HTML පෝරමයේ elements ස්වාභාවයෙන්ම අභ්‍යන්තර වටිනකම් තබාගනු ඇත. උදාහරණයක් වශයෙන්, මෙම HTML පෝරමය තනි නමක් භාරගනු ඇත.
 
 ```html
 <form>
@@ -21,18 +21,21 @@ REACT වල HTML පෝ‍රමය ඇතුළත තිබෙන ස�
   <input type="submit" value="Submit" />
 </form>
 ```
-
-This form has the default HTML form behavior of browsing to a new page when the user submits the form. If you want this behavior in React, it just works. But in most cases, it's convenient to have a JavaScript function that handles the submission of the form and has access to the data that the user entered into the form. The standard way to achieve this is with a technique called "controlled components".
-
 ඉහත HTML පෝරමයේ හැසිරීම වෙනත් සාමාන්‍ය HTML පෝරමයක් හා සමාන වේ. ඔබ පෝරමය submit කළහොත් එය browser යේ අදාළ පිටුව වෙත  ඔබව යොමු කරනු ලැබේ. නමුත් මේවැනි බොහෝ අවස්ථා වලදී ඔබට එම පෝරමයේ තිබෙන දත්තයන් අවශ්‍ය වේ. මේ සදහා javascript function එකක් ලිවීමෙන් ඔබට එම කාර්යය ඉතා පහසුවන් කරගත හැක. මෙය “controlled components” ක්‍රමය ලෙස හදුන්වා දී ඇත.
 
 ## Controlled Components {#controlled-components}
 
 In HTML, form elements such as `<input>`, `<textarea>`, and `<select>` typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with [`setState()`](/docs/react-component.html#setstate).
 
+HTML වල, සාමාන්‍යයෙන් `<input>`, `<textarea>`, සහ `<select>` ආදී පෝරම් elements වලට ආරම්භයේදීම සමහර වටිනාකම් ඇත. එම වටිනාකම් user input අනුව වෙනස් වේ. නමුත් React වල සාමාන්‍යයෙන් එම වටිනාකම් තබාගනු ලබන්නේ, එම component එකේ  'state property' නමින් හදුන්වන variable එකක වේ. එම වටිනාකම් [`setState()`](/docs/react-component.html#setstate) මගින් වෙනස් කල හැකිවේ.
+
 We can combine the two by making the React state be the "single source of truth". Then the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a "controlled component".
 
+අපට මෙම සංකල්ප දෙක එකතු කර 'controlled component' එකක් සැදීය හැකිය. මේසදහා 'single source of truth' යන ක්‍රමය භාවිතා  කල යුතුය. මේයින් කරනු ලබන්නේ HTML පෝරමය නිරමාණය කරන code එකෙන්න්ම එම පෝරමයේ user input ලබාගැනීමයි. පෝරමයක element එකක value attribute, මේ ආකාරයට react මගින් පාලනය කිරීම 'controlled component' ලෙස සැලකේ.
+
 For example, if we want to make the previous example log the name when it is submitted, we can write the form as a controlled component:
+
+උදාහරණයක් වශයෙන්, ඉහත HTML code එක controlled component ලෙස ලිවීමෙන්, user submit බටනය ක්ලික් කරනවිට අපට userගේ නම alert (log) කිරීමට හැකිවේ.
 
 ```javascript{4,10-12,24}
 class NameForm extends React.Component {
@@ -66,8 +69,7 @@ class NameForm extends React.Component {
   }
 }
 ```
-
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
+[**CodepPen එක මගින් උත්සාහකර බලන්න**](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
 
 Since the `value` attribute is set on our form element, the displayed value will always be `this.state.value`, making the React state the source of truth. Since `handleChange` runs on every keystroke to update the React state, the displayed value will update as the user types.
 
