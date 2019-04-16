@@ -16,9 +16,9 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
-Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a [detailed component API reference here](/docs/react-component.html).
+Components ඔබට ඔබගේ  UI එක තනි තනි කොටසට ස්වාධීනව ක්‍රියා කල හැකි, නැවත භාවිතා කල හැකි කොටස් වලට කැඩීමට ඉඩ ලබාදේ. මෙම  පිටුවේදී ඔබට components යන අදහසට අදුන්වා දීමක් සිදු කරයි. ඔබට [components වල සවිස්තරාත්මක විස්තරයක් API reference හිදී සොයාගත හැක](/docs/react-component.html).
 
-Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called "props") and return React elements describing what should appear on the screen.
+සංකල්පයක් ලෙස ගත් කල, components, JavaScript වල function වලට සමානය. components (“props” නමැති) අභිමත ආදානයන් ලබා ගන්නා අතර, තිරයේ අන්තර්ගතය කෙසේ වියයුතු දැයි විස්තර කරන React elements ආපසු ලබා දෙයි.
 
 ## Function and Class Components {#function-and-class-components}
 
