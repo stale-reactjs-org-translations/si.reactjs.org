@@ -16,24 +16,22 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
-Components ඔබට ඔබගේ  UI එක තනි තනි කොටසට ස්වාධීනව ක්‍රියා කල හැකි, නැවත භාවිතා කල හැකි කොටස් වලට කැඩීමට ඉඩ ලබාදේ. මෙම  පිටුවේදී ඔබට components යන අදහසට අදුන්වා දීමක් සිදු කරයි. ඔබට [components වල සවිස්තරාත්මක විස්තරයක් API reference හිදී සොයාගත හැක](/docs/react-component.html).
+Components ඔබට ඔබගේ  UI එක, තනි තනි කොටසට ස්වාධීනව ක්‍රියා කල හැකි, නැවත භාවිතා කල හැකි කොටස් වලට කැඩීමට ඉඩ ලබාදේ. මෙම  පිටුවේදී ඔබට components යන අදහසට අදුන්වා දීමක් සිදු කරයි. ඔබට [components වල සවිස්තරාත්මක විස්තරයක් API reference හිදී සොයාගත හැක](/docs/react-component.html).
 
 සංකල්පයක් ලෙස ගත් කල, components, JavaScript වල function වලට සමානය. components (“props” නමැති) අභිමත ආදානයන් ලබා ගන්නා අතර, තිරයේ අන්තර්ගතය කෙසේ වියයුතු දැයි විස්තර කරන React elements ආපසු ලබා දෙයි.
 
-## Function and Class Components {#function-and-class-components}
+## Function සහා Class Components {#function-and-class-components}
 
-The simplest way to define a component is to write a JavaScript function:
-
+component අර්ථ දැක්විය හැකි පහසුම විදිය JavaScript function එකක් ලිවීමයි.
 ```js
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
 ```
 
-This function is a valid React component because it accepts a single "props" (which stands for properties) object argument with data and returns a React element. We call such components "function components" because they are literally JavaScript functions.
+මෙම function එක වලංගු React component එකකි, මක්නිසාදයත් එය තනි, දත්ත සහිත "props" (properties සදහා කෙටි යෙදුමකි) object argument එකක් බාර ගන්නා අතර React element එකක් ආපසු ලබා දෙයි. අප එවැනි components සදහා "function components" යයි පවසයි. මක් නිසාදයත් ඒවා ඇත්ත වසයෙන්ම JavaScript functions. වන බැවිනි.
 
-You can also use an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) to define a component:
-
+ඔබට  [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) භාවිතයෙන්ද component එකක් අර්ථ දැක්විය හැකිය.
 ```js
 class Welcome extends React.Component {
   render() {
@@ -42,9 +40,9 @@ class Welcome extends React.Component {
 }
 ```
 
-The above two components are equivalent from React's point of view.
+ඉහතින් ඇති component දෙක React වලට අනුව බලන විට සමාන component දෙකකි.
 
-Classes have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html). Until then, we will use function components for their conciseness.
+Classes වලට අමතර ලක්ෂණ කිහිපයක් ඇත. අප ඒවා [ඊළඟ කාණ්ඩ](/docs/state-and-lifecycle.html) වලදී සාකච්ඡා කරනවා. ඒ වන තුරු අප function components භාවිතා කරමු, මක් නිසාද යත් ඒවා කෙටි බැවින්.
 
 ## Rendering a Component {#rendering-a-component}
 
