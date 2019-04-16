@@ -14,9 +14,9 @@ React ප්රබල සංයුති ආකෘතියක් සමඟ ප�
 
 ## 	සීමා කිරීම (Containment) {#containment}
 
-සමහර කොටස් (components) ඔවුන්ගේ දරුවන්(children) කලින් නොදැන සිටිති. මෙය විශේෂයෙන්ම පොදු වේ `Sidebar` or `Dialog`  "පෙට්ටි" නිරූපණය වන කොටස් (components) සඳහා.
+සමහර කොටස් (components) ඔවුන්ගේ දරුවන්(children) කලින් නොදැන සිටිති. මෙය විශේෂයෙන්ම පොදු වේ `Sidebar` හෝ `Dialog`  "පෙට්ටි" නිරූපණය වන කොටස් (components) සඳහා.
 
-We recommend that such components use the special `children` prop to pass children elements directly into their output:
+අපි නිර්දේශ කරනව විශේෂය `children` prop භාවිතා කරන කොටස්(components) දරුවන්ගේ(children) මූලද්රව්ය නිශ්පාදනයට කෙලින්ම ලබා දෙන ලෙස:
 
 ```js{4}
 function FancyBorder(props) {
@@ -28,7 +28,7 @@ function FancyBorder(props) {
 }
 ```
 
-This lets other components pass arbitrary children to them by nesting the JSX:
+මෙය වෙනත් අත්යවශ්ය අංගයන් JSX සවිකිරීම මඟින් අත්තනෝමතික ලෙස දරුවන්ට (to children) ලබා දෙයි.
 
 ```js{4-9}
 function WelcomeDialog() {
@@ -45,11 +45,11 @@ function WelcomeDialog() {
 }
 ```
 
-**[Try it on CodePen](https://codepen.io/gaearon/pen/ozqNOV?editors=0010)**
+**[CodePen මත එය උත්සාහ කරන්න](https://codepen.io/gaearon/pen/ozqNOV?editors=0010)**
 
-Anything inside the `<FancyBorder>` JSX tag gets passed into the `FancyBorder` component as a `children` prop. Since `FancyBorder` renders `{props.children}` inside a `<div>`, the passed elements appear in the final output.
+`<FancyBorder>` ඇතුලත තිබෙන ඕනම JSX ටැග් එකක් `FancyBorder` තුලට යනව  `children` prop එකක් ලෙස. `FancyBorder` එක `{props.children}`  `<div>` එකක් තුල ඉදිරිපත් කරන්න නිසා, ලැබුනු elements අවසන් ප්රතිඵලය තුල දක්නට ලැබේ.
 
-While this is less common, sometimes you might need multiple "holes" in a component. In such cases you may come up with your own convention instead of using `children`:
+මෙය සාමාන්යයෙන් අඩු වේ, ඔබට එකකට වඩා වැඩි කුහර අවශය විය හැක සමහර කොම්පොනන්ට් වලට. එවැනි අවස්තා වලදී ඔබට ඔබගේම සම්මතය බාවිතා කල හැකිය චිල්ඩ්‍රන්ස් භාවිතා කිරීමට අමතරව:
 
 ```js{5,8,18,21}
 function SplitPane(props) {
@@ -78,7 +78,7 @@ function App() {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/gwZOJp?editors=0010)
+[**CodePen මත එය උත්සාහ කරන්න**](https://codepen.io/gaearon/pen/gwZOJp?editors=0010)
 
 React elements like `<Contacts />` and `<Chat />` are just objects, so you can pass them as props like any other data. This approach may remind you of "slots" in other libraries but there are no limitations on what you can pass as props in React.
 
@@ -111,9 +111,9 @@ function WelcomeDialog() {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/kkEaOZ?editors=0010)
+[**CodePen මත එය උත්සාහ කරන්න**](https://codepen.io/gaearon/pen/kkEaOZ?editors=0010)
 
-Composition works equally well for components defined as classes:
+සංයුතිය(Composition) class ලෙස අර්ථ දක්වා ඇති components සඳහාද හොඳින් ක්රියා කරයි:
 
 ```js{10,27-31}
 function Dialog(props) {
@@ -161,7 +161,7 @@ class SignUpDialog extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/gwZbYa?editors=0010)
+[**CodePen මත එය උත්සාහ කරන්න**](https://codepen.io/gaearon/pen/gwZbYa?editors=0010)
 
 ## So What About Inheritance? {#so-what-about-inheritance}
 
