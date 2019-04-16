@@ -1,6 +1,6 @@
 ---
 id: composition-vs-inheritance
-title: Composition vs Inheritance
+title: සංයුතිය එදිරිව ආවේණිකය
 permalink: docs/composition-vs-inheritance.html
 redirect_from:
   - "docs/multiple-components.html"
@@ -8,13 +8,13 @@ prev: lifting-state-up.html
 next: thinking-in-react.html
 ---
 
-React has a powerful composition model, and we recommend using composition instead of inheritance to reuse code between components.
+React ප්රබල සංයුති ආකෘතියක් සමඟ පැමිණේ, එනිසා අපි නිර්දේශ කරනව සංයුතිය(composition) භාවිතා කිරීමට ආවේණිකය(inheritance) වෙනුවට components තුල නැවත භාවිතය සඳහා.
 
-In this section, we will consider a few problems where developers new to React often reach for inheritance, and show how we can solve them with composition.
+මෙම කොටසින්, ප්රශ්න කිහිපයක් අපි සලකා බලමු React වලට අලුත් developers බොහෝ විට ආවේණිකය (inheritance) භාවිතා කරන්නව, එනිසා අපි බලමු කොහොමද එවා විසදන්නෙ සංයුතියcomposition බාවිතා කර.
 
-## Containment {#containment}
+## 	සීමා කිරීම (Containment) {#containment}
 
-Some components don't know their children ahead of time. This is especially common for components like `Sidebar` or `Dialog` that represent generic "boxes".
+සමහර කොටස් (components) ඔවුන්ගේ දරුවන්(children) කලින් නොදැන සිටිති. මෙය විශේෂයෙන්ම පොදු වේ `Sidebar` or `Dialog`  "පෙට්ටි" නිරූපණය වන කොටස් (components) සඳහා.
 
 We recommend that such components use the special `children` prop to pass children elements directly into their output:
 
