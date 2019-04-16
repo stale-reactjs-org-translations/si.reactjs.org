@@ -25,15 +25,9 @@ REACT වල HTML පෝ‍රමය ඇතුළත තිබෙන eleme
 
 ## Controlled Components {#controlled-components}
 
-In HTML, form elements such as `<input>`, `<textarea>`, and `<select>` typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with [`setState()`](/docs/react-component.html#setstate).
-
 HTML වල, සාමාන්‍යයෙන් `<input>`, `<textarea>`, සහ `<select>` ආදී පෝරම් elements වලට ආරම්භයේදීම සමහර වටිනාකම් ඇත. එම වටිනාකම් user input අනුව වෙනස් වේ. නමුත් React වල සාමාන්‍යයෙන් එම වටිනාකම් තබාගනු ලබන්නේ, එම component එකේ  'state property' නමින් හදුන්වන variable එකක වේ. එම වටිනාකම් [`setState()`](/docs/react-component.html#setstate) මගින් වෙනස් කල හැකිවේ.
 
-We can combine the two by making the React state be the "single source of truth". Then the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a "controlled component".
-
 අපට මෙම සංකල්ප දෙක එකතු කර 'controlled component' එකක් සැදීය හැකිය. මේසදහා 'single source of truth' යන ක්‍රමය භාවිතා  කල යුතුය. මේයින් කරනු ලබන්නේ HTML පෝරමය නිරමාණය කරන code එකෙන්න්ම එම පෝරමයේ user input ලබාගැනීමයි. පෝරමයක element එකක value attribute, මේ ආකාරයට react මගින් පාලනය කිරීම 'controlled component' ලෙස සැලකේ.
-
-For example, if we want to make the previous example log the name when it is submitted, we can write the form as a controlled component:
 
 උදාහරණයක් වශයෙන්, ඉහත HTML code එක controlled component ලෙස ලිවීමෙන්, user submit බටනය ක්ලික් කරනවිට අපට userගේ නම alert (log) කිරීමට හැකිවේ.
 
@@ -72,6 +66,8 @@ class NameForm extends React.Component {
 [**CodepPen එක මගින් උත්සාහකර බලන්න**](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
 
 Since the `value` attribute is set on our form element, the displayed value will always be `this.state.value`, making the React state the source of truth. Since `handleChange` runs on every keystroke to update the React state, the displayed value will update as the user types.
+
+දැන් අපගේ පොරම් element එකට value attribute එකක් දී තිබෙන නිසා, පෝරමය මගින් display කරන වටිනාකම සැමවිටම this.state.value එක වේ. මෙහි the source of truth වන්නේ React state variable එක වේ. මෙහි `handleChange` මගින් සෑම keystroke එකක් සමගම React state variable එක යාවත්කාල වන බැවින් the displayed value සැමවිටම යාවත්කාල වේ.
 
 With a controlled component, every state mutation will have an associated handler function. This makes it straightforward to modify or validate user input. For example, if we wanted to enforce that names are written with all uppercase letters, we could write `handleChange` as:
 
