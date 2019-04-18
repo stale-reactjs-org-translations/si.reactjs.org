@@ -46,21 +46,21 @@ Classes වලට අමතර ලක්ෂණ කිහිපයක් ඇත. 
 
 ## Rendering a Component {#rendering-a-component}
 
-Previously, we only encountered React elements that represent DOM tags:
+මීට පෙර, අපට හමුවුනේ  DOM tags නියෝජනය කරන React elements පමණි:
 
 ```js
 const element = <div />;
 ```
 
-However, elements can also represent user-defined components:
+කෙසේ වෙතත්, elements වලටද අප විසින් අර්ථ  දක්වන ලද components නියෝජනය කළ හැකිය:
 
 ```js
 const element = <Welcome name="Sara" />;
 ```
 
-When React sees an element representing a user-defined component, it passes JSX attributes to this component as a single object. We call this object "props".
+React විසින් පරිශීලක-අර්ථ දැක්වු(user-defined) component එකක් නිරීක්ෂණය කරන විට, එය එම component එකට තනි object ලෙස JSX attributes ලබාදේ.  අප මෙම object එක "props" ලෙස හඳුන්වයි.
 
-For example, this code renders "Hello, Sara" on the page:
+උදාහරණයක් ලෙස ගත්තොත්, පහත code එක "Hello, Sara" ලෙස වෙබ් පිටුවේ පෙන්නුම් කරයි.
 
 ```js{1,5}
 function Welcome(props) {
@@ -76,19 +76,18 @@ ReactDOM.render(
 
 [](codepen://components-and-props/rendering-a-component)
 
-Let's recap what happens in this example:
+අපි නැවත මේ උදාහරණයේ වෙන්නේ මොකක්ද කියලා බලමු:
 
-1. We call `ReactDOM.render()` with the `<Welcome name="Sara" />` element.
-2. React calls the `Welcome` component with `{name: 'Sara'}` as the props.
-3. Our `Welcome` component returns a `<h1>Hello, Sara</h1>` element as the result.
-4. React DOM efficiently updates the DOM to match `<h1>Hello, Sara</h1>`.
+1. අපි `ReactDOM.render()` method එක `<Welcome name="Sara" />` element සමග call කරනවා.
+2. React විසින් `Welcome` component එක `{name: 'Sara'}` යන props object එකත් සමග call කරනවා.
+3. අපගේ `Welcome` component එක `<h1>Hello, Sara</h1>` කියන element එක ප්‍රතිපලයක් ලෙස අපට ලබා දෙනවා.
+4. React DOM විසින් කාර්යක්ෂම ලෙස  DOM එක `<h1>Hello, Sara</h1>` ට ගැලපෙන සේ යාවත්කාලින කරනවා.
 
->**Note:** Always start component names with a capital letter.
+>**සැලකිය යුතුයි:** හැමවෙලේම  component එකක නම capital letter එකකින් අරඹන්න.
 >
->React treats components starting with lowercase letters as DOM tags. For example, `<div />` represents an HTML div tag, but `<Welcome />` represents a component and requires `Welcome` to be in scope.
+>React විසින් components නම් lowercase letters එකකින් පටන් ගන්නේ නම් එය DOM tags ලෙස සලකයි. උදාහරණයක් ලෙස ගතහොත් , `<div />` මගින් HTML div tag එක නියෝජනය වන අතර, `<Welcome />` මගින් component එකක් නියෝජනය වන අතර, එම `Welcome` component එක scope එකේ තිබීම අත්‍යවශ්‍ය වේ.
 >
->To learn more about the reasoning behind this convention, please read [JSX In Depth](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized).
-
+>මෙම නාම කරණය පිටිපස ඇති හේතුන් දැන ගැනීමට අවශ්‍යනම් කරුණාකර [JSX In Depth](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized) කියවන්න.
 ## Composing Components {#composing-components}
 
 Components can refer to other components in their output. This lets us use the same component abstraction for any level of detail. A button, a form, a dialog, a screen: in React apps, all those are commonly expressed as components.
