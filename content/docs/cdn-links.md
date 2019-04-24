@@ -6,32 +6,39 @@ prev: create-a-new-react-app.html
 next: hello-world.html
 ---
 
-Both React and ReactDOM are available over a CDN.
+React සහ ReactDOM යන දෙවර්ගයම CDN මඟින් ලබා ගත හැකිය.
 
 ```html
 <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 ```
 
-The versions above are only meant for development, and are not suitable for production. Minified and optimized production versions of React are available at:
+ඉහත සංස්කරණයන් සියල්ල development අවධිය සදහා වඩාත් සුදුසු වන අතර, production අවධිය සදහාම වෙන් වූ  ( minified and optimized )  සංස්කරණයන් පහත links හරහා ලබා ගත හැකියි.
 
 ```html
 <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 ```
 
-To load a specific version of `react` and `react-dom`, replace `16` with the version number.
+react හා react-dom හි ඔබට අවශ්‍ය සංස්කරණය ( version ) ලබා ගැනීමට අවශ්‍ය නම්, ඉහත අංක 16 වෙනුවට ඔබට අවශ්‍ය සංස්කරණය ලබා දෙන්න. 
 
-### Why the `crossorigin` Attribute? {#why-the-crossorigin-attribute}
 
-If you serve React from a CDN, we recommend to keep the [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) attribute set:
+### `crossorigin` ගුණාංගය (attribute) හි අවශ්‍යතාව කුමක් සදහාද? {#why-the-crossorigin-attribute}
+
+ඔබ React භාවිතා කරන්නේ CDN සේවාවක් හරහා නම් [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) attribute එක පහත පරිදි සකසන ලෙස නිර්දේශ කරමු.
+
 
 ```html
 <script crossorigin src="..."></script>
 ```
+තවද,
 
-We also recommend to verify that the CDN you are using sets the `Access-Control-Allow-Origin: *` HTTP header:
+`Access-Control-Allow-Origin: *` HTTP header:
+
+භාවිතා කර, CDN සේවාව verify කලහොත් වඩාත් ඵලදායී වේ.
+
 
 ![Access-Control-Allow-Origin: *](../images/docs/cdn-cors-header.png)
 
-This enables a better [error handling experience](/blog/2017/07/26/error-handling-in-react-16.html) in React 16 and later.
+මෙසේ කිරීමෙන් ඔබට හොද  [error handling](/blog/2017/07/26/error-handling-in-react-16.html) අත්දැකීමක් react 16 හා ඊට ඉහල සංස්කරණයන් හීදී ලබා ගත හැක.
+
