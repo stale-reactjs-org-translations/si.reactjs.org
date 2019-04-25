@@ -79,6 +79,8 @@ handleChange(event) {
 
 In HTML, a `<textarea>` element defines its text by its children:
 
+HTML වල `<textarea>` එකේ වගන්ති ලියනු ලබන්නේ පහත ආකාරයට ළමා සංරචකයක් ලෙසටවේ:
+
 ```html
 <textarea>
   Hello there, this is some text in a text area
@@ -86,6 +88,8 @@ In HTML, a `<textarea>` element defines its text by its children:
 ```
 
 In React, a `<textarea>` uses a `value` attribute instead. This way, a form using a `<textarea>` can be written very similarly to a form that uses a single-line input:
+
+නමුත් React වල `<textarea>` මේසදහා බාවිතා කරනු ලබන්නේ `value` attribute වේ. මේආකාරයට ලිවීමෙන් `<textarea>` බාවිතා කරන ෆෝරමයක්  අනෙකුත් තනි input එකක් බාවිතා කරන ෆෝරමයක් ලෙස ලිවිය හැකිවේ.
 
 ```javascript{4-6,12-14,26}
 class EssayForm extends React.Component {
@@ -123,10 +127,13 @@ class EssayForm extends React.Component {
 ```
 
 Notice that `this.state.value` is initialized in the constructor, so that the text area starts off with some text in it.
+හොදින් බලන්න, අපි constructor මගින් ආරම්බයෙදීම `this.state.value` එකට වටිනාකමක් (වගනිති) දුන් බැවින් text area එකේ එම වගනිති අරමයෙදීම පෙන්වනු ලබයි.
 
 ## The select Tag {#the-select-tag}
 
 In HTML, `<select>` creates a drop-down list. For example, this HTML creates a drop-down list of flavors:
+
+HTML වල, `<select>` මගින් drop-down ලැයිස්තුවක් නිර්මාණය කරනු ලබයි. උදාහරණයක් වශයෙන්, පහල HTML මගින් ෆ්ලේවර් drop-down ලැයිස්තුවක් නිර්මාණය කරනු ලබයි:
 
 ```html
 <select>
@@ -138,6 +145,8 @@ In HTML, `<select>` creates a drop-down list. For example, this HTML creates a d
 ```
 
 Note that the Coconut option is initially selected, because of the `selected` attribute. React, instead of using this `selected` attribute, uses a `value` attribute on the root `select` tag. This is more convenient in a controlled component because you only need to update it in one place. For example:
+
+හොදින් බලන්න, `selected` attribute එක නිසා Coconut විකල්පය ආරම්බයේදීම තේරී ඇත. නමුත් React, `selected` attribute එක වෙනුවට `select` tag එකේ `value` attribute එක බාවිතා කරනු ලැබේ.  controlled component එකක මෙය ඉතා පහසුවේ මන්දයත් ඔබට එකම තැනකින් එය යාවත්කාල කිරීමට හැකිවේ. උදාහරණයක් වශයෙන්:
 
 ```javascript{4,10-12,24}
 class FlavorForm extends React.Component {
@@ -180,6 +189,8 @@ class FlavorForm extends React.Component {
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/JbbEzX?editors=0010)
 
 Overall, this makes it so that `<input type="text">`, `<textarea>`, and `<select>` all work very similarly - they all accept a `value` attribute that you can use to implement a controlled component.
+
+සමස්තයක් වශයෙන් `<input type="text">`, `<textarea>`, සහ `<select>` යන සියල්ලන්ගේම කර්තව්‍ය එකිනෙකට සමානවේ. එම සියල්ලටම `value` attribute එකක් ඇති බැවින්, මෙමගින් controlled component සැදීමට පසුවේ.
 
 > Note
 >
