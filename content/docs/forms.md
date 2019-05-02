@@ -127,6 +127,7 @@ class EssayForm extends React.Component {
 ```
 
 Notice that `this.state.value` is initialized in the constructor, so that the text area starts off with some text in it.
+
 හොදින් බලන්න, අපි constructor මගින් ආරම්බයෙදීම `this.state.value` එකට වටිනාකමක් (වගනිති) දුන් බැවින් text area එකේ එම වගනිති අරමයෙදීම පෙන්වනු ලබයි.
 
 ## The select Tag {#the-select-tag}
@@ -192,9 +193,9 @@ Overall, this makes it so that `<input type="text">`, `<textarea>`, and `<select
 
 සමස්තයක් වශයෙන් `<input type="text">`, `<textarea>`, සහ `<select>` යන සියල්ලන්ගේම කර්තව්‍ය එකිනෙකට සමානවේ. එම සියල්ලටම `value` attribute එකක් ඇති බැවින්, මෙමගින් controlled component සැදීමට පසුවේ.
 
-> Note
+> සටහන 
 >
-> You can pass an array into the `value` attribute, allowing you to select multiple options in a `select` tag:
+>`value` attribute එකට array එකක් යැවීමෙන්, ඔබට `select` tag එකේ බහු විකල්පයන් තෝරාගැනීමට හැකිවේ.
 >
 >```js
 ><select multiple={true} value={['B', 'C']}>
@@ -204,11 +205,15 @@ Overall, this makes it so that `<input type="text">`, `<textarea>`, and `<select
 
 In HTML, an `<input type="file">` lets the user choose one or more files from their device storage to be uploaded to a server or manipulated by JavaScript via the [File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications).
 
+HTML හි, `<input type="file">` මගින් පරිශීලකයාට, පරිශීලකයාගේ storage device එකේ තිබෙන File එකක් හෝ කිහිපයක් තෝරාගෙන එය server එකට upload කිරීමට හෝ JavaScript [File API ](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications) මගින් වෙනස් කිරීමට හැකිවේ.
+
 ```html
 <input type="file" />
 ```
 
 Because its value is read-only, it is an **uncontrolled** component in React. It is discussed together with other uncontrolled components [later in the documentation](/docs/uncontrolled-components.html#the-file-input-tag).
+
+මෙහි value attribute එකේ වටිනාකම read-only බැවින් react හි මෙය  **uncontrolled** component ලෙස සැලකේ. මෙය පිළිබද වැඩිදුරට අනෙකුත් uncontrolled components සමග [පසුව](/docs/uncontrolled-components.html#the-file-input-tag) සාකච්චකරනුලැබේ.
 
 ## Handling Multiple Inputs {#handling-multiple-inputs}
 
