@@ -6,7 +6,7 @@ redirect_from:
   - "docs/webcomponents.html"
 ---
 
-React and [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) are built to solve different problems.  Web Components provide strong encapsulation for reusable components, while React provides a declarative library that keeps the DOM in sync with your data. The two goals are complementary. As a developer, you are free to use React in your Web Components, or to use Web Components in React, or both.
+React සහ [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) විවිධ ගැටළු විසඳීමට නිමවා ඇත. නැවත භාවිතා කර හැකි component සදහා Web Components ශක්තිමත් ආවරනයක්  සපයනු ඇත, React මඟින් ඔබගේ දත්ත සමඟ සමමුහුර්ත කිරීම තබා ඇති ප්රකාශිත පුස්තකාලයක් සපයයි. මෙම ඉලක්ක දෙක එකිනෙකට අනුපූරක වේ. Developer කෙනෙකු ලෙස, ඔබේ Web Components තුළ React භාවිතා කිරීමට ඔබට නිදහස තිබේ, නැතහොත් React භාවිතා කිරීමට Web Components තුළ, හෝ දෙකම.
 
 Most people who use React don't use Web Components, but you may want to, especially if you are using third-party UI components that are written using Web Components.
 
