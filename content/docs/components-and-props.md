@@ -44,7 +44,7 @@ class Welcome extends React.Component {
 
 Classes වලට අමතර ලක්ෂණ කිහිපයක් ඇත. අප ඒවා [ඊළඟ කාණ්ඩ](/docs/state-and-lifecycle.html) වලදී සාකච්ඡා කරනවා. ඒ වන තුරු අප function components භාවිතා කරමු, මක් නිසාද යත් ඒවා කෙටි බැවින්.
 
-## Rendering a Component {#rendering-a-component}
+## Component එකක් Render කිරීම {#rendering-a-component}
 
 මීට පෙර, අපට හමුවුනේ  DOM tags නියෝජනය කරන React elements පමණි:
 
@@ -88,11 +88,11 @@ ReactDOM.render(
 >React විසින් components නම් lowercase letters එකකින් පටන් ගන්නේ නම් එය DOM tags ලෙස සලකයි. උදාහරණයක් ලෙස ගතහොත් , `<div />` මගින් HTML div tag එක නියෝජනය වන අතර, `<Welcome />` මගින් component එකක් නියෝජනය වන අතර, එම `Welcome` component එක scope එකේ තිබීම අත්‍යවශ්‍ය වේ.
 >
 >මෙම නාම කරණය පිටිපස ඇති හේතුන් දැන ගැනීමට අවශ්‍යනම් කරුණාකර [JSX In Depth](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized) කියවන්න.
-## Composing Components {#composing-components}
+## Components නිර්මාණය {#composing-components}
 
-Components can refer to other components in their output. This lets us use the same component abstraction for any level of detail. A button, a form, a dialog, a screen: in React apps, all those are commonly expressed as components.
+Components වලට ඒවායේ output ලබාදීමේදී වෙනත් components බාවිතා කල හැකිය.මෙම ලක්ෂණය හේතුවෙන් අපට ඕනෑම මට්ටමකදී එකම component එක abstract ලෙස බාවිතා කිරීමට අවස්ථාව ලබා දෙනවා. React App එකකදී, button එකක්, form එකක්, dialog එකක්, screen එකක්, යන සියල්ල පොදුවේ components ලෙස හදුන්වයි.
 
-For example, we can create an `App` component that renders `Welcome` many times:
+උදාහරණයක් ලෙස ගතහොත්, අපට `App` නැමති component එක තුල කිහිපවතාවක් render වන ලෙස `Welcome` නැමති component එකක් නිර්මාණය කල හැකිය.
 
 ```js{8-10}
 function Welcome(props) {
@@ -117,13 +117,13 @@ ReactDOM.render(
 
 [](codepen://components-and-props/composing-components)
 
-Typically, new React apps have a single `App` component at the very top. However, if you integrate React into an existing app, you might start bottom-up with a small component like `Button` and gradually work your way to the top of the view hierarchy.
+සාමාන්යෙන්,  අලුත් React App වල ඉහලින්ම `App` නැමති තනි component එකක් ඇත. කෙසේවෙතත්, ඔබ React පවතින App එකකට අනුබද්ද කළහොත් ඔබ සමහරක් විට `Button` එකක් වැනි කුඩා component එකක බාවිතයෙන් App එකේ පහතම අවස්ථාවේ සිට view hierarchy එකේ ඉහලට ක්‍රමානුකුලව App එක නිර්මාණය කිරීමට සිදුවිය හැකිය.
 
-## Extracting Components {#extracting-components}
+## Components Extract කිරීම {#extracting-components}
 
-Don't be afraid to split components into smaller components.
+Component තවත් කුඩා component බවට පත්කිරීමට බය වෙන්න එපා.
 
-For example, consider this `Comment` component:
+උදාහරණයක් ලෙස පහත ඇති `Comment` නැමති component එක සලකන්න:
 
 ```js
 function Comment(props) {
