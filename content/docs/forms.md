@@ -219,6 +219,8 @@ Because its value is read-only, it is an **uncontrolled** component in React. It
 
 When you need to handle multiple controlled `input` elements, you can add a `name` attribute to each element and let the handler function choose what to do based on the value of `event.target.name`.
 
+සෑම controlled input elements එකකට name attribute එකක් යෙදීමෙන්, ඔබට පහසුවන් බහු controlled input හැසිරවීමට හැකිවේ.
+
 For example:
 
 ```javascript{15,18,28,37}
