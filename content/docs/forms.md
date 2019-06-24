@@ -147,7 +147,9 @@ HTML වල, `<select>` මගින් drop-down ලැයිස්තුවක
 
 Note that the Coconut option is initially selected, because of the `selected` attribute. React, instead of using this `selected` attribute, uses a `value` attribute on the root `select` tag. This is more convenient in a controlled component because you only need to update it in one place. For example:
 
-හොදින් බලන්න, `selected` attribute එක නිසා Coconut විකල්පය ආරම්බයේදීම තේරී ඇත. නමුත් React, `selected` attribute එක වෙනුවට `select` tag එකේ `value` attribute එක බාවිතා කරනු ලැබේ.  controlled component එකක මෙය ඉතා පහසුවේ මන්දයත් ඔබට එකම තැනකින් එය යාවත්කාල කිරීමට හැකිවේ. උදාහරණයක් වශයෙන්:
+හොදින් බලන්න, `selected` attribute එක නිසා Coconut විකල්පය ආරම්බයේදීම තේරී ඇත. නමුත් React, `selected` attribute එක වෙනුවට `select` tag එකේ `value` attribute එක බාවිතා කරනු ලැබේ.  controlled component එකක මෙය ඉතා පහසුවේ මන්දයත් ඔබට එකම තැනකින් එය යාවත්කාල කිරීමට හැකිවේ. 
+
+උදාහරණයක් වශයෙන්:
 
 ```javascript{4,10-12,24}
 class FlavorForm extends React.Component {
@@ -219,9 +221,9 @@ Because its value is read-only, it is an **uncontrolled** component in React. It
 
 When you need to handle multiple controlled `input` elements, you can add a `name` attribute to each element and let the handler function choose what to do based on the value of `event.target.name`.
 
-සෑම controlled input elements එකකට name attribute එකක් යෙදීමෙන්, ඔබට පහසුවන් බහු controlled input හැසිරවීමට හැකිවේ.
+සෑම controlled `input` elements එකකට `name` attribute එකක් යෙදීමෙන්, ඔබට පහසුවන් `event.target.name` Value එක අනුව බොහෝ controlled input හැසිරවීමට හැකිවේ.
 
-For example:
+උදාහරණයක් වශයෙන්:
 
 ```javascript{15,18,28,37}
 class Reservation extends React.Component {
@@ -275,6 +277,9 @@ class Reservation extends React.Component {
 
 Note how we used the ES6 [computed property name](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names) syntax to update the state key corresponding to the given input name:
 
+අපි ES6 භාවිතා කළ ආකාරය සැලකිල්ලට ගන්න.[computed property name](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names)මෙහි දී ඇති අනුරූප input value එක අනුව state key එක යාවත්කාල කිරීම සදහා අපි විසින් ES6 සින්ටැක්ස් භාවිතා කළෙමු.
+
+
 ```js{2}
 this.setState({
   [name]: value
@@ -283,6 +288,8 @@ this.setState({
 
 It is equivalent to this ES5 code:
 
+එය මෙම ES5 code එකට සමාන වේ:
+
 ```js{2}
 var partialState = {};
 partialState[name] = value;
@@ -290,6 +297,8 @@ this.setState(partialState);
 ```
 
 Also, since `setState()` automatically [merges a partial state into the current state](/docs/state-and-lifecycle.html#state-updates-are-merged), we only needed to call it with the changed parts.
+
+තවද, `setState()` මගින් ස්වයංක්‍රීයව [අර්ධ state වත්මන් state එකට ඒකාබද්ධ කරන බැවින්](/docs/state-and-lifecycle.html#state-updates-are-merged), අපට `setState()` කතා කල උත්තේ වෙනස් කළ කොටස් සමඟ පමණි.
 
 ## Controlled Input Null Value {#controlled-input-null-value}
 
