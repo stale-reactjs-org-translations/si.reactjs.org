@@ -16,7 +16,7 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
-Components ඔබට ඔබගේ  UI එක, තනි තනි කොටසට ස්වාධීනව ක්‍රියා කල හැකි, නැවත භාවිතා කල හැකි කොටස් වලට කැඩීමට ඉඩ ලබාදේ. මෙම  පිටුවේදී ඔබට components යන අදහසට අදුන්වා දීමක් සිදු කරයි. ඔබට [components වල සවිස්තරාත්මක විස්තරයක් API reference හිදී සොයාගත හැක](/docs/react-component.html).
+Components ඔබට ඔබගේ UI එක, තනි තනි කොටසට ස්වාධීනව ක්‍රියා කල හැකි, නැවත භාවිතා කල හැකි සහ තනි කොටසක් ලෙස සිතිය හැකි කොටස් වලට කැඩීමට ඉඩ ලබාදේ. මෙම පිටුවේදී ඔබට components යන අදහසට අදුන්වා දීමක් සිදු කරයි. ඔබට [components වල සවිස්තරාත්මක විස්තරයක් API reference හිදී සොයාගත හැක](/docs/react-component.html).
 
 සංකල්පයක් ලෙස ගත් කල, components, JavaScript වල function වලට සමානය. components (“props” නමැති) අභිමත ආදානයන් ලබා ගන්නා අතර, තිරයේ අන්තර්ගතය කෙසේ වියයුතු දැයි විස්තර කරන React elements ආපසු ලබා දෙයි.
 
@@ -151,11 +151,12 @@ function Comment(props) {
 
 [](codepen://components-and-props/extracting-components)
 
-It accepts `author` (an object), `text` (a string), and `date` (a date) as props, and describes a comment on a social media website.
 
-This component can be tricky to change because of all the nesting, and it is also hard to reuse individual parts of it. Let's extract a few components from it.
+එය `author` (object  එකක්), `text` (string එකක් ) සහ `date` (දිනයක් ) props ලෙස බාර ගන්න අතර සමාජ මාධ්‍ය වෙබ් එකක comment එකක ආකාරය විස්තර කරනවා.
 
-First, we will extract `Avatar`:
+මෙම component එක වෙනස් කිරීම, එය තුල ඇති components nesting වී ඇති නිසා අපහසු විය හැකිය. තවද එහි ඇති තනි කොටස් නැවත භාවිතා කිරීමද අපහසුය. අපි දැන් එයින් components කිහිපයක් extract කරමු.
+
+ප්‍රථමයෙන්, අපි `Avatar` extract කර ගනිමු:
 
 ```js{3-6}
 function Avatar(props) {
@@ -168,11 +169,11 @@ function Avatar(props) {
 }
 ```
 
-The `Avatar` doesn't need to know that it is being rendered inside a `Comment`. This is why we have given its prop a more generic name: `user` rather than `author`.
+`Avatar` එය `Comment` එක තුල render වනබව දැනගැනීමට අවශ්‍යතාවයක් නොමැත. එහි prop සදහා `author` යන නමට වඩා  සමන්‍යකරණිය වූ නමක් වූ `user` දී ඇත්තේ එබැවින්ය.
 
-We recommend naming props from the component's own point of view rather than the context in which it is being used.
+component නාමකරණයේදී context එකට අනුව නම්කරනවට වඩා component එකට සාපේක්ෂව එය නම් කිරීම වඩාත් සුදුසුය.
 
-We can now simplify `Comment` a tiny bit:
+දැන් අපට ස්වල්ප වශයෙන් `Comment` සරල කරන්න පුළුවනි.
 
 ```js{5}
 function Comment(props) {
@@ -195,7 +196,7 @@ function Comment(props) {
 }
 ```
 
-Next, we will extract a `UserInfo` component that renders an `Avatar` next to the user's name:
+ඊළඟට, අපි user ගේ නමට එහායින් `Avatar` component එකක් render කරන `UserInfo` component එකක් extract කරන්නෙමු:
 
 ```js{3-8}
 function UserInfo(props) {
@@ -210,7 +211,7 @@ function UserInfo(props) {
 }
 ```
 
-This lets us simplify `Comment` even further:
+මෙය අපට `Comment` තවදුරටත් සරලකිරීමට ඉඩ ලබාදෙනවා:
 
 ```js{4}
 function Comment(props) {
@@ -230,11 +231,11 @@ function Comment(props) {
 
 [](codepen://components-and-props/extracting-components-continued)
 
-Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be a reusable component.
+components extract කිරීම මුලින්ම පෙනෙනා විදියට අමිහිරි කාර්යක් මෙන් පෙනිය හැකිය, නමුත් විශාල app වලදී නැවත බාවිතා කළහැකි components රාශියක් පැවතීම වාසිදායකය. ඔබගේ UI එකේ කොටසක් කිහිප සැරයක් නැවත භාවිතා හොඳ රීතියකි. (`Button`, `Panel`, `Avatar`) නැතහොත් එය තමන්ගේම component එකක් වුවහොත් සැහෙන්න සංකීර්ණ වියහැකිය (`App`, `FeedStory`, `Comment`), එමනිසා නැවත භාවිත කළහැකි component එකක් හොඳ candidate කෙනෙක් ලෙස හදුනාගත හැකිය.
 
-## Props are Read-Only {#props-are-read-only}
+## Props කියවීමට පමණක් හැකිය. {#props-are-read-only}
 
-Whether you declare a component [as a function or a class](#function-and-class-components), it must never modify its own props. Consider this `sum` function:
+ඔබ component එකක් [function එකක් ලෙස හෝ class එකක් ලෙස](#function-and-class-components) declare කල විට, එය කවදාවත් තමන්ගේම props වෙනස් නොකළ යුතුය. මෙම `sum` නමැති function එක සලකන්න:
 
 ```js
 function sum(a, b) {
@@ -242,9 +243,10 @@ function sum(a, b) {
 }
 ```
 
-Such functions are called ["pure"](https://en.wikipedia.org/wiki/Pure_function) because they do not attempt to change their inputs, and always return the same result for the same inputs.
+මෙවැනි functions ["pure"](https://en.wikipedia.org/wiki/Pure_function) ලෙස හදුන්වයි. මක්නිසාදයත් ඔවුන් තමන්ගේ inputs වෙනස් කිරීමට උත්සාහය නොදක්වයි තවද ඔවුන් නිතරම එකම input වලට එකම results ලබාදෙයි.
 
-In contrast, this function is impure because it changes its own input:
+ඊට ප්‍රතිවිරුද්ද ලෙස, මෙම function එක impure වේ. මක්නිසාද යත් එම function එක තමන්ගේම input වෙනස් කරයි:
+
 
 ```js
 function withdraw(account, amount) {
@@ -252,8 +254,8 @@ function withdraw(account, amount) {
 }
 ```
 
-React is pretty flexible but it has a single strict rule:
+React ගොඩක් නම්යශීලී වේ. නමුත් එයට තනි දැඩි නීතියක් ඇත.
 
-**All React components must act like pure functions with respect to their props.**
+**සැම React component එකක්ම ඔවුන්ගේ props වලට සාපේක්ෂව pure function එකක් ලෙස ක්‍රියා කල යුතුය.**
 
-Of course, application UIs are dynamic and change over time. In the [next section](/docs/state-and-lifecycle.html), we will introduce a new concept of "state". State allows React components to change their output over time in response to user actions, network responses, and anything else, without violating this rule.
+ඇත්ත වශයෙන්ම, application එකක UIs ඒවා dynamic සහ කාලයත් සමඟ වෙනස් වේ. [ඊළඟ කොටසේදී](/docs/state-and-lifecycle.html) අපි "state" නමැති අලුත් සංකල්පයක් හදුන්වා දේ. State මගින් React component වල output, කාලයත් සමග user ගේ ක්‍රියාවන් වලට, network response සහ අනික් ඔනිමදෙයක් අනුරූපව ඉහත නිතිය උල්ලංනය නොකර වෙනස් කිරීමට ඉඩ ලබාදේ.
