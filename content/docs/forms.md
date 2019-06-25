@@ -189,7 +189,7 @@ class FlavorForm extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/JbbEzX?editors=0010)
+[**CodePen මත එය උත්සාහ කරන්න**](https://codepen.io/gaearon/pen/JbbEzX?editors=0010)
 
 Overall, this makes it so that `<input type="text">`, `<textarea>`, and `<select>` all work very similarly - they all accept a `value` attribute that you can use to implement a controlled component.
 
@@ -273,7 +273,7 @@ class Reservation extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/wgedvV?editors=0010)
+[**CodePen මත එය උත්සාහ කරන්න**](https://codepen.io/gaearon/pen/wgedvV?editors=0010)
 
 Note how we used the ES6 [computed property name](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names) syntax to update the state key corresponding to the given input name:
 
@@ -304,7 +304,11 @@ Also, since `setState()` automatically [merges a partial state into the current 
 
 Specifying the value prop on a [controlled component](/docs/forms.html#controlled-components) prevents the user from changing the input unless you desire so. If you've specified a `value` but the input is still editable, you may have accidentally set `value` to `undefined` or `null`.
 
+[controlled component](/docs/forms.html#controlled-components) එකක `value` property මත අගයක් සටහන් කිරීමෙන් ඔබ කැමති නැතිනම් පරිශීලකයා ආදානය වෙනස් කිරීමට නොහැකිවේ. ඔබ අගයක් නියම කර ඇති නමුත් ආදානය තවමත් සංස්කරණය කළ හැකි නම්, ඔබ අහම්බෙන් වටිනාකම `undefined` හෝ `null` ලෙස සකසා ඇත.
+
 The following code demonstrates this. (The input is locked at first but becomes editable after a short delay.)
+
+පහත codeය මගින් මෙය පෙන්නුම් කරයි.(ආදානය මුලින් සංස්කරණය නොකළ හැකි ඇති නමුත් කෙටි ප්‍රමාදයකින් පසුව එය සංස්කරණය කළ හැකිය.)
 
 ```javascript
 ReactDOM.render(<input value="hi" />, mountNode);
@@ -317,7 +321,11 @@ setTimeout(function() {
 
 ## Alternatives to Controlled Components {#alternatives-to-controlled-components}
 
+##Controlled Components සඳහා විකල්ප{#alternatives-to-controlled-components}
+
 It can sometimes be tedious to use controlled components, because you need to write an event handler for every way your data can change and pipe all of the input state through a React component. This can become particularly annoying when you are converting a preexisting codebase to React, or integrating a React application with a non-React library. In these situations, you might want to check out [uncontrolled components](/docs/uncontrolled-components.html), an alternative technique for implementing input forms.
+
+සෑම වෙනස් විය හැකි data සමග ඔබට event handler function එකක් ලිවීමට වෙන බැවින් සහ React component එකක් සමග ඒවායේ input state වෙනස් කිරීමට වෙන බැවින්.Controlled Component භාවිතා කිරීම සමහර විට වෙහෙසකර විය හැකිය.
 
 ## Fully-Fledged Solutions {#fully-fledged-solutions}
 
