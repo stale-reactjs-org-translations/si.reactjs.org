@@ -16,24 +16,22 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
-Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a [detailed component API reference here](/docs/react-component.html).
+Components ඔබට ඔබගේ UI එක, තනි තනි කොටසට ස්වාධීනව ක්‍රියා කල හැකි, නැවත භාවිතා කල හැකි සහ තනි කොටසක් ලෙස සිතිය හැකි කොටස් වලට කැඩීමට ඉඩ ලබාදේ. මෙම පිටුවේදී ඔබට components යන අදහසට අදුන්වා දීමක් සිදු කරයි. ඔබට [components වල සවිස්තරාත්මක විස්තරයක් API reference හිදී සොයාගත හැක](/docs/react-component.html).
 
-Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called "props") and return React elements describing what should appear on the screen.
+සංකල්පයක් ලෙස ගත් කල, components, JavaScript වල function වලට සමානය. components (“props” නමැති) අභිමත ආදානයන් ලබා ගන්නා අතර, තිරයේ අන්තර්ගතය කෙසේ වියයුතු දැයි විස්තර කරන React elements ආපසු ලබා දෙයි.
 
-## Function and Class Components {#function-and-class-components}
+## Function සහා Class Components {#function-and-class-components}
 
-The simplest way to define a component is to write a JavaScript function:
-
+component අර්ථ දැක්විය හැකි පහසුම විදිය JavaScript function එකක් ලිවීමයි.
 ```js
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
 ```
 
-This function is a valid React component because it accepts a single "props" (which stands for properties) object argument with data and returns a React element. We call such components "function components" because they are literally JavaScript functions.
+මෙම function එක වලංගු React component එකකි, මක්නිසාදයත් එය තනි, දත්ත සහිත "props" (properties සදහා කෙටි යෙදුමකි) object argument එකක් බාර ගන්නා අතර React element එකක් ආපසු ලබා දෙයි. අප එවැනි components සදහා "function components" යයි පවසයි. මක් නිසාදයත් ඒවා ඇත්ත වසයෙන්ම JavaScript functions. වන බැවිනි.
 
-You can also use an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) to define a component:
-
+ඔබට  [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) භාවිතයෙන්ද component එකක් අර්ථ දැක්විය හැකිය.
 ```js
 class Welcome extends React.Component {
   render() {
@@ -42,27 +40,27 @@ class Welcome extends React.Component {
 }
 ```
 
-The above two components are equivalent from React's point of view.
+ඉහතින් ඇති component දෙක React වලට අනුව බලන විට සමාන component දෙකකි.
 
-Classes have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html). Until then, we will use function components for their conciseness.
+Classes වලට අමතර ලක්ෂණ කිහිපයක් ඇත. අප ඒවා [ඊළඟ කාණ්ඩ](/docs/state-and-lifecycle.html) වලදී සාකච්ඡා කරනවා. ඒ වන තුරු අප function components භාවිතා කරමු, මක් නිසාද යත් ඒවා කෙටි බැවින්.
 
-## Rendering a Component {#rendering-a-component}
+## Component එකක් Render කිරීම {#rendering-a-component}
 
-Previously, we only encountered React elements that represent DOM tags:
+මීට පෙර, අපට හමුවුනේ  DOM tags නියෝජනය කරන React elements පමණි:
 
 ```js
 const element = <div />;
 ```
 
-However, elements can also represent user-defined components:
+කෙසේ වෙතත්, elements වලටද අප විසින් අර්ථ  දක්වන ලද components නියෝජනය කළ හැකිය:
 
 ```js
 const element = <Welcome name="Sara" />;
 ```
 
-When React sees an element representing a user-defined component, it passes JSX attributes to this component as a single object. We call this object "props".
+React විසින් පරිශීලක-අර්ථ දැක්වු(user-defined) component එකක් නිරීක්ෂණය කරන විට, එය එම component එකට තනි object ලෙස JSX attributes ලබාදේ.  අප මෙම object එක "props" ලෙස හඳුන්වයි.
 
-For example, this code renders "Hello, Sara" on the page:
+උදාහරණයක් ලෙස ගත්තොත්, පහත code එක "Hello, Sara" ලෙස වෙබ් පිටුවේ පෙන්නුම් කරයි.
 
 ```js{1,5}
 function Welcome(props) {
@@ -78,24 +76,23 @@ ReactDOM.render(
 
 [](codepen://components-and-props/rendering-a-component)
 
-Let's recap what happens in this example:
+අපි නැවත මේ උදාහරණයේ වෙන්නේ මොකක්ද කියලා බලමු:
 
-1. We call `ReactDOM.render()` with the `<Welcome name="Sara" />` element.
-2. React calls the `Welcome` component with `{name: 'Sara'}` as the props.
-3. Our `Welcome` component returns a `<h1>Hello, Sara</h1>` element as the result.
-4. React DOM efficiently updates the DOM to match `<h1>Hello, Sara</h1>`.
+1. අපි `ReactDOM.render()` method එක `<Welcome name="Sara" />` element සමග call කරනවා.
+2. React විසින් `Welcome` component එක `{name: 'Sara'}` යන props object එකත් සමග call කරනවා.
+3. අපගේ `Welcome` component එක `<h1>Hello, Sara</h1>` කියන element එක ප්‍රතිපලයක් ලෙස අපට ලබා දෙනවා.
+4. React DOM විසින් කාර්යක්ෂම ලෙස  DOM එක `<h1>Hello, Sara</h1>` ට ගැලපෙන සේ යාවත්කාලින කරනවා.
 
->**Note:** Always start component names with a capital letter.
+>**සැලකිය යුතුයි:** හැමවෙලේම  component එකක නම capital letter එකකින් අරඹන්න.
 >
->React treats components starting with lowercase letters as DOM tags. For example, `<div />` represents an HTML div tag, but `<Welcome />` represents a component and requires `Welcome` to be in scope.
+>React විසින් components නම් lowercase letters එකකින් පටන් ගන්නේ නම් එය DOM tags ලෙස සලකයි. උදාහරණයක් ලෙස ගතහොත් , `<div />` මගින් HTML div tag එක නියෝජනය වන අතර, `<Welcome />` මගින් component එකක් නියෝජනය වන අතර, එම `Welcome` component එක scope එකේ තිබීම අත්‍යවශ්‍ය වේ.
 >
->To learn more about the reasoning behind this convention, please read [JSX In Depth](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized).
+>මෙම නාම කරණය පිටිපස ඇති හේතුන් දැන ගැනීමට අවශ්‍යනම් කරුණාකර [JSX In Depth](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized) කියවන්න.
+## Components නිර්මාණය {#composing-components}
 
-## Composing Components {#composing-components}
+Components වලට ඒවායේ output ලබාදීමේදී වෙනත් components බාවිතා කල හැකිය.මෙම ලක්ෂණය හේතුවෙන් අපට ඕනෑම මට්ටමකදී එකම component එක abstract ලෙස බාවිතා කිරීමට අවස්ථාව ලබා දෙනවා. React App එකකදී, button එකක්, form එකක්, dialog එකක්, screen එකක්, යන සියල්ල පොදුවේ components ලෙස හදුන්වයි.
 
-Components can refer to other components in their output. This lets us use the same component abstraction for any level of detail. A button, a form, a dialog, a screen: in React apps, all those are commonly expressed as components.
-
-For example, we can create an `App` component that renders `Welcome` many times:
+උදාහරණයක් ලෙස ගතහොත්, අපට `App` නැමති component එක තුල කිහිපවතාවක් render වන ලෙස `Welcome` නැමති component එකක් නිර්මාණය කල හැකිය.
 
 ```js{8-10}
 function Welcome(props) {
@@ -120,13 +117,13 @@ ReactDOM.render(
 
 [](codepen://components-and-props/composing-components)
 
-Typically, new React apps have a single `App` component at the very top. However, if you integrate React into an existing app, you might start bottom-up with a small component like `Button` and gradually work your way to the top of the view hierarchy.
+සාමාන්යෙන්,  අලුත් React App වල ඉහලින්ම `App` නැමති තනි component එකක් ඇත. කෙසේවෙතත්, ඔබ React පවතින App එකකට අනුබද්ද කළහොත් ඔබ සමහරක් විට `Button` එකක් වැනි කුඩා component එකක බාවිතයෙන් App එකේ පහතම අවස්ථාවේ සිට view hierarchy එකේ ඉහලට ක්‍රමානුකුලව App එක නිර්මාණය කිරීමට සිදුවිය හැකිය.
 
-## Extracting Components {#extracting-components}
+## Components Extract කිරීම {#extracting-components}
 
-Don't be afraid to split components into smaller components.
+Component තවත් කුඩා component බවට පත්කිරීමට බය වෙන්න එපා.
 
-For example, consider this `Comment` component:
+උදාහරණයක් ලෙස පහත ඇති `Comment` නැමති component එක සලකන්න:
 
 ```js
 function Comment(props) {
@@ -154,11 +151,12 @@ function Comment(props) {
 
 [](codepen://components-and-props/extracting-components)
 
-It accepts `author` (an object), `text` (a string), and `date` (a date) as props, and describes a comment on a social media website.
 
-This component can be tricky to change because of all the nesting, and it is also hard to reuse individual parts of it. Let's extract a few components from it.
+එය `author` (object  එකක්), `text` (string එකක් ) සහ `date` (දිනයක් ) props ලෙස බාර ගන්න අතර සමාජ මාධ්‍ය වෙබ් එකක comment එකක ආකාරය විස්තර කරනවා.
 
-First, we will extract `Avatar`:
+මෙම component එක වෙනස් කිරීම, එය තුල ඇති components nesting වී ඇති නිසා අපහසු විය හැකිය. තවද එහි ඇති තනි කොටස් නැවත භාවිතා කිරීමද අපහසුය. අපි දැන් එයින් components කිහිපයක් extract කරමු.
+
+ප්‍රථමයෙන්, අපි `Avatar` extract කර ගනිමු:
 
 ```js{3-6}
 function Avatar(props) {
@@ -171,11 +169,11 @@ function Avatar(props) {
 }
 ```
 
-The `Avatar` doesn't need to know that it is being rendered inside a `Comment`. This is why we have given its prop a more generic name: `user` rather than `author`.
+`Avatar` එය `Comment` එක තුල render වනබව දැනගැනීමට අවශ්‍යතාවයක් නොමැත. එහි prop සදහා `author` යන නමට වඩා  සමන්‍යකරණිය වූ නමක් වූ `user` දී ඇත්තේ එබැවින්ය.
 
-We recommend naming props from the component's own point of view rather than the context in which it is being used.
+component නාමකරණයේදී context එකට අනුව නම්කරනවට වඩා component එකට සාපේක්ෂව එය නම් කිරීම වඩාත් සුදුසුය.
 
-We can now simplify `Comment` a tiny bit:
+දැන් අපට ස්වල්ප වශයෙන් `Comment` සරල කරන්න පුළුවනි.
 
 ```js{5}
 function Comment(props) {
@@ -198,7 +196,7 @@ function Comment(props) {
 }
 ```
 
-Next, we will extract a `UserInfo` component that renders an `Avatar` next to the user's name:
+ඊළඟට, අපි user ගේ නමට එහායින් `Avatar` component එකක් render කරන `UserInfo` component එකක් extract කරන්නෙමු:
 
 ```js{3-8}
 function UserInfo(props) {
@@ -213,7 +211,7 @@ function UserInfo(props) {
 }
 ```
 
-This lets us simplify `Comment` even further:
+මෙය අපට `Comment` තවදුරටත් සරලකිරීමට ඉඩ ලබාදෙනවා:
 
 ```js{4}
 function Comment(props) {
@@ -233,11 +231,11 @@ function Comment(props) {
 
 [](codepen://components-and-props/extracting-components-continued)
 
-Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be a reusable component.
+components extract කිරීම මුලින්ම පෙනෙනා විදියට අමිහිරි කාර්යක් මෙන් පෙනිය හැකිය, නමුත් විශාල app වලදී නැවත බාවිතා කළහැකි components රාශියක් පැවතීම වාසිදායකය. ඔබගේ UI එකේ කොටසක් කිහිප සැරයක් නැවත භාවිතා හොඳ රීතියකි. (`Button`, `Panel`, `Avatar`) නැතහොත් එය තමන්ගේම component එකක් වුවහොත් සැහෙන්න සංකීර්ණ වියහැකිය (`App`, `FeedStory`, `Comment`), එමනිසා නැවත භාවිත කළහැකි component එකක් හොඳ candidate කෙනෙක් ලෙස හදුනාගත හැකිය.
 
-## Props are Read-Only {#props-are-read-only}
+## Props කියවීමට පමණක් හැකිය. {#props-are-read-only}
 
-Whether you declare a component [as a function or a class](#function-and-class-components), it must never modify its own props. Consider this `sum` function:
+ඔබ component එකක් [function එකක් ලෙස හෝ class එකක් ලෙස](#function-and-class-components) declare කල විට, එය කවදාවත් තමන්ගේම props වෙනස් නොකළ යුතුය. මෙම `sum` නමැති function එක සලකන්න:
 
 ```js
 function sum(a, b) {
@@ -245,9 +243,10 @@ function sum(a, b) {
 }
 ```
 
-Such functions are called ["pure"](https://en.wikipedia.org/wiki/Pure_function) because they do not attempt to change their inputs, and always return the same result for the same inputs.
+මෙවැනි functions ["pure"](https://en.wikipedia.org/wiki/Pure_function) ලෙස හදුන්වයි. මක්නිසාදයත් ඔවුන් තමන්ගේ inputs වෙනස් කිරීමට උත්සාහය නොදක්වයි තවද ඔවුන් නිතරම එකම input වලට එකම results ලබාදෙයි.
 
-In contrast, this function is impure because it changes its own input:
+ඊට ප්‍රතිවිරුද්ද ලෙස, මෙම function එක impure වේ. මක්නිසාද යත් එම function එක තමන්ගේම input වෙනස් කරයි:
+
 
 ```js
 function withdraw(account, amount) {
@@ -255,8 +254,8 @@ function withdraw(account, amount) {
 }
 ```
 
-React is pretty flexible but it has a single strict rule:
+React ගොඩක් නම්යශීලී වේ. නමුත් එයට තනි දැඩි නීතියක් ඇත.
 
-**All React components must act like pure functions with respect to their props.**
+**සැම React component එකක්ම ඔවුන්ගේ props වලට සාපේක්ෂව pure function එකක් ලෙස ක්‍රියා කල යුතුය.**
 
-Of course, application UIs are dynamic and change over time. In the [next section](/docs/state-and-lifecycle.html), we will introduce a new concept of "state". State allows React components to change their output over time in response to user actions, network responses, and anything else, without violating this rule.
+ඇත්ත වශයෙන්ම, application එකක UIs ඒවා dynamic සහ කාලයත් සමඟ වෙනස් වේ. [ඊළඟ කොටසේදී](/docs/state-and-lifecycle.html) අපි "state" නමැති අලුත් සංකල්පයක් හදුන්වා දේ. State මගින් React component වල output, කාලයත් සමග user ගේ ක්‍රියාවන් වලට, network response සහ අනික් ඔනිමදෙයක් අනුරූපව ඉහත නිතිය උල්ලංනය නොකර වෙනස් කිරීමට ඉඩ ලබාදේ.
