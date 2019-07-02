@@ -1,20 +1,20 @@
 ---
 id: faq-build
-title: Babel, JSX, and Build Steps
+title: Babel, JSX, සහ Build කිරීමේ පියවර
 permalink: docs/faq-build.html
 layout: docs
 category: FAQ
 ---
 
-### Do I need to use JSX with React? {#do-i-need-to-use-jsx-with-react}
+### මට React සමග JSX භාවිතා කිරීම අත්‍යවශ්‍යද? {#do-i-need-to-use-jsx-with-react}
 
-No! Check out ["React Without JSX"](/docs/react-without-jsx.html) to learn more.
+නැත! වැඩි විස්තර සදහා ["JSX නොමැතිව React"](/docs/react-without-jsx.html) කියවන්න.
 
-### Do I need to use ES6 (+) with React? {#do-i-need-to-use-es6--with-react}
+### මට React සමග ES6 (+) භාවිතා කිරීමට අත්‍යවශ්‍යද? {#do-i-need-to-use-es6--with-react}
 
-No! Check out ["React Without ES6"](/docs/react-without-es6.html) to learn more.
+නැත! වැඩි විස්තර සදහා ["ES6 නොමැතිව React"](/docs/react-without-es6.html) කියවන්න.
 
-### How can I write comments in JSX? {#how-can-i-write-comments-in-jsx}
+### කොහොමද මම JSX වලදී comments ලියන්නේ? {#how-can-i-write-comments-in-jsx}
 
 ```jsx
 <div>
