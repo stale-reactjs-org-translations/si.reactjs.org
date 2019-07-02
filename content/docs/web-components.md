@@ -8,9 +8,9 @@ redirect_from:
 
 React සහ [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) විවිධ ගැටළු විසඳීමට නිමවා ඇත. නැවත භාවිතා කර හැකි component සදහා Web Components ශක්තිමත් ආවරනයක්  සපයනු ඇත, React මඟින් ඔබගේ දත්ත සමඟ සමමුහුර්ත කිරීම තබා ඇති ප්රකාශිත පුස්තකාලයක් සපයයි. මෙම ඉලක්ක දෙක එකිනෙකට අනුපූරක වේ. Developer කෙනෙකු ලෙස, ඔබේ Web Components තුළ React භාවිතා කිරීමට ඔබට නිදහස තිබේ, නැතහොත් React භාවිතා කිරීමට Web Components තුළ, හෝ දෙකම.
 
-Most people who use React don't use Web Components, but you may want to, especially if you are using third-party UI components that are written using Web Components.
+React භාවිතා නොකරන බොහොමයක් Web Components භාවිතා නොකරයි. නමුත් ඔබට අවශ්‍ය විය හැකිය, විශේෂයෙන්ම ඔබ Web Components  මගින් ලියා ඇති third-party UI component භාවිතා කරන්නේ නම්.
 
-## Using Web Components in React {#using-web-components-in-react}
+## React තුල Web Components භාවිතය {#using-web-components-in-react}
 
 ```javascript
 class HelloMessage extends React.Component {
@@ -20,9 +20,9 @@ class HelloMessage extends React.Component {
 }
 ```
 
-> Note:
+>සටහන:
 >
-> Web Components often expose an imperative API. For instance, a `video` Web Component might expose `play()` and `pause()` functions. To access the imperative APIs of a Web Component, you will need to use a ref to interact with the DOM node directly. If you are using third-party Web Components, the best solution is to write a React component that behaves as a wrapper for your Web Component.
+> වෙබ් සංරචක බොහෝ විට අත්‍යවශ්‍ය API එකක් නිරාවරණය කරයි. උදා., a `video` Web Component might expose `play()` and `pause()` functions. To access the imperative APIs of a Web Component, you will need to use a ref to interact with the DOM node directly. If you are using third-party Web Components, the best solution is to write a React component that behaves as a wrapper for your Web Component.
 >
 > Events emitted by a Web Component may not properly propagate through a React render tree.
 > You will need to manually attach event handlers to handle these events within your React components.
@@ -56,7 +56,7 @@ class XSearch extends HTMLElement {
 customElements.define('x-search', XSearch);
 ```
 
->Note:
+>සටහන:
 >
 >This code **will not** work if you transform classes with Babel. See [this issue](https://github.com/w3c/webcomponents/issues/587) for the discussion.
 >Include the [custom-elements-es5-adapter](https://github.com/webcomponents/webcomponentsjs#custom-elements-es5-adapterjs) before you load your web components to fix this issue.
