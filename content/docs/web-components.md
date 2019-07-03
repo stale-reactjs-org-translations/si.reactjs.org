@@ -22,10 +22,10 @@ class HelloMessage extends React.Component {
 
 >සටහන:
 >
-> වෙබ් සංරචක බොහෝ විට අත්‍යවශ්‍ය API එකක් නිරාවරණය කරයි. උදා., a `video` Web Component might expose `play()` and `pause()` functions. To access the imperative APIs of a Web Component, you will need to use a ref to interact with the DOM node directly. If you are using third-party Web Components, the best solution is to write a React component that behaves as a wrapper for your Web Component.
+> වෙබ් සංරචක බොහෝ විට අත්‍යවශ්‍ය API එකක් නිරාවරණය කරයි. උදා., a `video` Web Component නිරාවරණය කල හැකිය `play()` and `pause()` functions. Web Component හි අත්යවශ්ය APIs තුලට ප්‍රවේශ වීමට , DOM නෝඩ් සමඟ කෙලින්ම අන්තර් ක්‍රියා කිරීමට ඔබට ref එකක් භාවිතා කිරීමට අවශ්‍ය වනු ඇත. ඔබ third-party Web Components භාවිතා කරන්නේනම්, හොඳම විසඳුම  ඔබගේ Web Component මත ආවරණයක් ලෙස ක්‍රියා කරන React component ලිවීමයි.
 >
-> Events emitted by a Web Component may not properly propagate through a React render tree.
-> You will need to manually attach event handlers to handle these events within your React components.
+> Web Component මගින් විමෝචනය කල Events  නිසි ලෙස React render tree මගින් ප්‍රචාරය නොකෙරේ.
+> ඔබට එම සිද්දීන් manually අමිණිය යුතුය ඔබගේ React components තුලට.
 
 One common confusion is that Web Components use "class" instead of "className".
 
