@@ -27,7 +27,7 @@ class HelloMessage extends React.Component {
 > Web Component මගින් විමෝචනය කල Events  නිසි ලෙස React render tree මගින් ප්‍රචාරය නොකෙරේ.
 > ඔබට එම සිද්දීන් manually අමිණිය යුතුය ඔබගේ React components තුලට.
 
-One common confusion is that Web Components use "class" instead of "className".
+එක් පොදු ව්යාකූල දෙයක් වන්නෙ Web Components "className"  වෙනුවට "class" භාවිතා කරයි.
 
 ```javascript
 function BrickFlipbox() {
@@ -40,7 +40,7 @@ function BrickFlipbox() {
 }
 ```
 
-## Using React in your Web Components {#using-react-in-your-web-components}
+## Web Components තුල  React භාවිතය {#using-react-in-your-web-components}
 
 ```javascript
 class XSearch extends HTMLElement {
