@@ -6,19 +6,19 @@ layout: docs
 category: FAQ
 ---
 
-### How can I make an AJAX call? {#how-can-i-make-an-ajax-call}
+### මම කොහොමද AJAX call එකක් යවන්නේ? {#how-can-i-make-an-ajax-call}
 
-You can use any AJAX library you like with React. Some popular ones are [Axios](https://github.com/axios/axios), [jQuery AJAX](https://api.jquery.com/jQuery.ajax/), and the browser built-in [window.fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+ඔබට පුළුවන් ඔබ කැමති ඕනෙම AJAX library එකක් React සමග පාවිචි කරන්න. සමහර ප්‍රසිද්ධ ඒවා නම් [Axios](https://github.com/axios/axios), [jQuery AJAX](https://api.jquery.com/jQuery.ajax/), සහ browser තුල ඉදිකර ඇති  [window.fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
-### Where in the component lifecycle should I make an AJAX call? {#where-in-the-component-lifecycle-should-i-make-an-ajax-call}
+### component lifecycle ඒකේ කොතනදිද මම AJAX call එකක් යැවිය යුත්තේ? {#where-in-the-component-lifecycle-should-i-make-an-ajax-call}
 
-You should populate data with AJAX calls in the [`componentDidMount`](/docs/react-component.html#mounting) lifecycle method. This is so you can use `setState` to update your component when the data is retrieved.
+ඔබ AJAX calls එකක් සමග දත්ත ලබා ගත යුත්තේ [`componentDidMount`](/docs/react-component.html#mounting) lifecycle method එක තුලය. මෙම නිසා ඔබට දත්ත ලැබුනු පසුව `setState` මගින් component එක යාවත්කාලීන කල හැකිය.
 
-### Example: Using AJAX results to set local state {#example-using-ajax-results-to-set-local-state}
+### උදාහරණය: AJAX ප්‍රතිපල මගින් local state එක සැකසීම. {#example-using-ajax-results-to-set-local-state}
 
-The component below demonstrates how to make an AJAX call in `componentDidMount` to populate local component state. 
+`componentDidMount` එක තුල සිට AJAX call එකක් මගින් local component state එකේ දත්ත සැකසීම පහල component එකෙන් පෙන්වා දෙයි. 
 
-The example API returns a JSON object like this:
+උදාහරණයට දී ඇති API එක තුලින් මේවැනි JSON object එකක් ලබා ගත හැක:
 
 ```
 {
