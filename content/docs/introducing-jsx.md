@@ -6,31 +6,32 @@ prev: hello-world.html
 next: rendering-elements.html
 ---
 
-Consider this variable declaration:
+මෙම variable declaration එක සලකා බලන්න:
 
 ```js
 const element = <h1>Hello, world!</h1>;
 ```
 
-This funny tag syntax is neither a string nor HTML.
+මෙම අමුතු tag syntax එක string හෝ HTML නොවේ.
 
-It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.
+එය JSX ලෙස හැඳින්වෙන අතර එම syntax එක JavaScript හි 
+සංයෝජනයකි. ඔබගේ UI කෙබඳු විය යුතුද යන්න විස්තර කිරීමට මෙය භාවිතා කිරීම අපි නිර්දේශ කරමු.JSX ඔබට වෙනත් හුරුපුරුදු භාෂාවක් මතක් කර දෙනු ඇත, නමුත් එය JavaScript හි පූර්ණ බලය සමඟ ඔබට ලබාදී  ඇත.
 
-JSX produces React "elements". We will explore rendering them to the DOM in the [next section](/docs/rendering-elements.html). Below, you can find the basics of JSX necessary to get you started.
+JSX React “elements” සෑදීම යොදාගැනේ. අපි [ඊළඟ කොටසේදී](/docs/rendering-elements.html) ඒවා DOM වෙත යොමු කිරීම ගවේෂණය කරන්නෙමු. ඔබට JSX භාවිතය කිරීමට අවශ්‍ය  මූලික කරුණු පහතින් සොයාගත හැක.
 
-### Why JSX? {#why-jsx}
+### ඇයි JSX? {#why-jsx}
 
-React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.
+React භාවිත වෙනවිට ඔබගේ Rendering Logic හා UI Logic එකට සම්බන්ධ වේ : Component හි Events හසුරුවන ආකාරය ද, එහි State වෙනස් වන ආකාරය හා Data දිස්වෙන ආකාරයද යන සියල්ල එකට සම්බන්ධවී ඇත.
 
-Instead of artificially separating *technologies* by putting markup and logic in separate files, React [separates *concerns*](https://en.wikipedia.org/wiki/Separation_of_concerns) with loosely coupled units called "components" that contain both. We will come back to components in a [further section](/docs/components-and-props.html), but if you're not yet comfortable putting markup in JS, [this talk](https://www.youtube.com/watch?v=x7cQ3mrcKaY) might convince you otherwise.
+ඔබගේ markup හා logic වෙනම file වල තැන්පත් කිරීම වෙනුවට, React “components” යන නමින් [එකක වලට කඩා](https://en.wikipedia.org/wiki/Separation_of_concerns) markup හා logic යන දෙකම එකට සම්බන්ධකරයි . අපි [තවත් කොටසකදී](/docs/components-and-props.html)  “components” වෙත නැවත සාකච්චාවට පැමිණෙමු, ඔබට තවමත් markup හා logic එකට අන්තර්ගත කිරීමට පසුබට වේනම්, මෙම [කථාව](https://www.youtube.com/watch?v=x7cQ3mrcKaY) මගින් ඔබට එය කිරීමට ඒත්තු ගැන්විය හැකිය.
 
-React [doesn't require](/docs/react-without-jsx.html) using JSX, but most people find it helpful as a visual aid when working with UI inside the JavaScript code. It also allows React to show more useful error and warning messages.
+React භාවිතා කිරීමට JSX  [අවශ්‍ය නොවේ](/docs/react-without-jsx.html), නමුත් බොහෝ අය එයට JavaScript code තුළ UI සමඟ වැඩ කරන විට එය  දෘශ්‍ය ආධාරකයක් ලෙස උපකාරී වේ. එය වඩාත් ප්‍රයෝජනවත් වන්නේ Error  සහ Warning පණිවිඩ පෙන්වීමටයි.
 
-With that out of the way, let's get started!
+එ සමඟ, අපි ආරම්භ කරමු!
 
-### Embedding Expressions in JSX {#embedding-expressions-in-jsx}
+### JSX හි ප්‍රකාශන කාවැද්දීම {#embedding-expressions-in-jsx}
 
-In the example below, we declare a variable called `name` and then use it inside JSX by wrapping it in curly braces:
+පහත උදාහරණයේ දී, අපි `name` ලෙස හැඳින්වෙන variable එකක්  declare  කර එය JSX  තුළ curly braces වලින් wrap කර  භාවිතා කරමු:
 
 ```js{1,2}
 const name = 'Josh Perez';
@@ -42,9 +43,9 @@ ReactDOM.render(
 );
 ```
 
-You can put any valid [JavaScript expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) inside the curly braces in JSX. For example, `2 + 2`, `user.firstName`, or `formatName(user)` are all valid JavaScript expressions.
+ඔබට ඕනෑම වලංගු [JavaScript expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) යක් JSX හි curly braces තුළ තැබිය හැකිය. උදාහරණයක් ලෙස, `2 + 2`, `user.firstName`, හෝ `formatName(user)` සියල්ලම වලංගු JavaScript ප්‍රකාශන වේ.
 
-In the example below, we embed the result of calling a JavaScript function, `formatName(user)`, into an `<h1>` element.
+පහත උදාහරණයේ දී, අපි JavaScript  function එකක් වන `formatName(user)`,  `<h1>` element හි, එමගින් එන result එක කාවැද්දුවෙමු.
 
 ```js{12}
 function formatName(user) {
@@ -68,15 +69,15 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://introducing-jsx)
+[CodePen](codepen://introducing-jsx) හි එය උත්සාහ කරන්න
 
-We split JSX over multiple lines for readability. While it isn't required, when doing this, we also recommend wrapping it in parentheses to avoid the pitfalls of [automatic semicolon insertion](https://stackoverflow.com/q/2846283).
+කියවීමේ පහසුතාවය සඳහා අපි JSX විවිධ රේඛා ඔස්සේ බෙදුවෙමු. එය අවශ්‍ය නොවනද , මෙය සිදු කරන විට, [automatic semicolon](https://stackoverflow.com/q/2846283) ඇතුළු කිරීමේ අන්තරායන් වළක්වා ගැනීම සඳහා parentheses තුළ wrap කරම අපි නිර්දේශ කරමු.
 
-### JSX is an Expression Too {#jsx-is-an-expression-too}
+### JSX යනු ප්‍රකාශණයකි {#jsx-is-an-expression-too}
 
-After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects.
+compile කිරීමෙන් පසුව, JSX ප්‍රකාශන සාමාන්‍ය JavaScript function calls බවට පත් වන අතර JavaScript objects ලෙස ඇගයීමට ලක් කරයි.
 
-This means that you can use JSX inside of `if` statements and `for` loops, assign it to variables, accept it as arguments, and return it from functions:
+මෙයින් අදහස් කරන්නේ ඔබට `if` සහ `for` loops ප්‍රකාශන සඳහා JSX භාවිතා කළ හැකි බවයි, එය variables හි assign කර , එහි arguments ඇතුල් කර function එකේ  ප්‍රතිපලය ගැනීමයි :
 
 ```js{3,5}
 function getGreeting(user) {
@@ -87,37 +88,37 @@ function getGreeting(user) {
 }
 ```
 
-### Specifying Attributes with JSX {#specifying-attributes-with-jsx}
+### JSX සමඟ Attributes නියම කිරීම {#specifying-attributes-with-jsx}
 
-You may use quotes to specify string literals as attributes:
+ඔබට string  භාවිතා කිරීමට quotes භාවිතා කළ හැකිය:
 
 ```js
 const element = <div tabIndex="0"></div>;
 ```
 
-You may also use curly braces to embed a JavaScript expression in an attribute:
+JavaScript ප්‍රකාශනයක් කාවැද්දීමට ඔබට curly braces භාවිතා කළ හැකිය:
 
 ```js
 const element = <img src={user.avatarUrl}></img>;
 ```
 
-Don't put quotes around curly braces when embedding a JavaScript expression in an attribute. You should either use quotes (for string values) or curly braces (for expressions), but not both in the same attribute.
+JavaScript  ප්‍රකාශනයක් කාවැද්දීමේදී curly braces වටා quotes දැමීම  නොකරන්න. ඔබ එක්කෝ quotes (string අගයන් සඳහා) හෝ curly braces (ප්‍රකාශන සඳහා)භාවිතා කළ යුතුය, නමුත් දෙකම එකවර බාවිතා නොකරන්න.
 
->**Warning:**
+>**අවවාදයයි:**
 >
->Since JSX is closer to JavaScript than to HTML, React DOM uses `camelCase` property naming convention instead of HTML attribute names.
+>HTML වලට වඩා JSX JavaScript වලට සමීප බැවින්, React DOM විසින් HTML attribute names `camelCase` නම් කිරීමේ සම්මුතිය භාවිතා කරයි.
 >
->For example, `class` becomes [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) in JSX, and `tabindex` becomes [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex).
+> උදාහරණයක් ලෙස, `class` JSX හි [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) බවට පත්වන අතර `tabindex`,  [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex) බවට පත්වේ.
 
-### Specifying Children with JSX {#specifying-children-with-jsx}
+### JSX හි Children  නියම කිරීම {#specifying-children-with-jsx}
 
-If a tag is empty, you may close it immediately with `/>`, like XML:
+යම්කිසි tag එකක් හිස් නම්, ඔබට එය XML `/>` අර්කාරයෙන් වහාම වසා දැමිය හැකිය:
 
 ```js
 const element = <img src={user.avatarUrl} />;
 ```
 
-JSX tags may contain children:
+JSX tags තුල children අඩංගු විය හැකිය:
 
 ```js
 const element = (
@@ -128,9 +129,9 @@ const element = (
 );
 ```
 
-### JSX Prevents Injection Attacks {#jsx-prevents-injection-attacks}
+### JSX Injection Attacks වළක්වයි {#jsx-prevents-injection-attacks}
 
-It is safe to embed user input in JSX:
+User input JSX තුළට කාවැද්දීම ආරක්ෂිතයි:
 
 ```js
 const title = response.potentiallyMaliciousInput;
@@ -138,13 +139,13 @@ const title = response.potentiallyMaliciousInput;
 const element = <h1>{title}</h1>;
 ```
 
-By default, React DOM [escapes](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that's not explicitly written in your application. Everything is converted to a string before being rendered. This helps prevent [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks.
+පෙරනිමියෙන්, React DOM render කිරීමට පෙර JSX හි ඇතුළත් කර ඇති ඕනෑම අගයන්ගෙන් [ගැලවී යයි](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html). මේ අනුව, ඔබගේ code හි ලියා නැති කිසිවක් ඔබට කිසි විටෙකත් inject කළ නොහැකි බව සහතික කරයි. Render කිරීමට පෙර සෑම දෙයක්ම string බවට පරිවර්තනය වේ. මෙය [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting) ප්‍රහාර වැළැක්වීමට උපකාරී වේ.
 
-### JSX Represents Objects {#jsx-represents-objects}
+### JSX Objects නියෝජනය කරයි {#jsx-represents-objects}
 
-Babel compiles JSX down to `React.createElement()` calls.
+Babel මගින් JSX `React.createElement()` calls වලට හරවයි compiles. 
 
-These two examples are identical:
+මෙම උදාහරණ දෙක සමාන වේ:
 
 ```js
 const element = (
@@ -162,7 +163,7 @@ const element = React.createElement(
 );
 ```
 
-`React.createElement()` performs a few checks to help you write bug-free code but essentially it creates an object like this:
+`React.createElement ()` දෝෂ රහිත code ලිවීමට ඔබට උදව් කිරීම සඳහා checks කිහිපයක් සිදු කරයි, නමුත් ඇත්තවශයෙන්ම  එය මෙවැනි object එකක් නිර්මාණය කරයි:
 
 ```js
 // Note: this structure is simplified
@@ -175,10 +176,10 @@ const element = {
 };
 ```
 
-These objects are called "React elements". You can think of them as descriptions of what you want to see on the screen. React reads these objects and uses them to construct the DOM and keep it up to date.
+මෙම objects  “React elements” ලෙස හැඳින්වේ. ඔබට ඒවා තිරය මත දැකීමට අවශ්‍ය දේ පිළිබඳ විස්තරයක් ලෙස සිතිය හැකිය. React  මඟින් මෙම objects කියවා ඒවා DOM එක සෑදීමට හා up to date තබා ගැනීමට භාවිතා කරයි.
 
-We will explore rendering React elements to the DOM in the next section.
+අපි ඊළඟ කොටසේදී React විසින් DOM හි render කිරීම සිදුවන ආකාරය ගවේෂණය කරන්නෙමු.
 
->**Tip:**
+>**ඉඟිය:**
 >
->We recommend using the ["Babel" language definition](https://babeljs.io/docs/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted. This website uses the [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/) color scheme which is compatible with it.
+>ඔබේ editor හි තුල ["Babel" language definition](https://babeljs.io/docs/editors) භාවිතා කිරීම අපි නිර්දේශ කරමු,එවිට ES6 සහ JSX code දෙකම නිසි ලෙස ඉස්මතු වේ. මෙම වෙබ් අඩවිය [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/) color scheme භාවිතා කරයි.
