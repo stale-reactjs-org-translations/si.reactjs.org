@@ -57,7 +57,11 @@ function ActionLink() {
 
 මෙතනදි `e` කියල කියන්නෙ synthetic event  එකක්. React වල synthetic event define කරල තියෙන්නෙ [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/) වලට අනුකූලව හින්ද ඔයා cross browser compatibility ගැන වද වෙන්න ඕනි නැහැ. ඔයාට මේ ගැන තව විස්තර දැනගන්න ඕනි නම් [`SyntheticEvent` reference guide](/docs/events.html) එක කියවල බලන්න.
 
+<<<<<<< HEAD
 React වලදි ඔයාට පුලුවන් element එකක් හදල පස්සෙ `addEventListener` method එක call කරල Event Listener එකක් add කරනව වෙනුවට element එක initially render වෙන තැනින්ම  Event Listener එකක් add කරන්න.
+=======
+When using React, you generally don't need to call `addEventListener` to add listeners to a DOM element after it is created. Instead, just provide a listener when the element is initially rendered.
+>>>>>>> 5b6ad388804aaa5cf5504ccd04329f52960e17ae
 
 [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) වලින් component එකක් define කරද්දි පොදු සම්මතයක් විදිහට event handler එකත් class එකේ method එකක් විදිහට ලියනව. උදාහරණයක් විදිහට පහල තියෙන “ ON” සහ “OFF” state මාරුකරන්න පුලුවන් button එකක් තියෙන `Toggle` component එක බලන්න:
 
@@ -143,7 +147,11 @@ class LoggingButton extends React.Component {
 
 ## Event Handlers වලට Arguments pass කිරීම{#passing-arguments-to-event-handlers}
 
+<<<<<<< HEAD
 loop එකක් අතුලෙදි event handler එකකට extra parameter එකක් pass කරන්න වෙන වෙලාවන් තියෙනවා. උදාහරණයක් විදිහට `id` කියන්නෙ row ID එකනම් පහල තියෙන code line දෙකම හරියට වැඩ කරන්න ඕනි.
+=======
+Inside a loop, it is common to want to pass an extra parameter to an event handler. For example, if `id` is the row ID, either of the following would work:
+>>>>>>> 5b6ad388804aaa5cf5504ccd04329f52960e17ae
 
 ```js
 <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
