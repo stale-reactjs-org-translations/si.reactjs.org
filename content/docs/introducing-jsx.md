@@ -183,3 +183,4 @@ const element = {
 >**ඉඟිය:**
 >
 >ඔබේ editor හි තුල ["Babel" language definition](https://babeljs.io/docs/editors) භාවිතා කිරීම අපි නිර්දේශ කරමු,එවිට ES6 සහ JSX code දෙකම නිසි ලෙස ඉස්මතු වේ.
+>>>>>>> 0dbdb40bd3c61520f00da2bc2412696a464ba432
