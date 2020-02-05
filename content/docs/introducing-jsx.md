@@ -182,4 +182,4 @@ const element = {
 
 >**ඉඟිය:**
 >
->ඔබේ editor හි තුල ["Babel" language definition](https://babeljs.io/docs/editors) භාවිතා කිරීම අපි නිර්දේශ කරමු,එවිට ES6 සහ JSX code දෙකම නිසි ලෙස ඉස්මතු වේ. මෙම වෙබ් අඩවිය [Oceanic Next](https://github.com/voronianski/oceanic-next-color-scheme/) color scheme භාවිතා කරයි.
+>ඔබේ editor හි තුල ["Babel" language definition](https://babeljs.io/docs/editors) භාවිතා කිරීම අපි නිර්දේශ කරමු,එවිට ES6 සහ JSX code දෙකම නිසි ලෙස ඉස්මතු වේ.
