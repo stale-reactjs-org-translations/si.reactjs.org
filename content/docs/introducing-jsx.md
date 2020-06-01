@@ -178,7 +178,11 @@ const element = {
 
 මෙම objects  “React elements” ලෙස හැඳින්වේ. ඔබට ඒවා තිරය මත දැකීමට අවශ්‍ය දේ පිළිබඳ විස්තරයක් ලෙස සිතිය හැකිය. React  මඟින් මෙම objects කියවා ඒවා DOM එක සෑදීමට හා up to date තබා ගැනීමට භාවිතා කරයි.
 
+<<<<<<< HEAD
 අපි ඊළඟ කොටසේදී React විසින් DOM හි render කිරීම සිදුවන ආකාරය ගවේෂණය කරන්නෙමු.
+=======
+We will explore rendering React elements to the DOM in the [next section](/docs/rendering-elements.html).
+>>>>>>> b4b59062e59d56da37274c6de1fa4a134d2d8f49
 
 >**ඉඟිය:**
 >

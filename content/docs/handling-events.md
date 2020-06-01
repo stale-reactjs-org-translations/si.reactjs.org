@@ -8,7 +8,11 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 
+<<<<<<< HEAD
 React elements එක්ක events හැසිරවීමත් DOM elements වලින් events හැසිරවීමට ගොඩක් සමානයි. Syntax වල පොඩි පොඩි වෙනස්කම් ටිකක් තියෙනවා.
+=======
+Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
+>>>>>>> b4b59062e59d56da37274c6de1fa4a134d2d8f49
 
 * React events නම් කරන්න භාවිතා කරන්නේ lowercase නෙමෙයි camelCase.
 * JSX වලදි event handler එක විදිහට යවන්නේ string එකක් නෙමෙයි function එකක්.
@@ -131,7 +135,7 @@ class LoggingButton extends React.Component {
   render() {
     // This syntax ensures `this` is bound within handleClick
     return (
-      <button onClick={(e) => this.handleClick(e)}>
+      <button onClick={() => this.handleClick()}>
         Click me
       </button>
     );
