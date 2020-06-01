@@ -67,6 +67,7 @@ class NameForm extends React.Component {
 
 දැන් අපගේ පෝරම් element සඳහා value attribute එකක් දී තිබෙන නිසා, පෝරමය මගින් display කරන වටිනාකම සැමවිටම this.state.value එක වේ. මෙහි the source of truth වන්නේ React state variable එක වේ. දැන් `handleChange` මගින් සෑම keystroke එකක් සමගම React state variable එක යාවත්කාල වන බැවින් පෙන්වන අගය සැමවිටම යාවත්කාල වේ.
 
+<<<<<<< HEAD
 පාලිත සංරචකයක් සමග සෑම state වෙනස්වීමකට එයට අනුබද්ධ handler function එකක් ඇත, එමනිසා ඔබට සරලව හා ඉතා පහසුවෙන් පරිශීලක ආදාන වෙනස් කීරීමට හෝ වලංගු කිරීමට හැකිවේ. උදාහරණයක් වශයෙන්, ඔබට පරිශීලක ආදාන සියල්ල ලොකු අකුරෙන් අවශ්‍ය නම් අපට `handleChange` පහත ආකාරයට ලිවිය හැක.
 
 ```javascript{2}
@@ -74,6 +75,9 @@ handleChange(event) {
   this.setState({value: event.target.value.toUpperCase()});
 }
 ```
+=======
+With a controlled component, the input's value is always driven by the React state. While this means you have to type a bit more code, you can now pass the value to other UI elements too, or reset it from other event handlers.
+>>>>>>> b4b59062e59d56da37274c6de1fa4a134d2d8f49
 
 ## The textarea Tag {#the-textarea-tag}
 
@@ -221,7 +225,7 @@ class Reservation extends React.Component {
 
   handleInputChange(event) {
     const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const value = target.name === 'isGoing' ? target.checked : target.value;
     const name = target.name;
 
     this.setState({
