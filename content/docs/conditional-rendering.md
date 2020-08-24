@@ -121,7 +121,11 @@ ReactDOM.render(
 
 ### Inline If with Logical && Operator {#inline-if-with-logical--operator}
 
+<<<<<<< HEAD
 ඔබ සඟල වරහන් මගින් JSX හි ඕනෑම [expression](/docs/introducing-jsx.html#embedding-expressions-in-jsx) එකක් යෙදිය හැක. මේ සදහා javascript logical `&&` operator එක භාවිතා වේ. මූලද්රව්යයක් ඇතුළු conditionally පාවිච්චි කිරිමට එය ප්රයෝජනවත් විය හැකිය.
+=======
+You may [embed expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
+>>>>>>> d16f1ee7958b5f80ef790265ba1b8711d4f228d6
 
 ```js{6-10}
 function Mailbox(props) {
