@@ -59,7 +59,11 @@ function ActionLink() {
 }
 ```
 
+<<<<<<< HEAD
 මෙතනදි `e` කියල කියන්නෙ synthetic event  එකක්. React වල synthetic event define කරල තියෙන්නෙ [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/) වලට අනුකූලව හින්ද ඔයා cross browser compatibility ගැන වද වෙන්න ඕනි නැහැ. ඔයාට මේ ගැන තව විස්තර දැනගන්න ඕනි නම් [`SyntheticEvent` reference guide](/docs/events.html) එක කියවල බලන්න.
+=======
+Here, `e` is a synthetic event. React defines these synthetic events according to the [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), so you don't need to worry about cross-browser compatibility. React events do not work exactly the same as native events. See the [`SyntheticEvent`](/docs/events.html) reference guide to learn more.
+>>>>>>> bd0c9d8c5f5e78e0bd1066b46024ba98f4daac84
 
 React වලදි ඔයාට පුලුවන් element එකක් හදල පස්සෙ `addEventListener` method එක call කරල Event Listener එකක් add කරනව වෙනුවට element එක initially render වෙන තැනින්ම Event Listener එකක් add කරන්න.
 
