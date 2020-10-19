@@ -186,4 +186,8 @@ We will explore rendering React elements to the DOM in the [next section](/docs/
 
 >**ඉඟිය:**
 >
+<<<<<<< HEAD
 >ඔබේ editor හි තුල ["Babel" language definition](https://babeljs.io/docs/editors) භාවිතා කිරීම අපි නිර්දේශ කරමු,එවිට ES6 සහ JSX code දෙකම නිසි ලෙස ඉස්මතු වේ.
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> 4e6cee1f82737aa915afd87de0cd4a8393de3fc8
