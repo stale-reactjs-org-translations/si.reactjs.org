@@ -93,7 +93,7 @@ function getGreeting(user) {
 ඔබට string  භාවිතා කිරීමට quotes භාවිතා කළ හැකිය:
 
 ```js
-const element = <div tabIndex="0"></div>;
+const element = <div tabIndex={0}></div>;
 ```
 
 JavaScript ප්‍රකාශනයක් කාවැද්දීමට ඔබට curly braces භාවිතා කළ හැකිය:
@@ -186,4 +186,8 @@ We will explore rendering React elements to the DOM in the [next section](/docs/
 
 >**ඉඟිය:**
 >
+<<<<<<< HEAD
 >ඔබේ editor හි තුල ["Babel" language definition](https://babeljs.io/docs/editors) භාවිතා කිරීම අපි නිර්දේශ කරමු,එවිට ES6 සහ JSX code දෙකම නිසි ලෙස ඉස්මතු වේ.
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> 5e437a10ed4e89cd5eaf990ce4f43e0857592b53
