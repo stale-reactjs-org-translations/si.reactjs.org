@@ -1,18 +1,18 @@
 ---
 id: faq-structure
-title: File Structure
+title: ගොනු ව්‍යුහය
 permalink: docs/faq-structure.html
 layout: docs
 category: FAQ
 ---
 
-### Is there a recommended way to structure React projects? {#is-there-a-recommended-way-to-structure-react-projects}
+### React-ව්‍යාපෘති සැකසීමට නිර්දේශිත ක්‍රමයක් තිබේද? {#is-there-a-recommended-way-to-structure-react-projects}
 
-React doesn't have opinions on how you put files into folders. That said there are a few common approaches popular in the ecosystem you may want to consider.
+ඔබ ෆෝල්ඩර වලට ගොනු දැමිය යුතු ආකාරය පිළිබඳව React වල මතයක් නොමැත. කෙසේ වෙතත්, ඔබට සලකා බැලිය හැකි ජනප්‍රිය ප්රවේශයන් කිහිපයක් තිබේ.
 
-#### Grouping by features or routes {#grouping-by-features-or-routes}
+#### ක්‍රියාකාරීත්වය හෝ මාර්ගය අනුව කණ්ඩායම් කිරීම {#grouping-by-features-or-routes}
 
-One common way to structure projects is locate CSS, JS, and tests together inside folders grouped by feature or route.
+එක් ජනප්‍රිය ප්‍රවේශයක් වන්නේ, ක්‍රියාකාරීත්වය හෝ මාර්ගය අනුව කාණ්ඩගත කර ඇති ෆෝල්ඩර වල CSS, JS සහ පරීක්ෂණ ගොනු ස්ථානගත කිරීමයි.
 
 ```
 common/
@@ -35,11 +35,11 @@ profile/
   ProfileAPI.js
 ```
 
-The definition of a "feature" is not universal, and it is up to you to choose the granularity. If you can't come up with a list of top-level folders, you can ask the users of your product what major parts it consists of, and use their mental model as a blueprint.
+"ක්‍රියාකාරීත්වය" යන සංකල්පය විශ්වීය නොවේ, එබැවින් විස්තර මට්ටම තෝරා ගැනීම ඔබගේ ය. ඔබට ඉහළ මට්ටමේ ෆෝල්ඩර ලැයිස්තුවක් ඉදිරිපත් කළ නොහැකි නම්, ඔබේ නිෂ්පාදනයේ පරිශීලකයින්ගෙන් එහි ප්‍රධාන කොටස් මොනවාදැයි විමසීමට සහ ඔවුන්ගේ මානසික ආකෘතිය සැලැස්මක් ලෙස භාවිතා කිරීමට ඔබට හැකිය.
 
-#### Grouping by file type {#grouping-by-file-type}
+#### ගොනු වර්ගය අනුව කණ්ඩායම් කිරීම {#grouping-by-file-type}
 
-Another popular way to structure projects is to group similar files together, for example:
+ව්‍යාපෘති ව්‍යුහගත කිරීම සඳහා තවත් ජනප්‍රිය ක්‍රමයක් වන්නේ සමාන ලිපිගොනු කාණ්ඩගත කිරීමයි, උදාහරණයක් ලෙස:
 
 ```
 api/
@@ -59,16 +59,16 @@ components/
   ProfileHeader.css
 ```
 
-Some people also prefer to go further, and separate components into different folders depending on their role in the application. For example, [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) is a design methodology built on this principle. Remember that it's often more productive to treat such methodologies as helpful examples rather than strict rules to follow.
+සමහර අය එය තවත් පියවරක් ඉදිරියට ගෙන යාමට කැමතියි.ඔවුන් යෙදුමේ කාර්යභාරය අනුව සංරචක ගොනු විවිධ නාමාවලි වලට සංවිධානය කරයි. උදාහරණයක් ලෙස, [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) යනු මෙම මූලධර්මය මත පදනම් වූ සැලසුම් ක්‍රමයකි. මෙම ක්‍රමවේදයන් සැලකිය යුතු නීති රීති නොව, ප්‍රයෝජනවත් උදාහරණ ලෙස සැලකිය යුතු බව මතක තබා ගන්න.
 
-#### Avoid too much nesting {#avoid-too-much-nesting}
+#### ඕනෑවට වඩා බෙදීමෙන්(nesting) වළකින්න {#avoid-too-much-nesting}
 
-There are many pain points associated with deep directory nesting in JavaScript projects. It becomes harder to write relative imports between them, or to update those imports when the files are moved. Unless you have a very compelling reason to use a deep folder structure, consider limiting yourself to a maximum of three or four nested folders within a single project. Of course, this is only a recommendation, and it may not be relevant to your project.
+JavaScript ව්‍යාපෘතිවල ගැඹුරු නාමාවලි බෙදීම හා සම්බන්ධ බොහෝ වේදනාකාරී ස්ථාන තිබේ. එකක් නම් ලිපිගොනු ගෙන යන විට සාපේක්ෂ ආනයන පාලනය කිරීම හෝ එම ආනයන යාවත්කාලීන කිරීම ය. ගැඹුරු ෆෝල්ඩර බෙදීම භාවිතා කිරීමට ඔබට හොඳ හේතුවක් නොමැති නම්, එක් ව්‍යාපෘතියක් තුළ උපරිම වශයෙන් මට්ටම් තුනක් හෝ හතරක් බෙදීමට සීමා කිරීම ගැන සලකා බලන්න. ඇත්ත වශයෙන්ම, මෙය නිර්දේශයක් පමණක් වන අතර ඔබේ ව්‍යාපෘතියට අදාළ නොවිය හැකිය.
 
-#### Don't overthink it {#dont-overthink-it}
+#### එය අධිතක්සේරු නොකරන්න {#dont-overthink-it}
 
-If you're just starting a project, [don't spend more than five minutes](https://en.wikipedia.org/wiki/Analysis_paralysis) on choosing a file structure. Pick any of the above approaches (or come up with your own) and start writing code! You'll likely want to rethink it anyway after you've written some real code.
+ඔබ ව්‍යාපෘතියක් ආරම්භ කරන්නේ නම්, ව්‍යාපෘති ව්‍යුහයක් තෝරා ගැනීමට [විනාඩි 5 කට වඩා ගත නොකරන්න.](https://en.wikipedia.org/wiki/Analysis_paralysis) ඉහත ලැයිස්තුගත කර ඇති ඕනෑම ප්‍රවේශයක් ගෙන (හෝ ඔබේම ක්‍රමයක් සමඟ පැමිණ) කේතීකරණය ආරම්භ කරන්න! යම් කේතයක් ලිවීමෙන් පසු ව්‍යාපෘති ව්‍යුහය ගැන නැවත සිතා බැලීමට ඔබට හොඳ අවස්ථාවක් තිබේ.
 
-If you feel completely stuck, start by keeping all files in a single folder. Eventually it will grow large enough that you will want to separate some files from the rest. By that time you'll have enough knowledge to tell which files you edit together most often. In general, it is a good idea to keep files that often change together close to each other. This principle is called "colocation".
+ඔබට සම්පූර්ණයෙන්ම හිර වී ඇති බවක් දැනේ නම්, සියලුම ගොනු එකම ෆෝල්ඩරයක තබා ගැනීමෙන් ආරම්භ කරන්න. කාලයාගේ ඇවෑමෙන්, එය විශාල වන විට ඔබට සමහර ගොනු අනෙක් ඒවායින් වෙන් කිරීමට අවශ්‍ය වන විට, ඔබ සංස්කරණය කරන්නේ කුමන ගොනුද යන්න තීරණය කිරීමට ඔබට බොහෝ විට ප්‍රමාණවත් දැනුමක් ඇත. සාමාන්‍ය රීතියක් ලෙස, නිතර නිතර වෙනස් වන ලිපිගොනු එකිනෙකට සමීපව තබා ගත යුතුය. මෙම මූලධර්මය "සම-පිහිටීම" ලෙස හැඳින්වේ.
 
-As projects grow larger, they often use a mix of both of the above approaches in practice. So choosing the "right" one in the beginning isn't very important.
+ප්‍රායෝගිකව, ව්‍යාපෘති බොහෝ විට ඉහත ප්‍රවේශයන් කිහිපයක එකතුවක් භාවිතා කරයි. එබැවින් ව්‍යාපෘතියේ ආරම්භයේදීම “නිවැරදි” ප්‍රවේශය තෝරා ගැනීම එතරම් වැදගත් නොවේ.
