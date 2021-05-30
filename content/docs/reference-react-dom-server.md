@@ -84,7 +84,7 @@ ReactDOMServer.renderToStaticNodeStream(element)
 [`renderToNodeStream`](#rendertonodestream) සමානය , නමුත් මෙය මගින් React අභ්‍යන්තරව භාවිතා කරන `data-reactroot` වැනි අමතර DOM ලක්ෂණ සැදිම වැළැකේ . 
 ඔබට සරල ස්ථිතික පිටු උත්පාදකයක් ලෙස React භාවිතා කිරීමට අවශ්‍යවෙනම් මෙය වදගත් වේ , මන්ද මෙය මගින් අමතර ලක්ෂණ ඉවත් කිරීම නිසා බයිට් කිහිපයක් ඉතිරි කරගනීමට ඇති හැකියවයි.
 
-මෙම ප්‍රවාහයේ HTML ප්‍රතිදානය [`ReactDOMServer.renderToStaticMarkup`](#rendertostaticmarkup) මගින් ආපසු ලබාදෙන්නට සර්වසමය
+මෙම ප්‍රවාහයේ HTML ප්‍රතිදානය [`ReactDOMServer.renderToStaticMarkup`](#rendertostaticmarkup) මගින් ආපසු ලබාදෙන්නට සර්වසමය.
 
 ඔබ සේවාදායකයාගේ සලකුණු කිරීම් අන්තර්ක්‍රියාකාරී කිරීමට සළසුම් කරන්නේ නම් මෙම ක්‍රමය භවිතා කිරිමෙන් වළකින්න.ඒ වෙනුවට [`renderToNodeStream`](#rendertonodestream)
 සර්වරයේ භවිතා කර සේවාදායකයාගේ [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) භවිතා කරන්න.
