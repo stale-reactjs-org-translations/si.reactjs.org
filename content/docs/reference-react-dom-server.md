@@ -6,7 +6,7 @@ category: Reference
 permalink: docs/react-dom-server.html
 ---
 
-The `ReactDOMServer` object enables you to render components to static markup. Typically, it's used on a Node server:
+`ReactDOMServer` වස්තුව මගින් ඔබට සංරචක ස්ථිතික සලකුණු බවට විදැහුම්කරණය කිරීම හැකියාව ලබාදෙයි. සමාන්‍යයෙන් එය Node සර්වරය භාවිතයට ගනි:
 
 ```js
 // ES modules
@@ -17,12 +17,12 @@ var ReactDOMServer = require('react-dom/server');
 
 ## Overview {#overview}
 
-The following methods can be used in both the server and browser environments:
+පහත දැක්වෙන ක්‍රම සර්වර පරිසරයේ මෙන්ම බ්‍රව්සර් පරිසරයේද භවිතයට ගත හැකිය:
 
 - [`renderToString()`](#rendertostring)
 - [`renderToStaticMarkup()`](#rendertostaticmarkup)
 
-These additional methods depend on a package (`stream`) that is **only available on the server**, and won't work in the browser.
+මෙම අතිරේක ක්‍රම (`stream`) පැකේජයක් මත රඳා පවති , එමනිසා මෙය **සර්වරයේ පමණක් භවිතයට ගත හැකිය** , බ්‍රව්සරයේ ක්‍රියා නොකරනු ඇත.
 
 - [`renderToNodeStream()`](#rendertonodestream)
 - [`renderToStaticNodeStream()`](#rendertostaticnodestream)
@@ -37,9 +37,9 @@ These additional methods depend on a package (`stream`) that is **only available
 ReactDOMServer.renderToString(element)
 ```
 
-Render a React element to its initial HTML. React will return an HTML string. You can use this method to generate HTML on the server and send the markup down on the initial request for faster page loads and to allow search engines to crawl your pages for SEO purposes.
+React අංගයක් ආරම්භක HTML බවට විදැහුම්කරණය කරයි . React මගින් නැවත HTML ස්ට්‍රින්ග් එකක් ලබා දෙනු ඇත .ඔබට මෙම ක්‍රමය මගින් සර්වරයේදී HTML ජනනය කර ආරම්භක ඉල්ලීමේදිම සලකුණු කිරීම් යැවිය හැකිය .එමගින් වේගවත් පිටු නැම්වීමක් ලබාදෙන අතර SEO අරමුණු සඳහා ඔබේ පිටු සෙවීමට සෙවුම් යන්ත්‍රවලට ඉඩ ලබාදෙයි.
 
-If you call [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) on a node that already has this server-rendered markup, React will preserve it and only attach event handlers, allowing you to have a very performant first-load experience.
+ඔබ දැනටමත් මෙම සර්වරය විසින් විදැහුම්කරණය කරන ලද සලකුණක් ඇති නෝඩයක් [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) අමතන්නේ නම් , React මගින් එය සංරක්ෂණය කර සිදුවීම් හසුරුවන්නන් ඇමිණීම පමණක් සිදුකරයි , එමගින් ඔබට ඉතා ඉහළ කර්ය සධනයක් සහිත පළමු නැම්වීමේ අත්දැකීමක් ලබ ගත හැකිය.
 
 * * *
 
@@ -49,9 +49,11 @@ If you call [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) on a node that 
 ReactDOMServer.renderToStaticMarkup(element)
 ```
 
-Similar to [`renderToString`](#rendertostring), except this doesn't create extra DOM attributes that React uses internally, such as `data-reactroot`. This is useful if you want to use React as a simple static page generator, as stripping away the extra attributes can save some bytes.
+[`renderToString`](#rendertostring) සමානය , නමුත් මෙය මගින් React අභ්‍යන්තරව භාවිතා කරන `data-reactroot` වැනි අමතර DOM ලක්ෂණ සැදිම වැළැකේ .ඔබට සරල ස්ථිතික පිටු උත්පාදකයක් ලෙස React භාවිතා කිරීමට අවශ්‍යවෙනම් මෙය වදගත් වේ , මන්ද මෙය මගින් අමතර ලක්ෂණ ඉවත් කිරීම නිසා බයිට් කිහිපයක් ඉතිරි කරගනීමට ඇති හැකියවයි.
 
-If you plan to use React on the client to make the markup interactive, do not use this method. Instead, use [`renderToString`](#rendertostring) on the server and [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) on the client.
+ඔබ සේවාදායකයාගේ සලකුණු කිරීම අන්තර්ක්‍රියාකාරී කිරීමට සළසුම් කරන්නේ නම් මෙම ක්‍රමය භවිතා කිරිමෙන් වළකින්න.ඒ වෙනුවට [`renderToString`](#rendertostring) 
+සර්වරයේ භවිතා කර සේවාදායකයාගේ [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) භවිතා කරන්න.
+
 
 * * *
 
@@ -61,15 +63,15 @@ If you plan to use React on the client to make the markup interactive, do not us
 ReactDOMServer.renderToNodeStream(element)
 ```
 
-Render a React element to its initial HTML. Returns a [Readable stream](https://nodejs.org/api/stream.html#stream_readable_streams) that outputs an HTML string. The HTML output by this stream is exactly equal to what [`ReactDOMServer.renderToString`](#rendertostring) would return. You can use this method to generate HTML on the server and send the markup down on the initial request for faster page loads and to allow search engines to crawl your pages for SEO purposes.
+React අංගයක් ආරම්භක HTML බවට විදැහුම්කරණය කරයි .HTML ස්ට්‍රින්ග් එකක් ප්‍රතිදානය කරන [කියවිය හැකි ප්‍රවාහයක්](https://nodejs.org/api/stream.html#stream_readable_streams) ලබා දෙයි.මෙම ප්‍රවාහයේ HTML ප්‍රතිදානය [`ReactDOMServer.renderToString`](#rendertostring) මගින් ආපසු ලබාදෙන්නට සර්වසමය.ඔබට මෙම ක්‍රමය මගින් සර්වරයේදී HTML ජනනය කර ආරම්භක ඉල්ලීමේදිම සලකුණු කිරීම් යැවිය හැකිය .එමගින් වේගවත් පිටු නැම්වීමක් ලබාදෙන අතර SEO අරමුණු සඳහා ඔබේ පිටු සෙවීමට සෙවුම් යන්ත්‍රවලට ඉඩ ලබාදෙයි.
 
-If you call [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) on a node that already has this server-rendered markup, React will preserve it and only attach event handlers, allowing you to have a very performant first-load experience.
+ඔබ දැනටමත් මෙම සර්වරය විසින් විදැහුම්කරණය කරන ලද සලකුණක් ඇති නෝඩයක් [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) අමතන්නේ නම් , React මගින් එය සංරක්ෂණය කර සිදුවීම් හසුරුවන්නන් ඇමිණීම පමණක් සිදුකරයි , එමගින් ඔබට ඉතා ඉහළ කර්ය සධනයක් සහිත පළමු නැම්වීමේ අත්දැකීමක් ලබ ගත හැකිය.
 
-> Note:
+> සටහන:
 >
-> Server-only. This API is not available in the browser.
+> සර්වරයේ භවිතයට පමණයි.මෙම ක්‍රමලේඛ අතුරු මුහුණත බ්‍රව්සරයේ භවිතා කර නොහැක.
 >
-> The stream returned from this method will return a byte stream encoded in utf-8. If you need a stream in another encoding, take a look at a project like [iconv-lite](https://www.npmjs.com/package/iconv-lite), which provides transform streams for transcoding text.
+> මෙම ක්‍රමයෙන් ආපසු එන ප්‍රවාහය utf-8 මගින් කේතනය කර ඇති බයිට් ප්‍රවාහයක් ලබා දෙනු ඇත.ඔබට වෙනත් කේතන ක්‍රමයක ප්‍රවාහයක් අවශ්‍ය නම් [iconv-lite](https://www.npmjs.com/package/iconv-lite) වැනි පෙළ ට්‍රාන්ස්කෝඩින් සලසන ප්‍රවාහ පරිණාමන ව්‍යාපෘතියක් සලකා බලන්න .
 
 * * *
 
@@ -79,14 +81,16 @@ If you call [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) on a node that 
 ReactDOMServer.renderToStaticNodeStream(element)
 ```
 
-Similar to [`renderToNodeStream`](#rendertonodestream), except this doesn't create extra DOM attributes that React uses internally, such as `data-reactroot`. This is useful if you want to use React as a simple static page generator, as stripping away the extra attributes can save some bytes.
+[`renderToNodeStream`](#rendertonodestream) සමානය , නමුත් මෙය මගින් React අභ්‍යන්තරව භාවිතා කරන `data-reactroot` වැනි අමතර DOM ලක්ෂණ සැදිම වැළැකේ . 
+ඔබට සරල ස්ථිතික පිටු උත්පාදකයක් ලෙස React භාවිතා කිරීමට අවශ්‍යවෙනම් මෙය වදගත් වේ , මන්ද මෙය මගින් අමතර ලක්ෂණ ඉවත් කිරීම නිසා බයිට් කිහිපයක් ඉතිරි කරගනීමට ඇති හැකියවයි.
 
-The HTML output by this stream is exactly equal to what [`ReactDOMServer.renderToStaticMarkup`](#rendertostaticmarkup) would return.
+මෙම ප්‍රවාහයේ HTML ප්‍රතිදානය [`ReactDOMServer.renderToStaticMarkup`](#rendertostaticmarkup) මගින් ආපසු ලබාදෙන්නට සර්වසමය
 
-If you plan to use React on the client to make the markup interactive, do not use this method. Instead, use [`renderToNodeStream`](#rendertonodestream) on the server and [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) on the client.
+ඔබ සේවාදායකයාගේ සලකුණු කිරීම් අන්තර්ක්‍රියාකාරී කිරීමට සළසුම් කරන්නේ නම් මෙම ක්‍රමය භවිතා කිරිමෙන් වළකින්න.ඒ වෙනුවට [`renderToNodeStream`](#rendertonodestream)
+සර්වරයේ භවිතා කර සේවාදායකයාගේ [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) භවිතා කරන්න.
 
-> Note:
+> සටහන:
 >
-> Server-only. This API is not available in the browser.
+> සර්වරයේ භවිතයට පමණයි.මෙම ක්‍රමලේඛ අතුරු මුහුණත බ්‍රව්සරයේ භවිතා කර නොහැක.
 >
-> The stream returned from this method will return a byte stream encoded in utf-8. If you need a stream in another encoding, take a look at a project like [iconv-lite](https://www.npmjs.com/package/iconv-lite), which provides transform streams for transcoding text.
+> මෙම ක්‍රමයෙන් ආපසු එන ප්‍රවාහය utf-8 මගින් කේතනය කර ඇති බයිට් ප්‍රවාහයක් ලබා දෙනු ඇත.ඔබට වෙනත් කේතන ක්‍රමයක ප්‍රවාහයක් අවශ්‍ය නම් [iconv-lite](https://www.npmjs.com/package/iconv-lite) වැනි පෙළ ට්‍රාන්ස්කෝඩින් සලසන ප්‍රවාහ පරිණාමන ව්‍යාපෘතියක් සලකා බලන්න .
