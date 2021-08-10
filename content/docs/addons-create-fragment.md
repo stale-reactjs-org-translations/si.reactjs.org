@@ -37,7 +37,7 @@ function Swapper(props) {
 }
 ```
 
-children sets දෙකේ keys සලකුණු කර නොමැති නිසා ඔබ මා`swapped` prop මාරු කරන විට children unmount කර නැවත remount කරනු ඇත.
+children sets දෙකේ keys සලකුණු කර නොමැති නිසා ඔබ `swapped` prop මාරු කරන විට children unmount කර නැවත remount කරනු ඇත.
 
 මෙම ගැටළුව විසඳීම සඳහා, children sets සඳහා keys ලබා දීම සඳහා ඔබට `createFragment` add-on භාවිතා කළ හැකිය.
 
