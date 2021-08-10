@@ -8,20 +8,22 @@ category: Add-Ons
 
 > Note:
 >
-> `React.addons` entry point is deprecated as of React v15.5. We now have first class support for fragments which you can read about [here](/docs/fragments.html).
+> `React.addons` React v15.5 අනුව entry point අවලංගු කර ඇත. ඔබට කියවිය හැකි fragments සඳහා දැන් අපට පළමු පන්තියේ ආධාර ඇත [මෙතන](/docs/fragments.html).
 
-## Importing {#importing}
+
+## ඇතුලත් කිරීම {#importing}
 
 ```javascript
 import createFragment from 'react-addons-create-fragment'; // ES6
 var createFragment = require('react-addons-create-fragment'); // ES5 with npm
 ```
 
-## Overview {#overview}
+## දළ විශ්ලේෂණය {#overview}
 
-In most cases, you can use the `key` prop to specify keys on the elements you're returning from `render`. However, this breaks down in one situation: if you have two sets of children that you need to reorder, there's no way to put a key on each set without adding a wrapper element.
+බොහෝ අවස්ථාවන්හීදී, ඔබ `render` ආපසු එන elementsවල keys නියම කිරීමට ඔබට `key` prop භාවිතා කළ හැකිය. කෙසේ වෙතත්, මෙය එක් අවස්ථාවක බිඳ වැටේ: ඔබට නැවත සකස් කිරීමට අවශ්‍ය ළමා කුල දෙකක් තිබේ නම්, wrapper element එකතු නොකර සෑම කට්ටලයකම key දැමීමට ක්‍රමයක් නොමැත.
 
-That is, if you have a component such as:
+
+එනම්, ඔබට එවැනි componentක් තිබේ නම්:
 
 ```js
 function Swapper(props) {
@@ -35,13 +37,13 @@ function Swapper(props) {
 }
 ```
 
-The children will unmount and remount as you change the `swapped` prop because there aren't any keys marked on the two sets of children.
+children sets දෙකේ keys සලකුණු කර නොමැති නිසා ඔබ මා`swapped` prop මාරු කරන විට children unmount කර නැවත remount කරනු ඇත.
 
-To solve this problem, you can use the `createFragment` add-on to give keys to the sets of children.
+මෙම ගැටළුව විසඳීම සඳහා, children sets සඳහා keys ලබා දීම සඳහා ඔබට `createFragment` add-on භාවිතා කළ හැකිය.
 
 #### `Array<ReactNode> createFragment(object children)` {#arrayreactnode-createfragmentobject-children}
 
-Instead of creating arrays, we write:
+arrays සෑදීම වෙනුවට අපි ලියන්නෙමු:
 
 ```javascript
 import createFragment from 'react-addons-create-fragment';
@@ -63,6 +65,6 @@ function Swapper(props) {
 }
 ```
 
-The keys of the passed object (that is, `left` and `right`) are used as keys for the entire set of children, and the order of the object's keys is used to determine the order of the rendered children. With this change, the two sets of children will be properly reordered in the DOM without unmounting.
+passed කරන ලද object keys (එනම් `left` සහ `right`) සමස්ත children set සඳහාම keys ලෙස භාවිතා කරන අතර, rendered children අනුපිළිවෙල තීරණය කිරීම සඳහා object keys අනුපිළිවෙල භාවිතා කෙරේ. මෙම වෙනස සමඟ, children sets දෙක, ඉවත් කිරීමකින් තොරව DOM හි නිසි පරිදි නැවත සකස් කරනු ඇත.
 
-The return value of `createFragment` should be treated as an opaque object; you can use the [`React.Children`](/docs/react-api.html#react.children) helpers to loop through a fragment but should not access it directly. Note also that we're relying on the JavaScript engine preserving object enumeration order here, which is not guaranteed by the spec but is implemented by all major browsers and VMs for objects with non-numeric keys.
+`CreateFragment` හි return අගය opaque object ලෙස සැලකිය යුතුය; ඔබට loop through a fragment [`React.Children`](/docs/react-api.html#react.children) සහායකයින් භාවිතා කළ හැකි නමුත් එයට directly ප්‍රවේශ විය නොහැක. අපි මෙහි JavaScript එන්ජිම ආරක්‍ෂා කරන object enumeration අනුපිළිවෙල මත විශ්වාසය තබන බව මතක තබා ගන්න, එය spec සහතික නොවන නමුත් non-numeric keys ඇති objects සඳහා සියලුම ප්‍රධාන බ්‍රව්සර් සහ VMs මඟින් ක්‍රියාත්මක කෙරේ.
