@@ -40,7 +40,11 @@ React යනු JavaScript library කි, එම නිසා JavaScript  ප�
 
 >සටහන
 >
+<<<<<<< HEAD
 >මෙම උපදෙස් මාළාවේ යම් අවස්ථාවලදී නව JavaScript Syntax උදාහරණ සඳහා භාවිතා කර ඇත. ඔබ පසුගිය අවුරුදු කිහිපය තුල JavaScript භාවිතා නොකළ කෙනෙක් නම්, [මෙම කරුණු තුන](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) බොහෝසේ වැදගත්වනු ඇත.
+=======
+>This guide occasionally uses some newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
+>>>>>>> 25f756d8e3800afb032cb31ce3626d6134e31e38
 
 
 ## ආරම්භ කරමු! {#lets-get-started}
