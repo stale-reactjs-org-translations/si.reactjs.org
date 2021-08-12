@@ -38,7 +38,11 @@ React මුල සිටම සැලසුම් කර ඇත්තේ ක්
 ඔබ React අත්හදා බැලීමට කැමති නම්, ඔබට මාර්ගගත ක්‍රමලේඛ වේදිකාවක් ඒ සඳහා භාවිත කළ හැකිය. 
 [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), [Glitch](https://glitch.com/edit/#!/remix/starter-react-template), හෝ [Stackblitz](https://stackblitz.com/fork/react). හි Hello World අච්චුව අත්හදා බලන්න
 
+<<<<<<< HEAD
 ඔබේම පෙළ සංස්කාරකයක අත්හදා බැලීමට කැමති නම්, ඔබට [මෙම HTML ලේඛනය](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) බාගත කර, සංස්කරණය කර ඔබේ අන්තර්ජාල ගවේෂකයේ විවෘත කර බැලීමටද හැකිය. මෙහිදී සිදු වන්නේ මන්දගාමී ධාවන කාල කේත පරිණාමනයකි, එමනිසා අප විසින් මෙය නිර්දේශ කරනු ලබන්නේ සරල ආදර්ශන සඳහා පමණි.
+=======
+If you're interested in playing around with React, you can use an online code playground. Try a Hello World template on [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), or [Stackblitz](https://stackblitz.com/fork/react).
+>>>>>>> f3baa6d075c8de475b688abf035d7054bc8a9606
 
 ### වෙබ් අඩවියකට React එකතු කිරීම {#add-react-to-a-website}
 
