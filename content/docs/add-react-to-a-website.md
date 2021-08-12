@@ -52,10 +52,17 @@ React මුල සිටම සැලසුම් කර ඇත්තේ ක්
 ```html{5,6,9}
   <!-- ... වෙනත් HTML ... -->
 
+<<<<<<< HEAD
   <!-- React නංවන්න. -->
   <!-- සටහන: (ප්‍රායෝගික) යෙදවීමේදී, "development.js" යන්න "production.min.js" මඟින් ප්‍රතිස්ථාපනය කරන්න. -->
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+=======
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+>>>>>>> 68e4efcf93b6e589355f6aa3cbc3f3c811c0ad37
 
   <!-- අපගේ React සංරචකය නංවන්න. -->
   <script src="like_button.js"></script>
@@ -83,7 +90,11 @@ const domContainer = document.querySelector('#like_button_container');
 ReactDOM.render(e(LikeButton), domContainer);
 ```
 
+<<<<<<< HEAD
 මෙම කේත දෙපෙළ, පළමු පියවරේදී, අපි HTML වලට එකතු කළ `<div>` සොයාගෙන, අපගේ "Like" බොත්තම නම්  React සංරචකය එතුළ දර්ශනය කරනු ලබයි. 
+=======
+These two lines of code find the `<div>` we added to our HTML in the first step, and then display our "Like" button React component inside of it.
+>>>>>>> 68e4efcf93b6e589355f6aa3cbc3f3c811c0ad37
 
 ### එපමණයි! {#thats-it}
 
@@ -114,8 +125,8 @@ React ඒකාබද්ධ කිරීම පිළිබඳ වැඩිද�
 ඔබ දැනටමත් යෙදුම් පිටපත් කුඩා කොට අසුරන්නේ නම් සහ ඔබේ නිකුත් කළ වෙබ් අඩවියේ `production.min.js` න් අවසන් වන React පිටපත් නැංවෙන බව සහතික නම්, **ඔබේ වෙබ්අඩවිය නිකුත් කිරීමට සූදානම් තත්වයේ පවතී**:
 
 ```js
-<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
 ```
 
 ඔබේ යෙදුම් ක්‍රමාවලිය සඳහා ඔබ කුඩා කර ඇසිරීම අනුගමනය නොකරන්නේ නම්, [එය සකස් කර ගැනීම සඳහා ක්‍රමයක් ඇත.](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3)
@@ -183,7 +194,7 @@ return (
 `src` නම් ගොනුවක් නිර්මාණය කර පහත අග්‍රස්ථ විධානය දුවවන්න:	
 
 ```
-npx babel --watch src --out-dir . --presets react-app/prod 
+npx babel --watch src --out-dir . --presets react-app/prod
 ```
 
 >සටහන
