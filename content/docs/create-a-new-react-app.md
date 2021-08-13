@@ -1,6 +1,6 @@
 ---
 id: create-a-new-react-app
-title: Create a New React App
+title: නව React යෙදුමක් නිර්මාණය කරන්න
 permalink: docs/create-a-new-react-app.html
 redirect_from:
   - "docs/add-react-to-a-new-app.html"
@@ -8,38 +8,38 @@ prev: add-react-to-a-website.html
 next: cdn-links.html
 ---
 
-Use an integrated toolchain for the best user and developer experience.
+හොඳ ම පරිශීලක සහ සංවර්ධක අත්දැකීමක් සඳහා ඒකාබද්ධ උපාංග කට්ටලයක් භාවිත කරන්න.
 
-This page describes a few popular React toolchains which help with tasks like:
+මෙම පිටුවේ පහත ආකාරයේ කාර්යයන් සඳහා සහය වන React උපාංග කට්ටල කිහිපයක් විස්තර කෙරේ:
 
-* Scaling to many files and components.
-* Using third-party libraries from npm.
-* Detecting common mistakes early.
-* Live-editing CSS and JS in development.
-* Optimizing the output for production.
+* ලේඛන සහ ගොනු විශාල සංඛ්‍යාවක් දක්වා ව්‍යාප්ත කිරීම
+* npm හි තෙවන පාර්ශව පුස්තකාල භාවිත කිරීම.
+* පොදු අත්වැරදීම් කලින් හඳුනා ගැනීම.
+* සංවර්ධනයේදී CSS සහ JS සජීවී සංස්කරණය.
+* නිකුත් කිරීම සඳහා ප්‍රතිදානය ප්‍රශස්තකරණය කිරීම.
 
-The toolchains recommended on this page **don't require configuration to get started**.
+මෙම පිටුවේ නිර්දේශ කර ඇති උපාංග කට්ටල **භාවිතය ඇරඹීම සඳහා කිසිදු වින්‍යාසකරණයක් අවශ්‍ය නොවේ.**
 
-## You Might Not Need a Toolchain {#you-might-not-need-a-toolchain}
+## ඔබට උපාංග කට්ටලයක් අවශ්‍ය නොවනු ඇත {#you-might-not-need-a-toolchain}
 
-If you don't experience the problems described above or don't feel comfortable using JavaScript tools yet, consider [adding React as a plain `<script>` tag on an HTML page](/docs/add-react-to-a-website.html), optionally [with JSX](/docs/add-react-to-a-website.html#optional-try-react-with-jsx).
+ඔබ ඉහත විස්තර කර ඇති ගැටළු අත් නොදකින්නේ නම් හෝ තවම උපාංග භාවිතයට නුහුරු නම්, කැමති නම් [JSX සමඟ](/docs/add-react-to-a-website.html#optional-try-react-with-jsx), [HTML පිටුවකට `<script>` ටැගයක් ලෙස React එකතු කළ හැකිය](/docs/add-react-to-a-website.html).
 
-This is also **the easiest way to integrate React into an existing website.** You can always add a larger toolchain if you find it helpful!
+මෙය **පවතින වෙබ් අඩවියකට React ඒකාබද්ධ කිරීමේ පහසුම ක්‍රමය** ද වේ. ඔබට පහසු යයි හැඟේ නම්, ඔබට සෑමවිටම වඩා විශාල උපාංග කට්ටලයක් එකතු කරගත හැකිය .
 
-## Recommended Toolchains {#recommended-toolchains}
+##  නිර්දේශිත උපාංග කට්ටල  {#recommended-toolchains}
 
-The React team primarily recommends these solutions:
+React කණ්ඩායම මූලිකව පහත විසඳුම් නිර්දේශ කරයි:
 
-- If you're **learning React** or **creating a new [single-page](/docs/glossary.html#single-page-application) app,** use [Create React App](#create-react-app).
-- If you're building a **server-rendered website with Node.js,** try [Next.js](#nextjs).
-- If you're building a **static content-oriented website,** try [Gatsby](#gatsby).
-- If you're building a **component library** or **integrating with an existing codebase**, try [More Flexible Toolchains](#more-flexible-toolchains).
+- ඔබ **React ඉගෙනගන්නේ නම්** හෝ **[තනි පිටුවේ](/docs/glossary.html#single-page-application) යෙදුමක්  නිර්මාණය කරන්නේ නම්,**[Create React App](#create-react-app) භාවිත කරන්න..
+- ඔබ **Node.js භාවිතයෙන් සර්වරයේ විදැහුම්කරණය වන වෙබ් අඩවියක්** ගොඩනගන්නේ නම්, [Next.js](#nextjs) උත්සාහ කරන්න.
+-  ඔබ ගොඩනගන්නේ **ස්ථිතික අන්තර්ගත-කේන්ද්‍රීය වෙබ් අඩවියක්** නම්, [Gatsby](#gatsby) උත්සාහ කරන්න.
+- ඔබ ගොඩනගන්නේ **සංරචක පුස්තකාලයක්** හෝ **පවතින කේත පදනම සමඟ ඒකාබද්ධතාවක් නම්**,  [වඩා නම්‍යශීලී උපාංග කට්ටල](#more-flexible-toolchains) උත්සාහ කරන්න.
 
 ### Create React App {#create-react-app}
 
-[Create React App](https://github.com/facebookincubator/create-react-app) is a comfortable environment for **learning React**, and is the best way to start building **a new [single-page](/docs/glossary.html#single-page-application) application** in React.
+[Create React App](https://github.com/facebookincubator/create-react-app) යනු **React ඉගෙනීම** සඳහා පහසු පරිසරයකි, සහ **නව [තනි පිටුවේ](/docs/glossary.html#single-page-application) React යෙදුමක්** ගොඩනැගීම ඇරඹීමට හොඳම මාර්ගයයි.
 
-It sets up your development environment so that you can use the latest JavaScript features, provides a nice developer experience, and optimizes your app for production. You’ll need to have [Node >= 8.10 and npm >= 5.6](https://nodejs.org/en/) on your machine. To create a project, run:
+එය ඔබට නවතම විශේෂාංග භාවිත කිරීමට, හොඳ සංවර්ධක අත්දැකීමක් ලබා ගැනීමට සහ ඔබේ යෙදුම නිකුත් කිරීම සඳහා ප්‍රශස්තකරණය කිරීමට හැකි වන පරිදි සංවර්ධන පරිසරයක් සකසා දෙයි. මේ සඳහා [Node >= 8.10 සහ npm >= 5.6](https://nodejs.org/en/) ඔබේ පරිගණකයේ තිබිය යුතුය. ව්‍යාපෘතියක් නිර්මාණය කිරීමට දුවවන්න:
 
 ```bash
 npx create-react-app my-app
@@ -47,46 +47,48 @@ cd my-app
 npm start
 ```
 
->Note
+>සටහන
 >
->`npx` on the first line is not a typo -- it's a [package runner tool that comes with npm 5.2+](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
+>පළමු පෙළෙහි `npx` යනු අක්ෂර වින්‍යාස දෝෂයක් නොවේ -- එය [npm 5.2+ සමඟ පැමිණෙන පැකේජ දිවවුම් උපාංගයකි](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
 
-Create React App doesn't handle backend logic or databases; it just creates a frontend build pipeline, so you can use it with any backend you want. Under the hood, it uses [Babel](https://babeljs.io/) and [webpack](https://webpack.js.org/), but you don't need to know anything about them.
+Create React App, පසු අන්තයේ තර්කයන් හෝ දත්ත ගබඩා නොහසුරුවයි; එය හුදෙක් ඕනෑම පසු අන්තයක් සමඟ භාවිත කළ හැකි පරිදි ඉදිරි අන්තයේ ගොඩනැංවුම් මාර්ගයක් නිර්මාණය කරයි. තිරයට යටින්, එය [Babel](https://babeljs.io/) සහ [webpack](https://webpack.js.org/) භාවිත කරන නමුත්, ඔබ ඒවා ගැන කිසිවක් දැනගැනීම අවශ්‍ය නොවේ.
 
-When you're ready to deploy to production, running `npm run build` will create an optimized build of your app in the `build` folder. You can learn more about Create React App [from its README](https://github.com/facebookincubator/create-react-app#create-react-app--) and the [User Guide](https://facebook.github.io/create-react-app/).
+ඔබ නිකුත් කිරීමට සූදානම් විට, `npm run build` දුවවීම මඟින් `build` ගොනුවේ ඔබේ යෙදුමේ ප්‍රශස්ත ගොඩ නැගීමක් නිර්මාණය කෙරෙනු ඇත.වැඩිදුර තොරතුරු එහි [කියවුම් පිටුවෙන්](https://github.com/facebookincubator/create-react-app#create-react-app--) සහ [පරිශීලක මාර්ගෝපදේශයෙන්](https://facebook.github.io/create-react-app/) ඉගෙන ගත හැකිය. 
 
 ### Next.js {#nextjs}
 
-[Next.js](https://nextjs.org/) is a popular and lightweight framework for **static and server‑rendered applications** built with React. It includes **styling and routing solutions** out of the box, and assumes that you're using [Node.js](https://nodejs.org/) as the server environment.
+[Next.js](https://nextjs.org/) යනු React වලින් නිර්මාණය කෙරෙන **ස්ථිතික සහ සර්වරයේ විදැහුම්කරණය වන යෙදුම්** සඳහා වන ජනප්‍රිය සහ සැහැල්ලු රාමුවකි. එහි, **වහා භාවිතයට සුදානම් අලංකරණ සහ මාර්ග ස්ථානගත කිරීමේ විසඳුම්** අන්තර්ගත වන අතර,ඔබ සර්වර පරිසරය ලෙස [Node.js](https://nodejs.org/) භාවිත කරන බව උපකල්පනය කරයි.
 
-Learn Next.js from [its official guide](https://nextjs.org/learn/).
+[Next.js හි නිල මාර්ගොපදේශයෙන්](https://nextjs.org/learn/) ඉගෙන ගන්න.
 
 ### Gatsby {#gatsby}
 
-[Gatsby](https://www.gatsbyjs.org/) is the best way to create **static websites** with React. It lets you use React components, but outputs pre-rendered HTML and CSS to guarantee the fastest load time.
+[Gatsby](https://www.gatsbyjs.org/) යනු React සමඟ **ස්ථිතික වෙබ් අඩවි** නිර්මාණය කිරීමට ඇති හොඳම ක්‍රමයයි. එය ඔබට සංරචක භාවිත කිරීමට ඉඩදෙන අතර, පූර්ව විදැහුම්කරණය වූ HTML සහ CSS ප්‍රතිදානය කරමින් වේගවත්ම නැංවුම් කාලයක් සහතික කරයි.
 
-Learn Gatsby from [its official guide](https://www.gatsbyjs.org/docs/) and a [gallery of starter kits](https://www.gatsbyjs.org/docs/gatsby-starters/).
+[ඔවුන්ගේ නිල මාර්ගෝපදේශයෙන්](https://www.gatsbyjs.org/docs/) සහ [ ආරම්භක කට්ටල සමූහයකින්](https://www.gatsbyjs.org/docs/gatsby-starters/) Gatsby ඉගෙනගත හැකිය.
 
-### More Flexible Toolchains {#more-flexible-toolchains}
+### වඩා නම්‍යශීලී උපාංග කට්ටල {#more-flexible-toolchains}
 
-The following toolchains offer more flexibility and choice. We recommend them to more experienced users:
+පහත උපාංග කට්ටල වැඩිදුර නම්‍යශීලතාව  සහ තේරීමේ හැකියාවන් පිරිනමයි. අපි මේවා වඩාත් අත්දැකීම සහිත පරිශීලකයන්ට නිර්දේශ කරන්නෙමු: 
 
-- **[Neutrino](https://neutrinojs.org/)** combines the power of [webpack](https://webpack.js.org/) with the simplicity of presets, and includes a preset for [React apps](https://neutrinojs.org/packages/react/) and [React components](https://neutrinojs.org/packages/react-components/).
+- **[Neutrino](https://neutrinojs.org/)** පූර්ව සැකසුම් වල සරලත්වය සමඟ [webpack](https://webpack.js.org/)හි බලය සංයුක්ත කර, [React යෙදුම්](https://neutrinojs.org/packages/react/) සහ [React සංරචක](https://neutrinojs.org/packages/react-components/). සඳහා පූර්ව සැකසුමක් අන්තර්ගත කරයි.
 
-- **[Parcel](https://parceljs.org/)** is a fast, zero configuration web application bundler that [works with React](https://parceljs.org/recipes.html#react).
+- **[Nx](https://nx.dev/react)** යනු React, Next.js, [Express](https://expressjs.com/) සහ තවත් ඒවා සඳහා නිසග සහය දක්වන, පූර්ණ අන්ත තනි කේත නිධි සංවර්ධනය සඳහා  වන උපාංග කට්ටලයකි.
 
-- **[Razzle](https://github.com/jaredpalmer/razzle)** is a server-rendering framework that doesn't require any configuration, but offers more flexibility than Next.js.
+- **[Parcel](https://parceljs.org/)** යනු [React සමඟ ක්‍රියාත්මක වන](https://parceljs.org/recipes.html#react), වේගවත්, ශුන්‍ය වින්‍යාසකරණ වෙබ් යෙදුම් ගොනු කරණයකි.
 
-## Creating a Toolchain from Scratch {#creating-a-toolchain-from-scratch}
+- **[Razzle](https://github.com/jaredpalmer/razzle)** යනු කිසිදු වින්‍යාසකරණයක් අවශ්‍ය නොවන, නමුත් Next.js ට වඩා නම්‍යශීලී  සර්වර විදැහුම්කරණ ක්‍රමලේඛ රාමුවකි.
 
-A JavaScript build toolchain typically consists of:
+## මුල සිට උපාංග කට්ටලයක් නිර්මාණය කිරීම {#creating-a-toolchain-from-scratch}
 
-* A **package manager**, such as [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/). It lets you take advantage of a vast ecosystem of third-party packages, and easily install or update them.
+JavaScript නිමැවුම් උපාංග කට්ටලයක් පහත ඒවායින් සමන්විත වේ:
 
-* A **bundler**, such as [webpack](https://webpack.js.org/) or [Parcel](https://parceljs.org/). It lets you write modular code and bundle it together into small packages to optimize load time.
+* **පැකේජ කළමනාකාරකයක්**, උදා: [Yarn](https://yarnpkg.com/) හෝ [npm](https://www.npmjs.com/). එය ඔබට අති විශාල තෙවන පාර්ශයීය පැකේජවලින් වාසි ලබා ගැනීමට, ඒවා පහසුවෙන් ස්ථාපනය කිරීමට සහ යාවත්කාලීන කිරීමට ඉඩ සලසයි.
 
-* A **compiler** such as [Babel](https://babeljs.io/). It lets you write modern JavaScript code that still works in older browsers.
+* **පොදි සකසනය**ක්, උදාහරණ: [webpack](https://webpack.js.org/) හෝ [Parcel](https://parceljs.org/). එය ඔබට මොඩියුල ආකාරයෙන් කේත ලිවීමට සහ නැංවුම් කාලය ප්‍රශස්තකරණය කිරීම සඳහා කේතය කුඩා පැකේජවලට බෙදා ගොනු කිරීමට ඉඩ දේ.
 
-If you prefer to set up your own JavaScript toolchain from scratch, [check out this guide](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658) that re-creates some of the Create React App functionality.
+* **සම්පාදකය**ක්. උදාහරණ: [Babel](https://babeljs.io/). එය ඔබට නවීන ආරයට රචිත කේතය පැරණි ගවේෂකවල ද දුවවීමට ඉඩ සලසයි. 
 
-Don't forget to ensure your custom toolchain [is correctly set up for production](/docs/optimizing-performance.html#use-the-production-build).
+ඔබ විසින් ඔබගේම උපාංග කට්ටලයක් මුල සිට සකසා ගැනීමට ඔබ වඩාත් කැමති නම්, Create React App හි සමහර විශේෂාංග ප්‍රතිනිර්මාණය කරන [මෙම මාර්ගෝපදේශය පරීක්ෂා කරන්න.](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658)
+
+ඔබේ අභිරුචි උපාංග කට්ටලය [අවසන් නිෂ්පාදනය සඳහා නිවැරදිව සකසා ඇති බවට](/docs/optimizing-performance.html#use-the-production-build) සහතික වීමට අමතක නොකරන්න.
