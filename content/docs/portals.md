@@ -1,20 +1,20 @@
 ---
 id: portals
-title: Portals
+title: ද්වාර
 permalink: docs/portals.html
 ---
 
-Portals provide a first-class way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
+ද්වාර යනු parent සංරචකයේ DOM ධූරාවලියෙන් බාහිරව පිහිටන children සංරචක, එම DOM ධූරාවලියේ විදහා දැක්වීමට භාවිතා කරන පළමු පෙල ක්‍රමයකි.
 
 ```js
 ReactDOM.createPortal(child, container)
 ```
 
-The first argument (`child`) is any [renderable React child](/docs/react-component.html#render), such as an element, string, or fragment. The second argument (`container`) is a DOM element.
+පළමු පරාමිතිය (`child`) ලෙස ඕනෑම [විදහා දැක්විය හැකි React child සංරචකයක්](/docs/react-component.html#render), හෝ එවැනි මූලික කොටසක්, වාක්‍යක්, හෝ ඛණ්ඩයක් ආදානය කල යුතුය. දෙවන පරාමිතිය (`container`) ලෙස DOM සංරචකයක් ඇතුලත් කල යුතුය.
 
-## Usage {#usage}
+## භාවිතය {#usage}
 
-Normally, when you return an element from a component's render method, it's mounted into the DOM as a child of the nearest parent node:
+සාමාන්‍යයෙන්, ඔබ සංරචකයේ render උපයෝගීතාව මගින් යමක් ප්‍රතිදානය කල විට, එය ළඟම ඇති parent සංරචකයෙහි child සංරචකයක් ලෙස DOM තුලට එක් වෙයි:
 
 ```js{4,6}
 render() {
@@ -27,7 +27,7 @@ render() {
 }
 ```
 
-However, sometimes it's useful to insert a child into a different location in the DOM:
+කෙසේ වෙතත්, සමහර අවස්ථාවන්හිදී DOM හි වෙනත් ස්ථානයකට child සංරචකයක් ඇතුළත් කිරීම ප්‍රයෝජනවත් වේ:
 
 ```js{6}
 render() {
@@ -40,21 +40,21 @@ render() {
 }
 ```
 
-A typical use case for portals is when a parent component has an `overflow: hidden` or `z-index` style, but you need the child to visually "break out" of its container. For example, dialogs, hovercards, and tooltips.
+ද්වාර වල සාමාන්‍ය භාවිතය නම්, parent සංරචකයක `overflow: සැඟවුන` හෝ` z-index` ශෛලිය ඇති විට, එසේ උවද ඔබට දෘශ්‍යමය වශයෙන් child සංරචකයෙහි රැඳවුමක් "වෙන් කර දැක්වීමට" child සංරචකය අවශ්‍යය වූ විටදී. උදාහරණ ලෙස, විමසීම් කවුලු (modal), චලනය කල හැකි කාඩ්පත් සහ මෙවලම් ඉඟි දැක්විය හැක.
 
-> Note:
+> සටහන:
 >
-> When working with portals, remember that [managing keyboard focus](/docs/accessibility.html#programmatically-managing-focus) becomes very important.
+>ද්වාර සමඟ වැඩ කරන විට, මතක තබා ගන්න [යතුරු පුවරුව නාභිගත කිරීම](/docs/accessibility.html#programmatically-managing-focus) ඉතා වැදගත් වන බව.
 >
-> For modal dialogs, ensure that everyone can interact with them by following the [WAI-ARIA Modal Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal).
+> විමසීම් කවුලු (modal) සඳහා [WAI-ARIA මාදිලියේ අනුමත කිරීමේ භාවිතයන්](https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal) සෑම කෙනෙකුටම එම කවුලු සමඟ අන්තර් ක්‍රියා කළ හැකි බවට වග බලා ගන්න.
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/yzMaBd)
+[**CodePen මගින් උත්සාහ කරන්න**](https://codepen.io/gaearon/pen/yzMaBd)
 
-## Event Bubbling Through Portals {#event-bubbling-through-portals}
+## ද්වාර හරහා සිදුවීම් බුබුලු {#event-bubbling-through-portals}
 
-Even though a portal can be anywhere in the DOM tree, it behaves like a normal React child in every other way. Features like context work exactly the same regardless of whether the child is a portal, as the portal still exists in the *React tree* regardless of position in the *DOM tree*.
+DOM ධූරාවලියේ ඕනෑම තැනක ද්වාරයක් තිබිය හැකි වුවද, එය අනෙක් සෑම ආකාරයකින්ම සාමාන්‍ය React child සංරචකයක් ලෙස හැසිරේ. Context වැනි විශේෂාංග child සංරචකය ද්වාරයක් වූවද ඉතාමත් සමාන ආකරයෙන්ම ක්‍රියා කරන්වා, මක්නිසාදයත් ද්වාරය තවමත් *React ධූරාවලිය* හි තිබෙන නිසා *DOM ධූරාවලිය* හි පිහිටීම කෙසේවුවත්.
 
-This includes event bubbling. An event fired from inside a portal will propagate to ancestors in the containing *React tree*, even if those elements are not ancestors in the *DOM tree*. Assuming the following HTML structure:
+සිදුවීම් බුබුලු මෙයට ඇතුළත්ය. ද්වාරයක් තුළ සිට ක්‍රියත්මක කරනු ලැබූ සිදුවීමක්, එම සිදුවීම *DOM ධූරාවලිය* මගින් පැවත එන්නක් නොවන විට දී වුවත්, *React ධූරාවලිය* අඩංගු පැවත එන්නන් වෙතට ප්‍රචාරණය කරනු ඇත. පහත දැක්වෙන HTML ව්යුහය උපකල්පනය කිරීම:
 
 ```html
 <html>
@@ -65,7 +65,7 @@ This includes event bubbling. An event fired from inside a portal will propagate
 </html>
 ```
 
-A `Parent` component in `#app-root` would be able to catch an uncaught, bubbling event from the sibling node `#modal-root`.
+`#app-root` හි ඇති `Parent` සංරචකයට, අල්ලා නොගත් බුබුලු සිදුවීමක් `#modal-root` සහෝදර නෝඩය මගින් අල්ලා ගැනීමට හැකි වේ.
 
 ```js{28-31,42-49,53,61-63,70-71,74}
 // These two containers are siblings in the DOM
@@ -149,6 +149,6 @@ function Child() {
 ReactDOM.render(<Parent />, appRoot);
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/jGBWpE)
+[**CodePen මගින් උත්සාහ කරන්න**](https://codepen.io/gaearon/pen/jGBWpE)
 
-Catching an event bubbling up from a portal in a parent component allows the development of more flexible abstractions that are not inherently reliant on portals. For example, if you render a `<Modal />` component, the parent can capture its events regardless of whether it's implemented using portals.
+Parent සංරචකයක් තුළ ද්වාරයකින් බුබුලු සිදුවීමක් අල්ලා ගැනීම ද්වාරයන් මත සහජයෙන්ම රඳා නොපවතින වඩාත් නම්‍යශීලී වියුක්ත කිරීම් වර්ධනය කිරීමට ඉඩ සලසයි. උදාහරණයක් වශයෙන්, ඔබ `<Modal />` සංරචකයක් ඉදිරිපත් කරන්නේ නම්, ද්වාරය භාවිතයෙන් එය නිර්මානය කළ ද යන්න නොසලකා Parent සංරචකයට එහි සිදුවීම් ග්‍රහණය කර ගත හැකිය.
