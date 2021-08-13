@@ -42,6 +42,7 @@ class Welcome extends React.Component {
 
 ඉහතින් ඇති component දෙක React වලට අනුව බලන විට සමාන component දෙකකි.
 
+
 Classes වලට අමතර ලක්ෂණ කිහිපයක් ඇත. අප ඒවා [ඊළඟ කාණ්ඩ](/docs/state-and-lifecycle.html) වලදී සාකච්ඡා කරනවා. ඒ වන තුරු අප function components භාවිතා කරමු, මක් නිසාද යත් ඒවා කෙටි බැවින්.
 
 ## Component එකක් Render කිරීම {#rendering-a-component}
