@@ -42,11 +42,7 @@ class Welcome extends React.Component {
 
 ඉහතින් ඇති component දෙක React වලට අනුව බලන විට සමාන component දෙකකි.
 
-<<<<<<< HEAD
 Classes වලට අමතර ලක්ෂණ කිහිපයක් ඇත. අප ඒවා [ඊළඟ කාණ්ඩ](/docs/state-and-lifecycle.html) වලදී සාකච්ඡා කරනවා. ඒ වන තුරු අප function components භාවිතා කරමු, මක් නිසාද යත් ඒවා කෙටි බැවින්.
-=======
-Function and Class components both have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html).
->>>>>>> b3c7f041586b71b31f556403426fcd7cab342535
 
 ## Component එකක් Render කිරීම {#rendering-a-component}
 
@@ -62,11 +58,7 @@ const element = <div />;
 const element = <Welcome name="Sara" />;
 ```
 
-<<<<<<< HEAD
-React විසින් පරිශීලක-අර්ථ දැක්වු(user-defined) component එකක් නිරීක්ෂණය කරන විට, එය එම component එකට තනි object ලෙස JSX attributes ලබාදේ.  අප මෙම object එක "props" ලෙස හඳුන්වයි.
-=======
-When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object "props".
->>>>>>> b3c7f041586b71b31f556403426fcd7cab342535
+React විසින් පරිශීලක-අර්ථ දැක්වු(user-defined) component එකක් නිරීක්ෂණය කරන විට, එය එම component එකට තනි object ලෙස JSX attributes ලබාදේ. අප මෙම object එක "props" ලෙස හඳුන්වයි.
 
 උදාහරණයක් ලෙස ගත්තොත්, පහත code එක "Hello, Sara" ලෙස වෙබ් පිටුවේ පෙන්නුම් කරයි.
 

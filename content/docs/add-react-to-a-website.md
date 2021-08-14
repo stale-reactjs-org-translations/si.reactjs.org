@@ -1,6 +1,6 @@
 ---
 id: add-react-to-a-website
-title: Add React to a Website
+title: වෙබ් අඩවියකට React එකතු කිරීම
 permalink: docs/add-react-to-a-website.html
 redirect_from:
   - "docs/add-react-to-an-existing-app.html"
@@ -8,122 +8,121 @@ prev: getting-started.html
 next: create-a-new-react-app.html
 ---
 
-Use as little or as much React as you need.
+ඔබට අවශ්‍ය පරිදි හැකිතාක් කුඩා හෝ විශාල ප්‍රමාණයෙන් React භාවිත කරන්න. 
 
-React has been designed from the start for gradual adoption, and **you can use as little or as much React as you need**. Perhaps you only want to add some "sprinkles of interactivity" to an existing page. React components are a great way to do that.
+React මුල සිටම සැලසුම් කර ඇත්තේ ක්‍රමික භාවිතය සඳහා වන අතර ඔබට **හැකිතරම් කුඩා හෝ හැකිතරම් විශාල ආකාරයකින්, ඔබේ අවශ්‍යතාව පරිදි එය භාවිත කළ හැකිය**. සමහර විට ඔබට අවශ්‍ය වී ඇත්තේ දැනටමත් පවතින පිටුවකට කුඩා අන්තර් ක්‍රියාකාරීත්වයක් එක් කිරීමට පමණක් විය හැකිය. React සංරචක යනු ඒ සඳහා කදිම මාර්ගයකි.
 
-The majority of websites aren't, and don't need to be, single-page apps. With **a few lines of code and no build tooling**, try React in a small part of your website. You can then either gradually expand its presence, or keep it contained to a few dynamic widgets.
+වෙබ් අඩවි බහුතරයක් තනි-පිටුවේ යෙදුම් නොවන අතර එසේ වීමට අවශ්‍ය ද නොවේ. **ඉතා කුඩා කේත පේළි කිහිපයක් සහ ගොඩනැගීම් උපාංග කිසිවකින් තොරව**, ඔබේ වෙබ් අඩවියේ කුඩා කොටසක React අත්හදා බලන්න. ඉන් පසුව ඔබට එහි පැවැත්ම ක්‍රමිකව ව්‍යාප්ත කිරීමට හෝ කුඩා ගතික සංරචක කීපයකට සීමා කිරීමට පුළුවන.
 
 ---
 
-- [Add React in One Minute](#add-react-in-one-minute)
-- [Optional: Try React with JSX](#optional-try-react-with-jsx) (no bundler necessary!)
+- [මිනිත්තුවකින් React එකතු කරන්න](#add-react-in-one-minute)
+- [අභිමත: JSX සමඟ React අත්හදා බලන්න](#optional-try-react-with-jsx) ( කිසිදු පොදි සැකසුමක් අවශ්‍ය නොවේ!)
 
-## Add React in One Minute {#add-react-in-one-minute}
+## මිනිත්තුවකින් React එකතු කරන්න {#add-react-in-one-minute}
 
-In this section, we will show how to add a React component to an existing HTML page. You can follow along with your own website, or create an empty HTML file to practice.
+මෙම කොටසේදී, පවතින HTML පිටුවකට React සංරචකයක් එකතු කරන්නේ කෙසේදැයි අපි ඔබට පෙන්වන්නෙමු. ඔබට ඔබේම වෙබ් අඩවියේ මෙය අත්හදා බැලිය හැකිය, නැත්නම් පුහුණුවීම සඳහා හිස් HTML පිටුවක් නිර්මාණය කරගන්න.
 
-There will be no complicated tools or install requirements -- **to complete this section, you only need an internet connection, and a minute of your time.**
+**මෙම කොටස සම්පූර්ණ කිරීම සඳහා ඔබට අවශ්‍ය වන්නේ අන්තර්ජාල සම්බන්ධතාවක් සහ ඔබේ කාලයෙන් මිනිත්තුවක් පමණි**. වෙනත් කිසිදු සංකීර්ණ උපාංගයක් හෝ ස්ථාපනය කරගත යුතු කිසිවක් අවශ්‍ය නොවේ.
 
-Optional: [Download the full example (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)
+අභිමත: [සම්පූර්ණ උදාහරණය බාගත කරගන්න (2KB අසුරන ලද)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)
 
-### Step 1: Add a DOM Container to the HTML {#step-1-add-a-dom-container-to-the-html}
+### පියවර 1: HTML වලට DOM රැඳවුමක් එක් කරන්න. {#step-1-add-a-dom-container-to-the-html}
 
-First, open the HTML page you want to edit. Add an empty `<div>` tag to mark the spot where you want to display something with React. For example:
+පළමුව, ඔබට සංස්කරණය කිරීමට අවශ්‍ය HTML පිටුව විවෘත කරගන්න. ඔබට React වලින් යමක් පෙන්විය යුතු ස්ථානයට හිස් ටැගයක් එකතු කරන්න. උදාහරණයක් ලෙස:
 
 ```html{3}
-<!-- ... existing HTML ... -->
+<!-- ... පවතින HTML ... -->
 
 <div id="like_button_container"></div>
 
-<!-- ... existing HTML ... -->
+<!-- ... පවතින HTML ... -->
 ```
 
-We gave this `<div>` a unique `id` HTML attribute. This will allow us to find it from the JavaScript code later and display a React component inside of it.
+අපි මෙම `<div>` ට, `id` භාවිතයෙන් අනන්‍ය හැඳින්වීමක් ලබා දුන්නෙමු. මෙය අපිට පසුව JavaScript කේතය තුළින් එය සොයා ගැනීමට සහ එතුළ React සංරචකයක් ප්‍රදර්ශනය කිරීමට ඉඩ සලසයි
 
->Tip
+>ඉඟිය
 >
->You can place a "container" `<div>` like this **anywhere** inside the `<body>` tag. You may have as many independent DOM containers on one page as you need. They are usually empty -- React will replace any existing content inside DOM containers.
+>ඔබට මෙවැනි `<div>` “රැඳවුමක්”, `<body>` ටැගය තුළ **ඕනෑම ස්ථානයක** ස්ථාපනය කළ හැකිය. ඔබට එක පිටුවක් තුළ ඔබේ අවශ්‍යතාව පරිදි ඕනෑ තරම් ස්වාධීන DOM රැඳවුම් ප්‍රමාණයක් රැඳවිය හැක. ඒවා  සාමාන්‍යයෙන් හිස්ය  -- React විසින් DOM රැඳවුම් තුළ පවතින කිසියම් අන්තර්ගතයක් ප්‍රතිස්ථාපනය කෙරෙනු ඇත. 
 
-### Step 2: Add the Script Tags {#step-2-add-the-script-tags}
+### පියවර 2: Script ටැග එකතු කරන්න {#step-2-add-the-script-tags}
 
-Next, add three `<script>` tags to the HTML page right before the closing `</body>` tag:
+මීළඟට , වැසෙන `</body>` ටැගයට පෙර `<script>` ටැග තුනක් එකතු කරන්න:
 
 ```html{5,6,9}
-  <!-- ... other HTML ... -->
+  <!-- ... වෙනත් HTML ... -->
 
-  <!-- Load React. -->
-  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <!-- React නංවන්න. -->
+  <!-- සටහන: (ප්‍රායෝගික) යෙදවීමේදී, "development.js" යන්න "production.min.js" මඟින් ප්‍රතිස්ථාපනය කරන්න. -->
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 
-  <!-- Load our React component. -->
+  <!-- අපගේ React සංරචකය නංවන්න. -->
   <script src="like_button.js"></script>
 
 </body>
 ```
 
-The first two tags load React. The third one will load your component code.
+පළමු ටැගයන් දෙක React නංවයි. තුන්වැන්න ඔබේ  සංරචකයේ කේතය නංවනු ඇත.
 
-### Step 3: Create a React Component {#step-3-create-a-react-component}
+### පියවර 3: React සංරචකයක් නිර්මාණය කරන්න {#step-3-create-a-react-component}
 
-Create a file called `like_button.js` next to your HTML page.
+ඔබේ HTML පිටුවට යාබදව `like_button.js` නම් ලේඛනයක් නිර්මාණය කරන්න.
+ **[මෙම ආරම්භක කේතය](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** විවෘත කර ඔබ නිර්මාණය කළ ලේඛනයට පිටපත් කර ගන්න.
 
-Open **[this starter code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** and paste it into the file you created.
-
->Tip
+>ඉඟිය 
 >
->This code defines a React component called `LikeButton`. Don't worry if you don't understand it yet -- we'll cover the building blocks of React later in our [hands-on tutorial](/tutorial/tutorial.html) and [main concepts guide](/docs/hello-world.html). For now, let's just get it showing on the screen!
+>මෙම කේතය `LikeButton` නම් React සංරචකයක් අර්ථ දක්වයි. ඔබට එය තවම වටහා ගත නොහැකි නම් වික්ෂිප්ත නොවන්න -- අපි, React හි මූලිකාංග, අපගේ [ප්‍රායෝගික නිබන්ධනයේ](/tutorial/tutorial.html) සහ [ප්‍රධාන සංකල්ප මාර්ගෝපදේශයේ](/docs/hello-world.html) දී  පසුව ආවරණය කරන්නෙමු. දැනට අපි තිරයේ දිස්වන දේ එයාකාරයෙන් පිළිගනිමු!
 
-After **[the starter code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, add two lines to the bottom of `like_button.js`:
+**[ආරම්භක කේතයෙන් ](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** පසුව, `like_button.js` හි අවසානයට පහත කේත දෙපෙළ එක් කරන්න:
 
 ```js{3,4}
-// ... the starter code you pasted ...
+// ... ඔබ පිටපත් කළ ආරම්භක කේතය ...
 
 const domContainer = document.querySelector('#like_button_container');
 ReactDOM.render(e(LikeButton), domContainer);
 ```
 
-These two lines of code find the `<div>` we added to our HTML in the first step, and then display our "Like" button React component inside of it. 
+මෙම කේත දෙපෙළ, පළමු පියවරේදී, අපි HTML වලට එකතු කළ `<div>` සොයාගෙන, අපගේ "Like" බොත්තම නම්  React සංරචකය එතුළ දර්ශනය කරනු ලබයි. 
 
-### That's It! {#thats-it}
+### එපමණයි! {#thats-it}
 
-There is no step four. **You have just added the first React component to your website.**
+හතරවන පියවරක් නැත. **ඔබ පළමු React සංරචකය ඔබේ වෙබ් පිටුවට එකතු කර තිබේ.**
 
-Check out the next sections for more tips on integrating React.
+React ඒකාබද්ධ කිරීම පිළිබඳ වැඩිදුර ඉඟි සඳහා මීළග කොටස් පරිශීලනය කරන්න
 
-**[View the full example source code](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605)**
+**[සම්පූර්ණ උදාහරණයේ කේතය බලන්න](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605)**
 
-**[Download the full example (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)**
+**[සමපුර්ණ උදාහරණය බාගත කරගන්න (2KB අසුරන ලද)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)**
 
-### Tip: Reuse a Component {#tip-reuse-a-component}
+### ඉඟිය: සංරචකයක් නැවත නැවත භාවිත කරන්න {#tip-reuse-a-component}
 
-Commonly, you might want to display React components in multiple places on the HTML page. Here is an example that displays the "Like" button three times and passes some data to it:
+සාමාන්‍යයෙන්, ඔබට React සංරචකයන් HTML පිටුවේ විවිධ ස්ථානවල ප්‍රදර්ශනය කිරීමට ද අවශ්‍ය වනු ඇත. පහත දැක්වෙන්නේ "Like" බොත්තම තෙවරක් ප්‍රදර්ශනය කර එයට යම් දත්ත සපයන අයුරු නිදර්ශනය කෙරෙන උදාහරණයකි:
 
-[View the full example source code](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda)
+[සම්පූර්ණ උදාහරණයේ කේතය බලන්න](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda)
 
-[Download the full example (2KB zipped)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/9d0dd0ee941fea05fd1357502e5aa348abb84c12.zip)
+[සමපුර්ණ උදාහරණය බාගත කරගන්න (2KB අසුරන ලද)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/9d0dd0ee941fea05fd1357502e5aa348abb84c12.zip)
 
->Note
+>සටහන
 >
->This strategy is mostly useful while React-powered parts of the page are isolated from each other. Inside React code, it's easier to use [component composition](/docs/components-and-props.html#composing-components) instead.
+>React අන්තර්ගත කොටස් එකිනෙකින් වෙන්වූ පිටුවල ඇති විට මෙම උපාය වඩාත් ප්‍රයෝජනවත් වේ. ඒ වෙනුවට, React කේතය තුළ [සංරචක සංයුතිකරණය](/docs/components-and-props.html#composing-components) භාවිත කිරීම වඩා පහසුය.
 
-### Tip: Minify JavaScript for Production {#tip-minify-javascript-for-production}
+### ඉඟිය: නිකුත් කිරීම සඳහා JavaScript කුඩා කර අසුරන්න. {#tip-minify-javascript-for-production}
 
-Before deploying your website to production, be mindful that unminified JavaScript can significantly slow down the page for your users.
+ඔබේ වෙබ් අඩවිය නිකුත් කිරීමට පෙර, කුඩා කර නොඅසුරන ලද JavaScript මඟින් ඔබේ පරිශීලකයන් සඳහා පිටුව සැලකිය යුතු ලෙස මන්දගාමී විය හැකි බවට කල්පනාකාරී වන්න.
 
-If you already minify the application scripts, **your site will be production-ready** if you ensure that the deployed HTML loads the versions of React ending in `production.min.js`:
+ඔබ දැනටමත් යෙදුම් පිටපත් කුඩා කොට අසුරන්නේ නම් සහ ඔබේ නිකුත් කළ වෙබ් අඩවියේ `production.min.js` න් අවසන් වන React පිටපත් නැංවෙන බව සහතික නම්, **ඔබේ වෙබ්අඩවිය නිකුත් කිරීමට සූදානම් තත්වයේ පවතී**:
 
 ```js
 <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
 ```
 
-If you don't have a minification step for your scripts, [here's one way to set it up](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3).
+ඔබේ යෙදුම් ක්‍රමාවලිය සඳහා ඔබ කුඩා කර ඇසිරීම අනුගමනය නොකරන්නේ නම්, [එය සකස් කර ගැනීම සඳහා ක්‍රමයක් ඇත.](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3)
 
-## Optional: Try React with JSX {#optional-try-react-with-jsx}
+## අභිමත: JSX සමඟ React අත්හදා බලන්න {#optional-try-react-with-jsx}
 
-In the examples above, we only relied on features that are natively supported by the browsers. This is why we used a JavaScript function call to tell React what to display:
+ඉහත උදාහරණයන්හිදී, අපි ගවේෂකයන් විසින් මූලිකව සහය දක්වන විශේෂාංග මත පමණක් රැඳුණෙමු. අපි React ට කුමක් ප්‍රදර්ශනය කළ යුතුදැයි පැවසීම සඳහා JavaScript කෘත්‍යයක් භාවිත කළේ එනිසාය:
 
 ```js
 const e = React.createElement;
@@ -136,10 +135,10 @@ return e(
 );
 ```
 
-However, React also offers an option to use [JSX](/docs/introducing-jsx.html) instead:
+කෙසේ නමුත්, React විසින් [JSX](/docs/introducing-jsx.html) භාවිත කිරීමට ද පහසුකම් සලසයි
 
 ```js
-// Display a "Like" <button>
+//  "Like" <බොත්තම> පෙන්වන්න
 return (
   <button onClick={() => this.setState({ liked: true })}>
     Like
@@ -147,56 +146,56 @@ return (
 );
 ```
 
-These two code snippets are equivalent. While **JSX is [completely optional](/docs/react-without-jsx.html)**, many people find it helpful for writing UI code -- both with React and with other libraries.
+මෙම කේත කොටස් දෙක සමානය. JSX **[සම්පූර්ණයෙන් අභිමත](/docs/react-without-jsx.html)** වුවත්, බොහෝ දෙනා එය React සමඟ සහ වෙනත් එවැනි පුස්තකාල සමඟ පරිශීලක අතුරුමුහුණත් නිර්මාණය කිරීමට සහය කරගනී.  
 
-You can play with JSX using [this online converter](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3).
+ඔබට [මෙම මාර්ගගත පරිවර්තකය](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3) භාවිතයෙන් JSX සමඟ ක්‍රීඩා කළ හැකිය.
 
-### Quickly Try JSX {#quickly-try-jsx}
+### ක්ෂණිකව JSX අත්හදා බලන්න{#quickly-try-jsx}
 
-The quickest way to try JSX in your project is to add this `<script>` tag to your page:
+ඔබේ ව්‍යාපෘතියේ JSX උත්සාහ කිරීමට වේගවත් ම ක්‍රමය නම් මෙම `<script>` ටැගය ඔබේ පිටුවට එකතු කිරීමයි:
 
 ```html
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 ```
 
-Now you can use JSX in any `<script>` tag by adding `type="text/babel"` attribute to it. Here is [an example HTML file with JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) that you can download and play with.
+දැන් ඔබට ඕනෑම `<script>` ටැගයකට `type="text/babel"` ලක්ෂණය එක් කිරීමෙන් එතුළ JSX භාවිත කළ හැකිය. මෙහි ඇත්තේ ඔබට බාගත කරගෙන අත්හදා බැලිය හැකි [JSX සහිත උදාහරණ HTML ලේඛනයකි](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html).
 
-This approach is fine for learning and creating simple demos. However, it makes your website slow and **isn't suitable for production**. When you're ready to move forward, remove this new `<script>` tag and the `type="text/babel"` attributes you've added. Instead, in the next section you will set up a JSX preprocessor to convert all your `<script>` tags automatically.
+ඉගෙනීමට සහ සරල ආදර්ශන සැකසීමට මෙම අවතීර්ණය ප්‍රමාණවත් ය. කෙසේ නමුත්, එය ඔබේ වෙබ් අඩවිය මන්දගාමී සහ **නිකුත් කිරීමට නුසුදුසු භාවයට පත් කරයි**. ඔබ ඉදිරියට යාමට සූදානම් විට මෙම නව `<script>` ටැග සහ එකතු කළ `type="text/babel"` ලක්ෂණ ඉවත් කරන්න. ඒ වෙනුවට මීළග කොටසේදී ඔබේ සියලුම `<script>`ටැග ස්වයංක්‍රීය ව පරිවර්තනය කිරීම සඳහා JSX පෙර සකසනයක් සකස් කරගනු ඇත.
 
-### Add JSX to a Project {#add-jsx-to-a-project}
+### ව්‍යාපෘතියකට JSX එකතු කරන්න {#add-jsx-to-a-project}
 
-Adding JSX to a project doesn't require complicated tools like a bundler or a development server. Essentially, adding JSX **is a lot like adding a CSS preprocessor.** The only requirement is to have [Node.js](https://nodejs.org/) installed on your computer.
+ව්‍යාපෘතියකට JSX එකතු කිරීම සඳහා පොදි සකසනයක් හෝ සංවර්ධන සර්වරයක් වැනි සංකීර්ණ උපාංග අවශ්‍ය නොවේ. අත්‍යවශයෙන්ම, JSX එක් කිරීම, **බොහෝ දුරට CSS පෙරසකසනයක් එක් කිරීමට සමානය**. එකම අවශ්‍යතාව වන්නේ ඔබේ පරිගණකයෙහි [Node.js](https://nodejs.org/) ස්ථාපනය කොට තිබීමයි
 
-Go to your project folder in the terminal, and paste these two commands:
+අග්‍රස්ථයෙන් ඔබේ ව්‍යාපෘති ගොනුව වෙත ගොස්, පහත විධාන දෙක පිටපත් කරගන්න:
 
-1. **Step 1:** Run `npm init -y` (if it fails, [here's a fix](https://gist.github.com/gaearon/246f6380610e262f8a648e3e51cad40d))
-2. **Step 2:** Run `npm install babel-cli@6 babel-preset-react-app@3`
+1. **පියවර 1:** `npm init -y` දුවවන්න (එය අසාර්ථක වේ නම්, [මෙහි විසඳුමක් තිබේ](https://gist.github.com/gaearon/246f6380610e262f8a648e3e51cad40d))
+2. **පියවර 2:** `npm install babel-cli@6 babel-preset-react-app@3` දුවවන්න.
 
->Tip
+>ඉඟිය
 >
->We're **using npm here only to install the JSX preprocessor;** you won't need it for anything else. Both React and the application code can stay as `<script>` tags with no changes.
+>අප මෙහි npm භාවිත කරන්නේ **JSX පෙරසකසනය ස්ථාපනය කරගැනීම සඳහාය.** 
+ඔබට අන් කිසිවක් සඳහා එය අවශ්‍ය නොවනු ඇත. React සහ යෙදුම් කේතය යන දෙකටම `<script >` ටැග ලෙස කිසිදු වෙනසකින් තොරව  පවතිනු ඇත.
 
-Congratulations! You just added a **production-ready JSX setup** to your project.
+සුබ පැතුම්! ඔබ **නිකුත් කිරීමට ගැළපෙන JSX සැලසුමක්** ඔබේ ව්‍යාපෘතියට එකතු කළෙහිය.
 
+### JSX පෙරසකසනය දුවවන්න {#run-jsx-preprocessor}
 
-### Run JSX Preprocessor {#run-jsx-preprocessor}
-
-Create a folder called `src` and run this terminal command:
+`src` නම් ගොනුවක් නිර්මාණය කර පහත අග්‍රස්ථ විධානය දුවවන්න:	
 
 ```
 npx babel --watch src --out-dir . --presets react-app/prod 
 ```
 
->Note
+>සටහන
 >
->`npx` is not a typo -- it's a [package runner tool that comes with npm 5.2+](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
+>`npx` යනු අක්ෂර වින්‍යාස දෝෂයක් නොවේ -- එය [npm 5.2+ සමඟ පැමිණෙන පැකේජ දිවවුම් උපාංගයකි](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
 >
->If you see an error message saying "You have mistakenly installed the `babel` package", you might have missed [the previous step](#add-jsx-to-a-project). Perform it in the same folder, and then try again.
+>ඔබ "ඔබ අතපසුවීමකින් `babel` පැකේජය ස්ථාපනය කරගෙන ඇත" යයි කියැවෙන දෝෂ පණිවිඩයක් දකින්නේ නම්, ඔබ බොහෝ විට [පෙර පියවර](#add-jsx-to-a-project) මඟහැර ඇත. එම පියවර එම ගොනුව තුළම සිදුකර නැවත උත්සාහ කරන්න.
 
-Don't wait for it to finish -- this command starts an automated watcher for JSX.
+එය සම්පූර්ණ වන තුරු බලා නොසිටින්න -- මෙම විධානය JSX සඳහා ස්වංක්‍රීය නිරීක්ෂකයක් ආරම්භ කරයි. 
 
-If you now create a file called `src/like_button.js` with this **[JSX starter code](https://gist.github.com/gaearon/c8e112dc74ac44aac4f673f2c39d19d1/raw/09b951c86c1bf1116af741fa4664511f2f179f0a/like_button.js)**, the watcher will create a preprocessed `like_button.js` with the plain JavaScript code suitable for the browser. When you edit the source file with JSX, the transform will re-run automatically.
+ඔබ දැන් **[JSX ආරම්භක කේතය](https://gist.github.com/gaearon/c8e112dc74ac44aac4f673f2c39d19d1/raw/09b951c86c1bf1116af741fa4664511f2f179f0a/like_button.js)** භාවිතයෙන්  `src/like_button.js` නම් ලේඛනයක් නිර්මාණය කරයි නම්, නිරීක්ෂකය විසින්  ගවේශකය සඳහා සුදුසු කේතය සහිත පෙර  සැකසූ `src/like_button.js` ලේඛනයක් නිර්මාණය කෙරෙනු ඇත. ඔබ එම ලේඛනය JSX වලින් සංස්කරණය කිරීමේදී, පරිණාමනය ස්වයංක්‍රීය ව දිවවෙනු ඇත. 
 
-As a bonus, this also lets you use modern JavaScript syntax features like classes without worrying about breaking older browsers. The tool we just used is called Babel, and you can learn more about it from [its documentation](https://babeljs.io/docs/en/babel-cli/).
+අමතරව, මෙය ඔබට පැරණි ගවේෂකවලදී බිඳවැටීම් සිදු නොවන පරිදි, පන්ති වැනි නවීන JavaScript වින්‍යාස විශේෂාංග ද භාවිතයට ද ඉඩ සලසයි. අප භාවිත කළ උපාංගය නම් වන අතර [එහි ප්‍රලේඛනයෙන්](https://babeljs.io/docs/en/babel-cli/) ඔබට ඒ පිළිබඳ වැඩිදුර ඉගෙන ගත හැකි වනු ඇත.
 
-If you notice that you're getting comfortable with build tools and want them to do more for you, [the next section](/docs/create-a-new-react-app.html) describes some of the most popular and approachable toolchains. If not -- those script tags will do just fine!
+ඔබ ගොඩනැංවුම් උපාංග වලට හුරුවන බව සහ ඒවා වැඩිදුර භාවිත කිරීමට අවශ්‍ය බව, ඔබට හැඟෙන්නේ නම්, [මීළඟ කොටසේ](/docs/create-a-new-react-app.html) සමහර ජනප්‍රිය සහ භාවිතයට පහසු උපාංග කට්ටල කිහිපයක් විස්තර කෙරේ.ඒවා අවශ්‍ය නොවේ නම් -- script ටැග වුවද ප්‍රමාණවත් ය!
