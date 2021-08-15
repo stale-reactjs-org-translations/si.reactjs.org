@@ -9,8 +9,12 @@ redirect_from:
   - "docs/forms-zh-CN.html"
 ---
 
+<<<<<<< HEAD
 REACT හි HTML පෝ‍රමය ඇතුළත තිබෙන elements වල හැසිරීම වෙනත් DOM elements වලට වඩා වෙනස්වෙ. මෙයට 
 හෙතුව, HTML පෝරමයේ elements ස්වාභාවයෙන්ම අභ්‍යන්තර අගයන් තබාගනු ඇත. උදාහරණයක් වශයෙන්, මෙම HTML පෝරමය තනි නමක් භාරගනු ඇත.
+=======
+HTML form elements work a bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+>>>>>>> 95e15d063b205007a92c52efb5311f76ad5a0b6c
 
 ```html
 <form>
@@ -31,7 +35,7 @@ HTML හි, සාමාන්‍යයෙන් `<input>`, `<textarea>`, ස�
 
 උදාහරණයක් වශයෙන්, ඉහත HTML code එක පාලිත සංරචකයක් ලෙස ලිවීමෙන්, පරිශීලකයා submit බටනය ක්ලික් කරනවිට අපට පරිශීලකයාගේ නම alert (log) කිරීමට හැකිවේ.
 
-```javascript{4,10-12,24}
+```javascript{4,10-12,21,24}
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
@@ -215,7 +219,7 @@ class Reservation extends React.Component {
 
   handleInputChange(event) {
     const target = event.target;
-    const value = target.name === 'isGoing' ? target.checked : target.value;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
     this.setState({
