@@ -52,10 +52,17 @@ React මුල සිටම සැලසුම් කර ඇත්තේ ක්
 ```html{5,6,9}
   <!-- ... වෙනත් HTML ... -->
 
+<<<<<<< HEAD
   <!-- React නංවන්න. -->
   <!-- සටහන: (ප්‍රායෝගික) යෙදවීමේදී, "development.js" යන්න "production.min.js" මඟින් ප්‍රතිස්ථාපනය කරන්න. -->
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+=======
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+>>>>>>> a88b1e1331126287ccf03f2f4ec25ec38513b911
 
   <!-- අපගේ React සංරචකය නංවන්න. -->
   <script src="like_button.js"></script>
@@ -83,7 +90,11 @@ const domContainer = document.querySelector('#like_button_container');
 ReactDOM.render(e(LikeButton), domContainer);
 ```
 
+<<<<<<< HEAD
 මෙම කේත දෙපෙළ, පළමු පියවරේදී, අපි HTML වලට එකතු කළ `<div>` සොයාගෙන, අපගේ "Like" බොත්තම නම්  React සංරචකය එතුළ දර්ශනය කරනු ලබයි. 
+=======
+These two lines of code find the `<div>` we added to our HTML in the first step, and then display our "Like" button React component inside of it.
+>>>>>>> a88b1e1331126287ccf03f2f4ec25ec38513b911
 
 ### එපමණයි! {#thats-it}
 
@@ -114,15 +125,19 @@ React ඒකාබද්ධ කිරීම පිළිබඳ වැඩිද�
 ඔබ දැනටමත් යෙදුම් පිටපත් කුඩා කොට අසුරන්නේ නම් සහ ඔබේ නිකුත් කළ වෙබ් අඩවියේ `production.min.js` න් අවසන් වන React පිටපත් නැංවෙන බව සහතික නම්, **ඔබේ වෙබ්අඩවිය නිකුත් කිරීමට සූදානම් තත්වයේ පවතී**:
 
 ```js
-<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
 ```
 
 ඔබේ යෙදුම් ක්‍රමාවලිය සඳහා ඔබ කුඩා කර ඇසිරීම අනුගමනය නොකරන්නේ නම්, [එය සකස් කර ගැනීම සඳහා ක්‍රමයක් ඇත.](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3)
 
 ## අභිමත: JSX සමඟ React අත්හදා බලන්න {#optional-try-react-with-jsx}
 
+<<<<<<< HEAD
 ඉහත උදාහරණයන්හිදී, අපි ගවේෂකයන් විසින් මූලිකව සහය දක්වන විශේෂාංග මත පමණක් රැඳුණෙමු. අපි React ට කුමක් ප්‍රදර්ශනය කළ යුතුදැයි පැවසීම සඳහා JavaScript කෘත්‍යයක් භාවිත කළේ එනිසාය:
+=======
+In the examples above, we only relied on features that are natively supported by browsers. This is why we used a JavaScript function call to tell React what to display:
+>>>>>>> a88b1e1331126287ccf03f2f4ec25ec38513b911
 
 ```js
 const e = React.createElement;
@@ -158,7 +173,11 @@ return (
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 ```
 
+<<<<<<< HEAD
 දැන් ඔබට ඕනෑම `<script>` ටැගයකට `type="text/babel"` ලක්ෂණය එක් කිරීමෙන් එතුළ JSX භාවිත කළ හැකිය. මෙහි ඇත්තේ ඔබට බාගත කරගෙන අත්හදා බැලිය හැකි [JSX සහිත උදාහරණ HTML ලේඛනයකි](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html).
+=======
+Now you can use JSX in any `<script>` tag by adding `type="text/babel"` attribute to it. Here is [an example HTML file with JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/main/static/html/single-file-example.html) that you can download and play with.
+>>>>>>> a88b1e1331126287ccf03f2f4ec25ec38513b911
 
 ඉගෙනීමට සහ සරල ආදර්ශන සැකසීමට මෙම අවතීර්ණය ප්‍රමාණවත් ය. කෙසේ නමුත්, එය ඔබේ වෙබ් අඩවිය මන්දගාමී සහ **නිකුත් කිරීමට නුසුදුසු භාවයට පත් කරයි**. ඔබ ඉදිරියට යාමට සූදානම් විට මෙම නව `<script>` ටැග සහ එකතු කළ `type="text/babel"` ලක්ෂණ ඉවත් කරන්න. ඒ වෙනුවට මීළග කොටසේදී ඔබේ සියලුම `<script>`ටැග ස්වයංක්‍රීය ව පරිවර්තනය කිරීම සඳහා JSX පෙර සකසනයක් සකස් කරගනු ඇත.
 
@@ -183,7 +202,7 @@ return (
 `src` නම් ගොනුවක් නිර්මාණය කර පහත අග්‍රස්ථ විධානය දුවවන්න:	
 
 ```
-npx babel --watch src --out-dir . --presets react-app/prod 
+npx babel --watch src --out-dir . --presets react-app/prod
 ```
 
 >සටහන

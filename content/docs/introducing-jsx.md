@@ -182,4 +182,8 @@ const element = {
 
 >**ඉඟිය:**
 >
+<<<<<<< HEAD
 >ඔබේ editor හි තුල ["Babel" language definition](https://babeljs.io/docs/editors) භාවිතා කිරීම අපි නිර්දේශ කරමු,එවිට ES6 සහ JSX code දෙකම නිසි ලෙස ඉස්මතු වේ.
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> a88b1e1331126287ccf03f2f4ec25ec38513b911
