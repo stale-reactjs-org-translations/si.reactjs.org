@@ -9,8 +9,12 @@ redirect_from:
   - "docs/forms-zh-CN.html"
 ---
 
+<<<<<<< HEAD
 REACT හි HTML පෝ‍රමය ඇතුළත තිබෙන elements වල හැසිරීම වෙනත් DOM elements වලට වඩා වෙනස්වෙ. මෙයට 
 හෙතුව, HTML පෝරමයේ elements ස්වාභාවයෙන්ම අභ්‍යන්තර අගයන් තබාගනු ඇත. උදාහරණයක් වශයෙන්, මෙම HTML පෝරමය තනි නමක් භාරගනු ඇත.
+=======
+HTML form elements work a bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+>>>>>>> 4fab3d31469ab7a53dbf8b50cab5d57880a0c035
 
 ```html
 <form>
@@ -31,7 +35,7 @@ HTML හි, සාමාන්‍යයෙන් `<input>`, `<textarea>`, ස�
 
 උදාහරණයක් වශයෙන්, ඉහත HTML code එක පාලිත සංරචකයක් ලෙස ලිවීමෙන්, පරිශීලකයා submit බටනය ක්ලික් කරනවිට අපට පරිශීලකයාගේ නම alert (log) කිරීමට හැකිවේ.
 
-```javascript{4,10-12,24}
+```javascript{4,10-12,21,24}
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
@@ -215,7 +219,7 @@ class Reservation extends React.Component {
 
   handleInputChange(event) {
     const target = event.target;
-    const value = target.name === 'isGoing' ? target.checked : target.value;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
     this.setState({
@@ -273,7 +277,11 @@ this.setState(partialState);
 
 ## පාලිත ආදානය Null Value {#controlled-input-null-value}
 
+<<<<<<< HEAD
 [පාලිත සංරචකයක](/docs/forms.html#controlled-components) `value` property මත අගයක් සටහන් කිරීමෙන් ඔබ කැමති නැතිනම් පරිශීලකයාට ආදානය වෙනස් කිරීමට නොහැකිවේ. ඔබ අගයක් නියම කර ඇති නමුත් ආදානය තවමත් සංස්කරණය කළ හැකි නම්, ඔබ අහම්බෙන් වටිනාකම `undefined` හෝ `null` ලෙස සකසා ඇත.
+=======
+Specifying the `value` prop on a [controlled component](/docs/forms.html#controlled-components) prevents the user from changing the input unless you desire so. If you've specified a `value` but the input is still editable, you may have accidentally set `value` to `undefined` or `null`.
+>>>>>>> 4fab3d31469ab7a53dbf8b50cab5d57880a0c035
 
 පහත codeය මගින් මෙය පෙන්නුම් කරයි. (ආදානය මුලින් සංස්කරණය නොකළ හැකි ඇති නමුත් කෙටි ප්‍රමාදයකින් පසුව එය සංස්කරණය කළ හැකිය.)
 
