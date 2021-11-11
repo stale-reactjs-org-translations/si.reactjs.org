@@ -1,7 +1,7 @@
 ---
-title: අවස්ථා සංරචකයක්
+title: තත්ත්වය සහිත සංරචකයක්
 order: 1
 domid: timer-example
 ---
 
-In addition to taking input data (accessed via `this.props`), a component can maintain internal state data (accessed via `this.state`). When a component's state data changes, the rendered markup will be updated by re-invoking `render()`.
+ආදාන දත්ත ලබා ගැනීමට අමතරව (`this.props` හරහා ප්‍රවේශ වූ), සංරචකයකට අභ්‍යන්තර තත්ව දත්ත (`this.state` හරහා ප්‍රවේශ වී) පවත්වා ගත හැක. සංරචකයක තත්ත්‍ව දත්ත වෙනස් වූ විට, විදැහුම් කරන ලද පරිශීලක අතුරුමුහුණත `render()` නැවත කැඳවීමෙන් යාවත්කාලීන කෙරේ.
