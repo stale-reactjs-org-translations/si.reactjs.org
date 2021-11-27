@@ -1,7 +1,7 @@
 ---
-title: An Application
+title: යෙදුමක්
 order: 2
 domid: todos-example
 ---
 
-Using `props` and `state`, we can put together a small Todo application. This example uses `state` to track the current list of items as well as the text that the user has entered. Although event handlers appear to be rendered inline, they will be collected and implemented using event delegation.
+`props` සහ `state` භාවිතයෙන්, අපට කුඩා Todo යෙදුමක් එක් කළ හැක. මෙම උදාහරණය වත්මන් අයිතම ලැයිස්තුව මෙන්ම පරිශීලකයා ඇතුළත් කර ඇති පෙළ නිරීක්ෂණය කිරීමට `state` භාවිත කරයි. සිදුවීම් හසුරුවන්නන් පේළිගත කර ඇති බවක් පෙනෙන්නට තිබුණද, ඒවා එකතු කර සිදුවීම් නියෝජිතයන් භාවිතයෙන් ක්‍රියාත්මක කරනු ඇත.

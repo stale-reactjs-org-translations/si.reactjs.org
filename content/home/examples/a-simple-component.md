@@ -1,9 +1,9 @@
 ---
-title: සරල සංරචකයකි
+title: සරල සංරචකයක්
 order: 0
 domid: hello-example
 ---
 
-React components implement a `render()` method that takes input data and returns what to display. This example uses an XML-like syntax called JSX. Input data that is passed into the component can be accessed by `render()` via `this.props`.
+React සංරචක `render()` නම් ආදාන දත්ත ලබාගෙන ප්‍රදර්ශනය කළ යුතු දේ ලබා දෙන ක්‍රමයක් ක්‍රියාත්මක කරයි . මෙම උදාහරණය JSX නම් XML වැනි වාක්‍ය ඛණ්ඩයක් භාවිතා කරයි. සංරචකය තුලට යවන ලද ආදාන දත්ත `render()` ක්‍රමයට `this.props` හරහා ලබාගත හැක.
 
-**JSX is optional and not required to use React.** Try the [Babel REPL](babel://es5-syntax-example) to see the raw JavaScript code produced by the JSX compilation step.
+**JSX විකල්පයක් වන අතර React භාවිතා කිරීම සඳහා අත්‍යවශ්‍ය නොවේ.** JSX සම්පාදන පියවර මගින් නිපදවන ලද අමු JavaScript කේතය බැලීමට [Babel REPL](babel://es5-syntax-example) උත්සාහ කරන්න .

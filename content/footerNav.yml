@@ -1,26 +1,26 @@
 community:
-  title: Community
+  title: ප්‍රජාව
 
 docs:
-  title: Docs
+  title: ලියකියවිලි
 
 more:
-  title: More
+  title: තවත්
   items:
-    - title: Tutorial
+    - title: නිබන්ධනය
       to: /tutorial/tutorial.html
-    - title: Blog
+    - title: බ්ලොගය
       to: /blog
-    - title: Acknowledgements
+    - title: පිළිගැනීම්
       to: /acknowledgements.html
     - title: React Native
       to: https://reactnative.dev/
       external: true
 
 channels:
-  title: Channels
+  title: නාලිකා
   items:
-    - title: GitHub
+    - title: Github
       to: https://github.com/facebook/react
       external: true
     - title: Stack Overflow
