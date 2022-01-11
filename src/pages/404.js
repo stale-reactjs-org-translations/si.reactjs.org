@@ -24,10 +24,9 @@ const PageNotFound = ({location}: Props) => (
           <Header>Page Not Found</Header>
           <TitleAndMetaTags title="React - Page Not Found" />
           <div css={sharedStyles.markdown}>
-            <p>We couldn't find what you were looking for.</p>
+            <p>ඔබ සෙවූ දෙය අපට මෙහිදී සොයාගත නොහැක.</p>
             <p>
-              Please contact the owner of the site that linked you to the
-              original URL and let them know their link is broken.
+              කරුණාකර ඔබව මෙම සම්පත් නිශ්චායකය වෙත යොමු කළ වෙබ් අඩවියේ හිමිකරු සම්බන්ධ කර මෙම යොමුව බිඳී ඇති බව දන්වන්න.
             </p>
           </div>
         </div>
