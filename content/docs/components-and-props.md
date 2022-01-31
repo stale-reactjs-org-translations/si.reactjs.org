@@ -74,7 +74,7 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://components-and-props/rendering-a-component)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)**
 
 අපි නැවත මේ උදාහරණයේ වෙන්නේ මොකක්ද කියලා බලමු:
 
@@ -115,7 +115,7 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://components-and-props/composing-components)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)**
 
 සාමාන්යෙන්,  අලුත් React App වල ඉහලින්ම `App` නැමති තනි component එකක් ඇත. කෙසේවෙතත්, ඔබ React පවතින App එකකට අනුබද්ද කළහොත් ඔබ සමහරක් විට `Button` එකක් වැනි කුඩා component එකක බාවිතයෙන් App එකේ පහතම අවස්ථාවේ සිට view hierarchy එකේ ඉහලට ක්‍රමානුකුලව App එක නිර්මාණය කිරීමට සිදුවිය හැකිය.
 
@@ -149,7 +149,7 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)**
 
 
 එය `author` (object  එකක්), `text` (string එකක් ) සහ `date` (දිනයක් ) props ලෙස බාර ගන්න අතර සමාජ මාධ්‍ය වෙබ් එකක comment එකක ආකාරය විස්තර කරනවා.
@@ -229,9 +229,13 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components-continued)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)**
 
+<<<<<<< HEAD
 components extract කිරීම මුලින්ම පෙනෙනා විදියට අමිහිරි කාර්යක් මෙන් පෙනිය හැකිය, නමුත් විශාල app වලදී නැවත බාවිතා කළහැකි components රාශියක් පැවතීම වාසිදායකය. ඔබගේ UI එකේ කොටසක් කිහිප සැරයක් නැවත භාවිතා හොඳ රීතියකි. (`Button`, `Panel`, `Avatar`) නැතහොත් එය තමන්ගේම component එකක් වුවහොත් සැහෙන්න සංකීර්ණ වියහැකිය (`App`, `FeedStory`, `Comment`), එමනිසා නැවත භාවිත කළහැකි component එකක් හොඳ candidate කෙනෙක් ලෙස හදුනාගත හැකිය.
+=======
+Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be extracted to a separate component.
+>>>>>>> 5f0549c86e7a9c0774e66687d1bc0118a681eb9d
 
 ## Props කියවීමට පමණක් හැකිය. {#props-are-read-only}
 
