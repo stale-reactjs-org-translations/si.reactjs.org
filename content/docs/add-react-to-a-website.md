@@ -52,10 +52,17 @@ React මුල සිටම සැලසුම් කර ඇත්තේ ක්
 ```html{5,6,9}
   <!-- ... වෙනත් HTML ... -->
 
+<<<<<<< HEAD
   <!-- React නංවන්න. -->
   <!-- සටහන: (ප්‍රායෝගික) යෙදවීමේදී, "development.js" යන්න "production.min.js" මඟින් ප්‍රතිස්ථාපනය කරන්න. -->
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+=======
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+>>>>>>> 84ad3308338e2bb819f4f24fa8e9dfeeffaa970b
 
   <!-- අපගේ React සංරචකය නංවන්න. -->
   <script src="like_button.js"></script>
@@ -76,14 +83,24 @@ React මුල සිටම සැලසුම් කර ඇත්තේ ක්
 
 **[ආරම්භක කේතයෙන් ](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** පසුව, `like_button.js` හි අවසානයට පහත කේත දෙපෙළ එක් කරන්න:
 
+<<<<<<< HEAD
 ```js{3,4}
 // ... ඔබ පිටපත් කළ ආරම්භක කේතය ...
+=======
+```js{3,4,5}
+// ... the starter code you pasted ...
+>>>>>>> 84ad3308338e2bb819f4f24fa8e9dfeeffaa970b
 
 const domContainer = document.querySelector('#like_button_container');
-ReactDOM.render(e(LikeButton), domContainer);
+const root = ReactDOM.createRoot(domContainer);
+root.render(e(LikeButton));
 ```
 
+<<<<<<< HEAD
 මෙම කේත දෙපෙළ, පළමු පියවරේදී, අපි HTML වලට එකතු කළ `<div>` සොයාගෙන, අපගේ "Like" බොත්තම නම්  React සංරචකය එතුළ දර්ශනය කරනු ලබයි. 
+=======
+These three lines of code find the `<div>` we added to our HTML in the first step, create a React app with it, and then display our "Like" button React component inside of it.
+>>>>>>> 84ad3308338e2bb819f4f24fa8e9dfeeffaa970b
 
 ### එපමණයි! {#thats-it}
 
@@ -114,15 +131,19 @@ React ඒකාබද්ධ කිරීම පිළිබඳ වැඩිද�
 ඔබ දැනටමත් යෙදුම් පිටපත් කුඩා කොට අසුරන්නේ නම් සහ ඔබේ නිකුත් කළ වෙබ් අඩවියේ `production.min.js` න් අවසන් වන React පිටපත් නැංවෙන බව සහතික නම්, **ඔබේ වෙබ්අඩවිය නිකුත් කිරීමට සූදානම් තත්වයේ පවතී**:
 
 ```js
-<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
 ```
 
 ඔබේ යෙදුම් ක්‍රමාවලිය සඳහා ඔබ කුඩා කර ඇසිරීම අනුගමනය නොකරන්නේ නම්, [එය සකස් කර ගැනීම සඳහා ක්‍රමයක් ඇත.](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3)
 
 ## අභිමත: JSX සමඟ React අත්හදා බලන්න {#optional-try-react-with-jsx}
 
+<<<<<<< HEAD
 ඉහත උදාහරණයන්හිදී, අපි ගවේෂකයන් විසින් මූලිකව සහය දක්වන විශේෂාංග මත පමණක් රැඳුණෙමු. අපි React ට කුමක් ප්‍රදර්ශනය කළ යුතුදැයි පැවසීම සඳහා JavaScript කෘත්‍යයක් භාවිත කළේ එනිසාය:
+=======
+In the examples above, we only relied on features that are natively supported by browsers. This is why we used a JavaScript function call to tell React what to display:
+>>>>>>> 84ad3308338e2bb819f4f24fa8e9dfeeffaa970b
 
 ```js
 const e = React.createElement;
@@ -148,7 +169,11 @@ return (
 
 මෙම කේත කොටස් දෙක සමානය. JSX **[සම්පූර්ණයෙන් අභිමත](/docs/react-without-jsx.html)** වුවත්, බොහෝ දෙනා එය React සමඟ සහ වෙනත් එවැනි පුස්තකාල සමඟ පරිශීලක අතුරුමුහුණත් නිර්මාණය කිරීමට සහය කරගනී.  
 
+<<<<<<< HEAD
 ඔබට [මෙම මාර්ගගත පරිවර්තකය](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3) භාවිතයෙන් JSX සමඟ ක්‍රීඩා කළ හැකිය.
+=======
+You can play with JSX using [this online converter](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.15.7).
+>>>>>>> 84ad3308338e2bb819f4f24fa8e9dfeeffaa970b
 
 ### ක්ෂණිකව JSX අත්හදා බලන්න{#quickly-try-jsx}
 
@@ -158,7 +183,11 @@ return (
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 ```
 
+<<<<<<< HEAD
 දැන් ඔබට ඕනෑම `<script>` ටැගයකට `type="text/babel"` ලක්ෂණය එක් කිරීමෙන් එතුළ JSX භාවිත කළ හැකිය. මෙහි ඇත්තේ ඔබට බාගත කරගෙන අත්හදා බැලිය හැකි [JSX සහිත උදාහරණ HTML ලේඛනයකි](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html).
+=======
+Now you can use JSX in any `<script>` tag by adding `type="text/babel"` attribute to it. Here is [an example HTML file with JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/main/static/html/single-file-example.html) that you can download and play with.
+>>>>>>> 84ad3308338e2bb819f4f24fa8e9dfeeffaa970b
 
 ඉගෙනීමට සහ සරල ආදර්ශන සැකසීමට මෙම අවතීර්ණය ප්‍රමාණවත් ය. කෙසේ නමුත්, එය ඔබේ වෙබ් අඩවිය මන්දගාමී සහ **නිකුත් කිරීමට නුසුදුසු භාවයට පත් කරයි**. ඔබ ඉදිරියට යාමට සූදානම් විට මෙම නව `<script>` ටැග සහ එකතු කළ `type="text/babel"` ලක්ෂණ ඉවත් කරන්න. ඒ වෙනුවට මීළග කොටසේදී ඔබේ සියලුම `<script>`ටැග ස්වයංක්‍රීය ව පරිවර්තනය කිරීම සඳහා JSX පෙර සකසනයක් සකස් කරගනු ඇත.
 
@@ -183,7 +212,7 @@ return (
 `src` නම් ගොනුවක් නිර්මාණය කර පහත අග්‍රස්ථ විධානය දුවවන්න:	
 
 ```
-npx babel --watch src --out-dir . --presets react-app/prod 
+npx babel --watch src --out-dir . --presets react-app/prod
 ```
 
 >සටහන
