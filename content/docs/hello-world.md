@@ -8,16 +8,14 @@ next: introducing-jsx.html
 
 කුඩාම React උදාහරණය පහළින්:
 
-```js
-ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('root')
-);
+```jsx
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<h1>Hello, world!</h1>);
 ```
 
 ඉහත උදාහරණය "Hello, world!" ලෙස Heading එකක් page එකෙහි පෙන්වයි.
 
-[](codepen://hello-world)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrpgNB?editors=1010)**
 
 ඉහලින් ඇති link එක මගින් online editor එක open කරගන්න.එයට වෙනස්කම් සිදුකරන්න, එම වෙනස්කම් output එකට බලපාන ආකාරය නිරීක්ෂණය කරන්න. මෙම උපදේශන මාලාවේ බොහෝ පිටුවල ඉහත ආකාරයේ  වෙනස්කම් කර නිරීක්ෂණය කළ හැකි උදාහරණ පවතී.
 
@@ -40,7 +38,11 @@ React යනු JavaScript library කි, එම නිසා JavaScript  ප�
 
 >සටහන
 >
+<<<<<<< HEAD
 >මෙම උපදෙස් මාළාවේ යම් අවස්ථාවලදී නව JavaScript Syntax උදාහරණ සඳහා භාවිතා කර ඇත. ඔබ පසුගිය අවුරුදු කිහිපය තුල JavaScript භාවිතා නොකළ කෙනෙක් නම්, [මෙම කරුණු තුන](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) බොහෝසේ වැදගත්වනු ඇත.
+=======
+>This guide occasionally uses some newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
+>>>>>>> 5f3a9756e00e256735a5f52df19b403d8fdd3a9d
 
 
 ## ආරම්භ කරමු! {#lets-get-started}
