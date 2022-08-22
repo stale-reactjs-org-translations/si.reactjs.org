@@ -29,33 +29,41 @@ React elements එක්ක events හැසිරවීමත් DOM elements �
 </button>
 ```
 
+<<<<<<< HEAD
 තවත් වෙනස්කමක් තමයි React වලදි ඔයාට element එකක default behavior එක නවත්තන්න return `false` භාවිතා කරන්න බැහැ. ඔයා අනිවාර්යෙන්ම `preventDefault` භාවිතා කරන්න ඕනි.
 උදාහරණයක් විදිහට plain HTML වලින් link එකක සාමාන්‍ය හැසිරීම (default behavior) නවත්තන්න ඒ කියන්නෙ link එක click කලාම  අලුත් page එකක් open වෙන එක නවත්තන්න පහල තියෙන code එකෙන් පුලුවන් වුනත්:
+=======
+Another difference is that you cannot return `false` to prevent default behavior in React. You must call `preventDefault` explicitly. For example, with plain HTML, to prevent the default form behavior of submitting, you can write:
+>>>>>>> 37cf98d075de3133b5ae69fe80fbecb6a742530a
 
 ```html
-<a href="#" onclick="console.log('The link was clicked.'); return false">
-  Click me
-</a>
+<form onsubmit="console.log('You clicked submit.'); return false">
+  <button type="submit">Submit</button>
+</form>
 ```
 
 React වලින් link එකක default behavior නවත්තන්න නම් මේ වගෙ code එකක් ලියන්න ඕනි:
 
-```js{2-5,8}
-function ActionLink() {
-  function handleClick(e) {
+```js{3}
+function Form() {
+  function handleSubmit(e) {
     e.preventDefault();
-    console.log('The link was clicked.');
+    console.log('You clicked submit.');
   }
 
   return (
-    <a href="#" onClick={handleClick}>
-      Click me
-    </a>
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Submit</button>
+    </form>
   );
 }
 ```
 
+<<<<<<< HEAD
 මෙතනදි `e` කියල කියන්නෙ synthetic event  එකක්. React වල synthetic event define කරල තියෙන්නෙ [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/) වලට අනුකූලව හින්ද ඔයා cross browser compatibility ගැන වද වෙන්න ඕනි නැහැ. ඔයාට මේ ගැන තව විස්තර දැනගන්න ඕනි නම් [`SyntheticEvent` reference guide](/docs/events.html) එක කියවල බලන්න.
+=======
+Here, `e` is a synthetic event. React defines these synthetic events according to the [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), so you don't need to worry about cross-browser compatibility. React events do not work exactly the same as native events. See the [`SyntheticEvent`](/docs/events.html) reference guide to learn more.
+>>>>>>> 37cf98d075de3133b5ae69fe80fbecb6a742530a
 
 React වලදි ඔයාට පුලුවන් element එකක් හදල පස්සෙ `addEventListener` method එක call කරල Event Listener එකක් add කරනව වෙනුවට element එක initially render වෙන තැනින්ම Event Listener එකක් add කරන්න.
 
@@ -72,8 +80,8 @@ class Toggle extends React.Component {
   }
 
   handleClick() {
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
     }));
   }
 
@@ -85,11 +93,6 @@ class Toggle extends React.Component {
     );
   }
 }
-
-ReactDOM.render(
-  <Toggle />,
-  document.getElementById('root')
-);
 ```
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/xEmzGg?editors=0010)
@@ -98,15 +101,18 @@ JSX callbacks වලදි `this` කියන keyword එකේ භාවිත
 
 මේක React වලට ආවේණික behavior එකක් නෙමෙයි. මේ තමයි [JavaScript වල functions වැඩ කරන විදිහ](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/). JavaScript වලදි ඔයා method call එකට පස්සෙ `()` නැතුව method එකක් refer කරනවනම්, ඒ කියන්නේ `onClick={this.handleClick}` code එකේදි වගේ; ඔයා අනිවාර්යෙන්ම ඒ method එක bind කරල තියෙන්න ඕනි.
 
+<<<<<<< HEAD
 ඔයා `bind`  method එක call කරන්න වැඩි කැමැත්තක් නැතිනම් ඔයාට මේ වැඩේ කරගන්න තව ක්‍රම දෙකක් තියෙනව. ඔයාට පුලුවන් තාම පර්යේෂණ මට්ටමේ තියෙන [public class fields syntax](https://babeljs.io/docs/plugins/transform-class-properties/)  එකේ විදිහට class fields භාවිතා කරල callbacks bind කරන්න.
+=======
+If calling `bind` annoys you, there are two ways you can get around this. You can use [public class fields syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields#public_instance_fields) to correctly bind callbacks:
+>>>>>>> 37cf98d075de3133b5ae69fe80fbecb6a742530a
 
 ```js{2-6}
 class LoggingButton extends React.Component {
   // This syntax ensures `this` is bound within handleClick.
-  // Warning: this is *experimental* syntax.
   handleClick = () => {
     console.log('this is:', this);
-  }
+  };
 
   render() {
     return (
