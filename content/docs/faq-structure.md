@@ -12,7 +12,11 @@ category: FAQ
 
 #### ක්‍රියාකාරීත්වය හෝ මාර්ගය අනුව කණ්ඩායම් කිරීම {#grouping-by-features-or-routes}
 
+<<<<<<< HEAD
 එක් ජනප්‍රිය ප්‍රවේශයක් වන්නේ, ක්‍රියාකාරීත්වය හෝ මාර්ගය අනුව කාණ්ඩගත කර ඇති ෆෝල්ඩර වල CSS, JS සහ පරීක්ෂණ ගොනු ස්ථානගත කිරීමයි.
+=======
+One common way to structure projects is to locate CSS, JS, and tests together inside folders grouped by feature or route.
+>>>>>>> e3073b03a5b9eff4ef12998841b9e56120f37e26
 
 ```
 common/
