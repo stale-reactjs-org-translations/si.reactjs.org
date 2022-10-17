@@ -36,11 +36,6 @@ React භාවිතා කිරීමට JSX  [අවශ්‍ය නොව�
 ```js{1,2}
 const name = 'Josh Perez';
 const element = <h1>Hello, {name}</h1>;
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
 ```
 
 ඔබට ඕනෑම වලංගු [JavaScript expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) යක් JSX හි curly braces තුළ තැබිය හැකිය. උදාහරණයක් ලෙස, `2 + 2`, `user.firstName`, හෝ `formatName(user)` සියල්ලම වලංගු JavaScript ප්‍රකාශන වේ.
@@ -62,14 +57,13 @@ const element = (
     Hello, {formatName(user)}!
   </h1>
 );
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
 ```
 
+<<<<<<< HEAD
 [CodePen](codepen://introducing-jsx) හි එය උත්සාහ කරන්න
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/PGEjdG?editors=1010)**
+>>>>>>> 8fe817e61e5fe50020ed9379ce9e1c5a2cf476a9
 
 කියවීමේ පහසුතාවය සඳහා අපි JSX විවිධ රේඛා ඔස්සේ බෙදුවෙමු. එය අවශ්‍ය නොවනද , මෙය සිදු කරන විට, [automatic semicolon](https://stackoverflow.com/q/2846283) ඇතුළු කිරීමේ අන්තරායන් වළක්වා ගැනීම සඳහා parentheses තුළ wrap කරම අපි නිර්දේශ කරමු.
 
@@ -93,7 +87,7 @@ function getGreeting(user) {
 ඔබට string  භාවිතා කිරීමට quotes භාවිතා කළ හැකිය:
 
 ```js
-const element = <div tabIndex="0"></div>;
+const element = <a href="https://www.reactjs.org"> link </a>;
 ```
 
 JavaScript ප්‍රකාශනයක් කාවැද්දීමට ඔබට curly braces භාවිතා කළ හැකිය:
@@ -182,4 +176,8 @@ const element = {
 
 >**ඉඟිය:**
 >
+<<<<<<< HEAD
 >ඔබේ editor හි තුල ["Babel" language definition](https://babeljs.io/docs/editors) භාවිතා කිරීම අපි නිර්දේශ කරමු,එවිට ES6 සහ JSX code දෙකම නිසි ලෙස ඉස්මතු වේ.
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> 8fe817e61e5fe50020ed9379ce9e1c5a2cf476a9
