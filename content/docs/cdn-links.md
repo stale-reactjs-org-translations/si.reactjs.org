@@ -9,18 +9,22 @@ next: release-channels.html
 React සහ ReactDOM යන දෙවර්ගයම CDN මඟින් ලබා ගත හැකිය.
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 ```
 
 ඉහත සංස්කරණයන් සියල්ල development අවධිය සදහා වඩාත් සුදුසු වන අතර, production අවධිය සදහාම වෙන් වූ  ( minified and optimized )  සංස්කරණයන් පහත links හරහා ලබා ගත හැකියි.
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 ```
 
+<<<<<<< HEAD
 react හා react-dom හි ඔබට අවශ්‍ය සංස්කරණය ( version ) ලබා ගැනීමට අවශ්‍ය නම්, ඉහත අංක 16 වෙනුවට ඔබට අවශ්‍ය සංස්කරණය ලබා දෙන්න. 
+=======
+To load a specific version of `react` and `react-dom`, replace `18` with the version number.
+>>>>>>> 1a641bb88e647186f260dd2a8e56f0b083f2e46b
 
 
 ### `crossorigin` ගුණාංගය (attribute) හි අවශ්‍යතාව කුමක් සදහාද? {#why-the-crossorigin-attribute}
