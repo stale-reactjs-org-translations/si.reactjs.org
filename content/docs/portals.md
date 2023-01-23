@@ -46,7 +46,11 @@ render() {
 >
 >ද්වාර සමඟ වැඩ කරන විට, මතක තබා ගන්න [යතුරු පුවරුව නාභිගත කිරීම](/docs/accessibility.html#programmatically-managing-focus) ඉතා වැදගත් වන බව.
 >
+<<<<<<< HEAD
 > විමසීම් කවුලු (modal) සඳහා [WAI-ARIA මාදිලියේ අනුමත කිරීමේ භාවිතයන්](https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal) සෑම කෙනෙකුටම එම කවුලු සමඟ අන්තර් ක්‍රියා කළ හැකි බවට වග බලා ගන්න.
+=======
+> For modal dialogs, ensure that everyone can interact with them by following the [WAI-ARIA Modal Authoring Practices](https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/).
+>>>>>>> 38bf76a4a7bec6072d086ce8efdeef9ebb7af227
 
 [**CodePen මගින් උත්සාහ කරන්න**](https://codepen.io/gaearon/pen/yzMaBd)
 
@@ -146,7 +150,8 @@ function Child() {
   );
 }
 
-ReactDOM.render(<Parent />, appRoot);
+const root = ReactDOM.createRoot(appRoot);
+root.render(<Parent />);
 ```
 
 [**CodePen මගින් උත්සාහ කරන්න**](https://codepen.io/gaearon/pen/jGBWpE)

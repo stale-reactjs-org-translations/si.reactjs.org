@@ -62,26 +62,31 @@ React විසින් පරිශීලක-අර්ථ දැක්වු(u
 
 උදාහරණයක් ලෙස ගත්තොත්, පහත code එක "Hello, Sara" ලෙස වෙබ් පිටුවේ පෙන්නුම් කරයි.
 
-```js{1,5}
+```js{1,6}
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
 const element = <Welcome name="Sara" />;
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
+root.render(element);
 ```
 
-[](codepen://components-and-props/rendering-a-component)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)**
 
 අපි නැවත මේ උදාහරණයේ වෙන්නේ මොකක්ද කියලා බලමු:
 
+<<<<<<< HEAD
 1. අපි `ReactDOM.render()` method එක `<Welcome name="Sara" />` element සමග call කරනවා.
 2. React විසින් `Welcome` component එක `{name: 'Sara'}` යන props object එකත් සමග call කරනවා.
 3. අපගේ `Welcome` component එක `<h1>Hello, Sara</h1>` කියන element එක ප්‍රතිපලයක් ලෙස අපට ලබා දෙනවා.
 4. React DOM විසින් කාර්යක්ෂම ලෙස  DOM එක `<h1>Hello, Sara</h1>` ට ගැලපෙන සේ යාවත්කාලින කරනවා.
+=======
+1. We call `root.render()` with the `<Welcome name="Sara" />` element.
+2. React calls the `Welcome` component with `{name: 'Sara'}` as the props.
+3. Our `Welcome` component returns a `<h1>Hello, Sara</h1>` element as the result.
+4. React DOM efficiently updates the DOM to match `<h1>Hello, Sara</h1>`.
+>>>>>>> 38bf76a4a7bec6072d086ce8efdeef9ebb7af227
 
 >**සැලකිය යුතුයි:** හැමවෙලේම  component එකක නම capital letter එකකින් අරඹන්න.
 >
@@ -108,14 +113,9 @@ function App() {
     </div>
   );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 ```
 
-[](codepen://components-and-props/composing-components)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)**
 
 සාමාන්යෙන්,  අලුත් React App වල ඉහලින්ම `App` නැමති තනි component එකක් ඇත. කෙසේවෙතත්, ඔබ React පවතින App එකකට අනුබද්ද කළහොත් ඔබ සමහරක් විට `Button` එකක් වැනි කුඩා component එකක බාවිතයෙන් App එකේ පහතම අවස්ථාවේ සිට view hierarchy එකේ ඉහලට ක්‍රමානුකුලව App එක නිර්මාණය කිරීමට සිදුවිය හැකිය.
 
@@ -149,7 +149,7 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)**
 
 
 එය `author` (object  එකක්), `text` (string එකක් ) සහ `date` (දිනයක් ) props ලෙස බාර ගන්න අතර සමාජ මාධ්‍ය වෙබ් එකක comment එකක ආකාරය විස්තර කරනවා.
@@ -229,9 +229,13 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components-continued)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)**
 
+<<<<<<< HEAD
 components extract කිරීම මුලින්ම පෙනෙනා විදියට අමිහිරි කාර්යක් මෙන් පෙනිය හැකිය, නමුත් විශාල app වලදී නැවත බාවිතා කළහැකි components රාශියක් පැවතීම වාසිදායකය. ඔබගේ UI එකේ කොටසක් කිහිප සැරයක් නැවත භාවිතා හොඳ රීතියකි. (`Button`, `Panel`, `Avatar`) නැතහොත් එය තමන්ගේම component එකක් වුවහොත් සැහෙන්න සංකීර්ණ වියහැකිය (`App`, `FeedStory`, `Comment`), එමනිසා නැවත භාවිත කළහැකි component එකක් හොඳ candidate කෙනෙක් ලෙස හදුනාගත හැකිය.
+=======
+Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be extracted to a separate component.
+>>>>>>> 38bf76a4a7bec6072d086ce8efdeef9ebb7af227
 
 ## Props කියවීමට පමණක් හැකිය. {#props-are-read-only}
 
