@@ -18,7 +18,17 @@ redirect_from:
   - "docs/environments.html"
 ---
 
+<<<<<<< HEAD
 මෙම පිටුව React ප්‍රලේඛනයේ සහ ආශ්‍රිත ලේඛනවල සාරාංශයකි.
+=======
+> Try the new React documentation.
+> 
+> The new [Quick Start](https://beta.reactjs.org/learn) teaches modern React and includes live examples.
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+This page is an overview of the React documentation and related resources.
+>>>>>>> 63c77695a95902595b6c2cc084a5c3650b15210a
 
 **React** යනු පරිශීලක අතුරුමුහුණත් නිර්මාණය කිරීම සඳහා වන JavaScript වලින් රචනා කරන ලද පුස්තකාලයකි. අපේ [මුල් පිටුවෙන්](/) හෝ [නිබන්ධනයෙන්](/tutorial/tutorial.html) React යනු සම්පුර්ණයෙන්ම කවරක්දැයි ඉගෙන ගන්න.
 
@@ -38,9 +48,15 @@ React මුල සිටම සැලසුම් කර ඇත්තේ ක්
 ඔබ React අත්හදා බැලීමට කැමති නම්, ඔබට මාර්ගගත ක්‍රමලේඛ වේදිකාවක් ඒ සඳහා භාවිත කළ හැකිය. 
 [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), [Glitch](https://glitch.com/edit/#!/remix/starter-react-template), හෝ [Stackblitz](https://stackblitz.com/fork/react). හි Hello World අච්චුව අත්හදා බලන්න
 
+<<<<<<< HEAD
 ඔබේම පෙළ සංස්කාරකයක අත්හදා බැලීමට කැමති නම්, ඔබට [මෙම HTML ලේඛනය](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) බාගත කර, සංස්කරණය කර ඔබේ අන්තර්ජාල ගවේෂකයේ විවෘත කර බැලීමටද හැකිය. මෙහිදී සිදු වන්නේ මන්දගාමී ධාවන කාල කේත පරිණාමනයකි, එමනිසා අප විසින් මෙය නිර්දේශ කරනු ලබන්නේ සරල ආදර්ශන සඳහා පමණි.
 
 ### වෙබ් අඩවියකට React එකතු කිරීම {#add-react-to-a-website}
+=======
+If you're interested in playing around with React, you can use an online code playground. Try a Hello World template on [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), or [Stackblitz](https://stackblitz.com/fork/react).
+
+If you prefer to use your own text editor, you can also [download this HTML file](https://raw.githubusercontent.com/reactjs/reactjs.org/main/static/html/single-file-example.html), edit it, and open it from the local filesystem in your browser. It does a slow runtime code transformation, so we'd only recommend using this for simple demos.
+>>>>>>> 63c77695a95902595b6c2cc084a5c3650b15210a
 
 ඔබට [HTML පිටුවකට මිනිත්තුවකින් React එක් කළ හැකිය](/docs/add-react-to-a-website.html). ඉන් පසුව ඔබට වෙබ් යෙදුම තුළ එහි භාවිතය ක්‍රමිකව ව්‍යාප්ත කිරීමට හෝ සීමිත ගතික සංරචක කිහිපයකට පමණක් සීමා කළ හැකිය.
 
@@ -115,7 +131,11 @@ React කණ්ඩායමෙන් ලැබෙන යාවත්කාලී
 
 ඔබට ට්වීටර් හි [@reactjs ගිණුම](https://twitter.com/reactjs) අනුගමනය කිරීමට ද හැකි නමුත්, ඔබ බ්ලොග් අඩවිය පමණක් කියවන්නෙකු වුවද කිසිදු අත්‍යවශ්‍ය නිවේදනයක් මඟ නොහැරෙනු ඇත. 
 
+<<<<<<< HEAD
 සෑම React නිකුත්කිරීමකටම බ්ලොග් සටහනක් නිකුත් නොකරන නමුත්, සෑම නිකුතුවකදීම සිදු වූ වෙනස්කම් පිළිබඳ විස්තරාත්මක සටහනක් [React නිධියෙහි `CHANGELOG.md` ලේඛනයෙන්](https://github.com/facebook/react/blob/master/CHANGELOG.md) මෙන්ම [නිකුත් කිරීම්](https://github.com/facebook/react/releases) පිටුවෙන් ද සොයාගත හැකි වනු ඇත.
+=======
+Not every React release deserves its own blog post, but you can find a detailed changelog for every release in the [`CHANGELOG.md` file in the React repository](https://github.com/facebook/react/blob/main/CHANGELOG.md), as well as on the [Releases](https://github.com/facebook/react/releases) page.
+>>>>>>> 63c77695a95902595b6c2cc084a5c3650b15210a
 
 ## පිටපත්කරණය කරන ලද ප්‍රලේඛනය {#versioned-documentation}
 
