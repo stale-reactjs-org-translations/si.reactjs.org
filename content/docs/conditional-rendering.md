@@ -8,7 +8,20 @@ redirect_from:
   - "tips/false-in-jsx.html"
 ---
 
+<<<<<<< HEAD
 React තුලදි ඔබට අවශ්ය වෙනස් behaviors සදහා වෙන වෙනම components සදා ගත හෑක. ඉන්පසු state එක මත එවායින් සමහරක් පමනක් render කරගත හෑක.
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Conditional Rendering](https://beta.reactjs.org/learn/conditional-rendering)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+
+In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.
+>>>>>>> 19aa5b4852c3905757edb16dd62f7e7506231210
 
 React තුලදි Conditional rendering වැඩ කරන්නේ javascript තුල සමාන්‍ය conditions වැඩකරන ආකරයටමය. [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) සහ [conditional operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) භාවිතා කර අපට අවශ්‍ය UI Components පමනක් පෙනෙන පරිදි state එකෙ values update කල හැකියි
 
@@ -35,11 +48,9 @@ function Greeting(props) {
   return <GuestGreeting />;
 }
 
-ReactDOM.render(
-  // Try changing to isLoggedIn={true}:
-  <Greeting isLoggedIn={false} />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+// Try changing to isLoggedIn={true}:
+root.render(<Greeting isLoggedIn={false} />);
 ```
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
@@ -109,10 +120,8 @@ class LoginControl extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <LoginControl />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<LoginControl />);
 ```
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
@@ -121,7 +130,11 @@ ReactDOM.render(
 
 ### Inline If with Logical && Operator {#inline-if-with-logical--operator}
 
+<<<<<<< HEAD
 ඔබ සඟල වරහන් මගින් JSX හි ඕනෑම [expression](/docs/introducing-jsx.html#embedding-expressions-in-jsx) එකක් යෙදිය හැක. මේ සදහා javascript logical `&&` operator එක භාවිතා වේ. මූලද්රව්යයක් ඇතුළු conditionally පාවිච්චි කිරිමට එය ප්රයෝජනවත් විය හැකිය.
+=======
+You may [embed expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
+>>>>>>> 19aa5b4852c3905757edb16dd62f7e7506231210
 
 ```js{6-10}
 function Mailbox(props) {
@@ -139,10 +152,9 @@ function Mailbox(props) {
 }
 
 const messages = ['React', 'Re: React', 'Re:Re: React'];
-ReactDOM.render(
-  <Mailbox unreadMessages={messages} />,
-  document.getElementById('root')
-);
+
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<Mailbox unreadMessages={messages} />);
 ```
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
@@ -150,6 +162,19 @@ ReactDOM.render(
 එය ක්රියාකරන්නේ JavaScript, `true && expression` සෑම විටම `expression` එක නිරාවරණය කරන අතර `false && expression` සෑම විටම  `false` වලින් නවතී
 
 එබැවින් කොන්දේසිය සත්යය නම්, '&&' පසුව ඇති element එක output එක තුල දිස්වනු ඇත. එය අසත්ය නම්, React විසින් නොසලකා හරිනු ඇත.
+
+Note that returning a falsy expression will still cause the element after `&&` to be skipped but will return the falsy expression. In the example below, `<div>0</div>` will be returned by the render method.
+
+```javascript{2,5}
+render() {
+  const count = 0;
+  return (
+    <div>
+      {count && <h1>Messages: {count}</h1>}
+    </div>
+  );
+}
+```
 
 ### Inline If-Else with Conditional Operator {#inline-if-else-with-conditional-operator}
 
@@ -230,10 +255,8 @@ class Page extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Page />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<Page />);
 ```
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
